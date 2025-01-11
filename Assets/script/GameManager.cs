@@ -53,6 +53,6 @@ public class GameManager : MonoBehaviour
             card.gameObject.SetActive(false);
             card.transform.SetParent(cards);
         }
-        DiscardedAmountText.SetText(deck.Count.ToString());
+        DiscardedAmountText.SetText(discard.Count.ToString());
     }
 }
