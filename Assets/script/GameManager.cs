@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [Header("transforms")]
     public Transform cards;
     public Transform handCards;
+    public Transform useCards;
     public Transform discardedCards;
 
     [Header("Lists")]
@@ -43,6 +44,13 @@ public class GameManager : MonoBehaviour
         endTurnButton.GetComponent<Button>().enabled = true;
         submitButton.GetComponent<Button>().enabled = true;
     }
+    public void EndTurn()
+    {
+        DiscardCards();
+        // disable button until turn begins
+        endTurnButton.GetComponent<Button>().enabled = false;
+        submitButton.GetComponent<Button>().enabled = false;
+    }
     public void DrawCards()
     {
         DiscardCards();
@@ -61,6 +69,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            // put cards from discard pile into deck if deck is empty
             discard.Clear();
             foreach (SetCard card in discard)
             {
@@ -68,12 +77,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    public void EndTurn()
-    {
-        DiscardCards();
-        endTurnButton.GetComponent<Button>().enabled = false;
-        submitButton.GetComponent<Button>().enabled = false;
-    }
+    //discard any unused cards when turn ends
     public void DiscardCards()
     {
         
@@ -81,9 +85,17 @@ public class GameManager : MonoBehaviour
         {
             discard.Add(card);
         }
+        // discard all cards in hand
         for (int i = handCards.childCount - 1; i >= 0; i--)
         {
             Transform child = handCards.GetChild(i);
+            child.SetParent(discardedCards);
+            child.gameObject.SetActive(false);
+        }
+        //discard any cards left in use cards
+        for (int i = useCards.childCount - 1; i >= 0; i--)
+        {
+            Transform child = useCards.GetChild(i);
             child.SetParent(discardedCards);
             child.gameObject.SetActive(false);
         }
