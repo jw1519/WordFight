@@ -2192,6 +2192,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91c3e9b9e4bc1843b938af2b86d3e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &951159515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 951159516}
+  m_Layer: 0
+  m_Name: DiscardedCards
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &951159516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951159515}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -61.136536, y: 13.804626, z: -2.1148753}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1294538589}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &984146908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,7 +2565,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1224163464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1365296064}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: EndTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1224163464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2935,6 +2978,7 @@ RectTransform:
   m_Children:
   - {fileID: 234763960}
   - {fileID: 110058700}
+  - {fileID: 951159516}
   - {fileID: 1467315998}
   - {fileID: 744412548}
   - {fileID: 1618043727}
@@ -3110,7 +3154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc12d685ff6b89042b1d17b2f6afe9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCards: 7
   cards: {fileID: 110058700}
+  handCards: {fileID: 234763960}
+  discardedCards: {fileID: 951159516}
   deck:
   - {fileID: 991771001}
   - {fileID: 1744932587}
@@ -3138,12 +3185,12 @@ MonoBehaviour:
   - {fileID: 1890069340}
   - {fileID: 1281390138}
   - {fileID: 1505721574}
-  handCards: {fileID: 234763960}
   hand: []
   discard: []
-  maxCards: 7
   deckAmountText: {fileID: 124066123}
   DiscardedAmountText: {fileID: 1269850591}
+  submitButton: {fileID: 1881245223}
+  endTurnButton: {fileID: 1224163463}
 --- !u!4 &1365296065
 Transform:
   m_ObjectHideFlags: 0
@@ -4462,7 +4509,7 @@ GameObject:
   - component: {fileID: 1881245224}
   - component: {fileID: 1881245223}
   m_Layer: 5
-  m_Name: SubmitButton (1)
+  m_Name: SubmitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -2,24 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
+    public int maxCards;
+    [Header("transforms")]
     public Transform cards;
-    public List<SetCard> deck = new List<SetCard>();
     public Transform handCards;
+    public Transform discardedCards;
+
+    [Header("Lists")]
+    public List<SetCard> deck = new List<SetCard>();
     public List<SetCard> hand = new List<SetCard>();
     public List<SetCard> discard = new List<SetCard>();
-    public int maxCards;
+
+    [Header("Text")]
     public TextMeshProUGUI deckAmountText;
     public TextMeshProUGUI DiscardedAmountText;
 
-    public void Start()
+    [Header("Buttons")]
+    public Button submitButton;
+    public Button endTurnButton;
+
+    public void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
         deckAmountText.SetText(deck.Count.ToString());
-        DrawCards();
+        BeginTurn();
     }
 
+    public void BeginTurn()
+    {
+        DrawCards();
+        endTurnButton.GetComponent<Button>().enabled = true;
+        submitButton.GetComponent<Button>().enabled = true;
+    }
     public void DrawCards()
     {
         DiscardCards();
@@ -31,6 +54,7 @@ public class GameManager : MonoBehaviour
                 RandomCard.gameObject.SetActive(true);
                 RandomCard.transform.SetParent(handCards);
                 hand.Add(RandomCard);
+                deck.Remove(RandomCard);
             }
             deckAmountText.SetText(deck.Count.ToString());
             
@@ -44,15 +68,27 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public void EndTurn()
+    {
+        DiscardCards();
+        endTurnButton.GetComponent<Button>().enabled = false;
+        submitButton.GetComponent<Button>().enabled = false;
+    }
     public void DiscardCards()
     {
-        hand.Clear();
-        foreach (SetCard card in handCards)
+        
+        foreach (SetCard card in hand)
         {
             discard.Add(card);
-            card.gameObject.SetActive(false);
-            card.transform.SetParent(cards);
+        }
+        for (int i = handCards.childCount - 1; i >= 0; i--)
+        {
+            Transform child = handCards.GetChild(i);
+            child.SetParent(discardedCards);
+            child.gameObject.SetActive(false);
         }
         DiscardedAmountText.SetText(discard.Count.ToString());
+        hand.Clear();
     }
+    
 }
