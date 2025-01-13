@@ -102,5 +102,14 @@ public class GameManager : MonoBehaviour
         DiscardedAmountText.SetText(discard.Count.ToString());
         hand.Clear();
     }
-    
+    public void SubmitWord()
+    {
+        string word = "";
+        foreach(Transform card in useCards)
+        {
+            string letter = card.GetComponent<SetCard>().card.letter;
+            word = word + letter;
+        }
+        Debug.Log(word);
+    }
 }
