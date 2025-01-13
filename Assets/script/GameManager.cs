@@ -41,15 +41,8 @@ public class GameManager : MonoBehaviour
     public void BeginTurn()
     {
         DrawCards();
-        endTurnButton.GetComponent<Button>().enabled = true;
-        submitButton.GetComponent<Button>().enabled = true;
-    }
-    public void EndTurn()
-    {
-        DiscardCards();
-        // disable button until turn begins
-        endTurnButton.GetComponent<Button>().enabled = false;
-        submitButton.GetComponent<Button>().enabled = false;
+        submitButton.gameObject.SetActive(true);
+        endTurnButton.gameObject.SetActive(true);
     }
     public void DrawCards()
     {
@@ -101,15 +94,5 @@ public class GameManager : MonoBehaviour
         }
         DiscardedAmountText.SetText(discard.Count.ToString());
         hand.Clear();
-    }
-    public void SubmitWord()
-    {
-        string word = "";
-        foreach(Transform card in useCards)
-        {
-            string letter = card.GetComponent<SetCard>().card.letter;
-            word = word + letter;
-        }
-        Debug.Log(word);
     }
 }
