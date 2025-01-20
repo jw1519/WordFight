@@ -10,6 +10,6 @@ public class SetCard : MonoBehaviour
     void Start()
     {
         cardLetterText.SetText(card.letter);
-        cardDamageText.SetText(card.damage.ToString());
+        cardDamageText.SetText(card.damageOrDefence.ToString());
     }
 }

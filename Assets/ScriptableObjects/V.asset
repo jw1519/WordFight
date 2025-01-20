@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: V
   m_EditorClassIdentifier: 
   letter: V
-  damage: 0
+  damageOrDefence: 4
+  cardType: 0

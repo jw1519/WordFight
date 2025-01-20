@@ -4,5 +4,12 @@ using UnityEngine;
 public class Card : ScriptableObject
 {
     public string letter;
-    public int damage;
+    public int damageOrDefence;
+    public CardType cardType;
+    public enum CardType
+    {
+        Attack,
+        Defence,
+        Ability
+    }
 }

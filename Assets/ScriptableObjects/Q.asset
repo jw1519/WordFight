@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Q
   m_EditorClassIdentifier: 
   letter: Q
-  damage: 0
+  damageOrDefence: 10
+  cardType: 0

@@ -16,7 +16,7 @@ public class ButtonManager : MonoBehaviour
         {
             string letter = card.GetComponent<SetCard>().card.letter;
             word = word + letter;
-            wordDamage = wordDamage + card.GetComponent<SetCard>().card.damage;
+            wordDamage = wordDamage + card.GetComponent<SetCard>().card.damageOrDefence;
         }
         Debug.Log(word);
 
