@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UseCardSlot : MonoBehaviour, IDropHandler
+public class CardSlots : MonoBehaviour, IDropHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
