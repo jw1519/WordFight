@@ -95,4 +95,13 @@ public class GameManager : MonoBehaviour
         DiscardedAmountText.SetText(discard.Count.ToString());
         hand.Clear();
     }
+    public void DiscardUsedCards()
+    {
+        foreach (Transform card in useCards)
+        {
+            card.gameObject.SetActive(false);
+            hand.Remove(card.GetComponent<SetCard>());
+            discard.Remove(card.GetComponent<SetCard>());
+        }
+    }
 }
