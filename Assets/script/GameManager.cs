@@ -86,6 +86,11 @@ public class GameManager : MonoBehaviour
             child.gameObject.SetActive(false);
         }
         //discard any cards left in use cards
+        DiscardUsedCards();
+        hand.Clear();
+    }
+    public void DiscardUsedCards()
+    {
         for (int i = useCards.childCount - 1; i >= 0; i--)
         {
             Transform child = useCards.GetChild(i);
@@ -93,15 +98,5 @@ public class GameManager : MonoBehaviour
             child.gameObject.SetActive(false);
         }
         DiscardedAmountText.SetText(discard.Count.ToString());
-        hand.Clear();
-    }
-    public void DiscardUsedCards()
-    {
-        foreach (Transform card in useCards)
-        {
-            card.gameObject.SetActive(false);
-            hand.Remove(card.GetComponent<SetCard>());
-            discard.Remove(card.GetComponent<SetCard>());
-        }
     }
 }

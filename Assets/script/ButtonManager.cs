@@ -24,11 +24,7 @@ public class ButtonManager : MonoBehaviour
 
         //if is a word
         //enemy health = health - wordDamage
-        foreach (Transform card in GameManager.instance.useCards)
-        {
-            card.GetComponent<SetCard>();
-            GameManager.instance.
-        }
+        GameManager.instance.DiscardUsedCards();
     }
     public void EndTurn()
     {
