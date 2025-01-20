@@ -3334,8 +3334,8 @@ MonoBehaviour:
   discard: []
   deckAmountText: {fileID: 124066123}
   DiscardedAmountText: {fileID: 1269850591}
-  submitButton: {fileID: 1881245221}
-  endTurnButton: {fileID: 1224163461}
+  submitButton: {fileID: 1881245223}
+  endTurnButton: {fileID: 1224163463}
 --- !u!4 &1365296065
 Transform:
   m_ObjectHideFlags: 0
