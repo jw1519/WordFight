@@ -3330,7 +3330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc12d685ff6b89042b1d17b2f6afe9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCards: 7
   submitButton: {fileID: 1881245223}
   endTurnButton: {fileID: 1224163463}
 --- !u!4 &1365296065
