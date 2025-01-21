@@ -26,7 +26,7 @@ public class WordManager : MonoBehaviour
     {
         string word = "";
         int wordDamage = 0;
-        foreach (Transform card in GameManager.instance.useCards)
+        foreach (Transform card in CardManager.instance.useCards)
         {
             string letter = card.GetComponent<SetCard>().card.letter;
             word = word + letter;
@@ -34,7 +34,7 @@ public class WordManager : MonoBehaviour
         }
         if (wordTrie.Search(word))
         {
-            GameManager.instance.DiscardUsedCards();
+            CardManager.instance.DiscardUsedCards();
         }
     }
 }

@@ -5,7 +5,7 @@ public class StrengthBoostDecorator : CardAbilitiy
     private int boostMultiplier = 2;
     public void Apply(GameObject gameObject)
     {
-        foreach (SetCard cards in GameManager.instance.hand)
+        foreach (SetCard cards in CardManager.instance.hand)
         {
             cards.card.damageOrDefence = cards.card.damageOrDefence * boostMultiplier;
         }
@@ -14,7 +14,7 @@ public class StrengthBoostDecorator : CardAbilitiy
 
     public void Remove(GameObject gameObject)
     {
-        foreach (SetCard cards in GameManager.instance.hand)
+        foreach (SetCard cards in CardManager.instance.hand)
         {
             cards.card.damageOrDefence = cards.card.damageOrDefence / boostMultiplier;
         }
