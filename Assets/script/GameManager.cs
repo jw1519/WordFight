@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public int maxCards;
+    public int maxCards = 7;
     [Header("transforms")]
     public Transform cards;
     public Transform handCards;
@@ -42,6 +42,12 @@ public class GameManager : MonoBehaviour
         DrawCards();
         submitButton.gameObject.SetActive(true);
         endTurnButton.gameObject.SetActive(true);
+    }
+    public void EndTurn()
+    {
+        DiscardCards();
+        submitButton.gameObject.SetActive(false);
+        endTurnButton.gameObject.SetActive(false);
     }
     public void DrawCards()
     {

@@ -932,8 +932,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -65.298584, y: -162.66}
-  m_SizeDelta: {x: -164.2997, y: -325.32}
+  m_AnchoredPosition: {x: -65.298584, y: -200.16}
+  m_SizeDelta: {x: -164.2997, y: -400.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &234763962
 CanvasRenderer:
@@ -960,7 +960,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 7
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 140, y: 160}
@@ -2732,8 +2732,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1227843395}
-        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+      - m_Target: {fileID: 1365296064}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: EndTurn
         m_Mode: 1
         m_Arguments:
@@ -2782,53 +2782,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224163461}
   m_CullTransparentMesh: 1
---- !u!1 &1227843393
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1227843394}
-  - component: {fileID: 1227843395}
-  m_Layer: 0
-  m_Name: Buttonmanager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1227843394
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227843393}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1365296065}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1227843395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227843393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c418ec48da4bc0c4ba39bd3c5b144170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  submitButton: {fileID: 1881245223}
-  endTurnButton: {fileID: 1224163463}
-  wordList: {fileID: 0}
 --- !u!114 &1248641470 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7107218184073478818, guid: c6ced23febaee0e4c8e704a45eee020a, type: 3}
@@ -3401,9 +3354,9 @@ MonoBehaviour:
   hand: []
   discard: []
   deckAmountText: {fileID: 124066123}
-  DiscardedAmountText: {fileID: 1269850591}
-  submitButton: {fileID: 1881245223}
-  endTurnButton: {fileID: 1224163463}
+  DiscardedAmountText: {fileID: 0}
+  submitButton: {fileID: 0}
+  endTurnButton: {fileID: 0}
 --- !u!4 &1365296065
 Transform:
   m_ObjectHideFlags: 0
@@ -3417,7 +3370,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1227843394}
   - {fileID: 1620629675}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4924,8 +4876,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1227843395}
-        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+      - m_Target: {fileID: 1620629676}
+        m_TargetAssemblyTypeName: WordManager, Assembly-CSharp
         m_MethodName: SubmitWord
         m_Mode: 1
         m_Arguments:
