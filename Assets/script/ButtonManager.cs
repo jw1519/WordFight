@@ -8,6 +8,8 @@ public class ButtonManager : MonoBehaviour
     public Button submitButton;
     public Button endTurnButton;
 
+    public TextAsset wordList;
+
     public void SubmitWord()
     {
         string word = "";
@@ -21,10 +23,11 @@ public class ButtonManager : MonoBehaviour
         Debug.Log(word);
 
         //check if it is a word
-
-        //if is a word
+        
+        
         //enemy health = health - wordDamage
         GameManager.instance.DiscardUsedCards();
+
     }
     public void EndTurn()
     {
