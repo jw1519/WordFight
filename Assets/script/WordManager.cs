@@ -36,5 +36,9 @@ public class WordManager : MonoBehaviour
         {
             CardManager.instance.DiscardUsedCards();
         }
+        else
+        {
+            Debug.Log("This is not a word");
+        }
     }
 }
