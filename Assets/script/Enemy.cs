@@ -5,7 +5,7 @@ public class Enemy : ScriptableObject
     private int health;
     private int damage; 
     private int maxHealth;
-    private Action actionForThisTurn;
+    public Action actionForThisTurn;
     
     public Difficulty difficulty;
     private void Awake()
