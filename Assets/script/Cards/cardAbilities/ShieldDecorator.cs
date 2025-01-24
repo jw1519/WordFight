@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ShieldDecorator : CardAbilitiy
 {
-    private GameObject shield;
+    private Sprite shield;
     public void Apply(GameObject player)
     {
         if (shield == null)
         {
-            shield = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            
         }
     }
 

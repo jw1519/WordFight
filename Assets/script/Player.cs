@@ -6,13 +6,10 @@ public class Player : MonoBehaviour
 {
     public static Player Instance;
     public int health = 100;
+    public int defence;
 
     private void Awake()
     {
         Instance = this;
-    }
-    public void Attack()
-    {
-
     }
 }

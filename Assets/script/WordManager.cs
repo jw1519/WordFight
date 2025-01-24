@@ -34,6 +34,13 @@ public class WordManager : MonoBehaviour
         }
         if (wordTrie.Search(word))
         {
+            foreach (Transform card in CardManager.instance.useCards)
+            {
+                SetCard setCard = card.GetComponent<SetCard>();
+                UseCards.instance.GetCardStats(setCard);
+                UseCards.instance.Attack();
+                UseCards.instance.Defence();
+            }
             CardManager.instance.DiscardUsedCards();
         }
         else
