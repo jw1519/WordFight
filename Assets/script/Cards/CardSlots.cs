@@ -8,7 +8,6 @@ public class CardSlots : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null)
         {
-            Debug.Log("Dropped");
             eventData.pointerDrag.transform.SetParent(transform, false);
         }
     }

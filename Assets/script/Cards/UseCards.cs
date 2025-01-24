@@ -38,7 +38,16 @@ public class UseCards : MonoBehaviour
     {
         if (enemy != null)
         {
-            enemy.health = enemy.health - damage;
+            if (enemy.health - damage > 0)
+            {
+                enemy.health = enemy.health - damage;
+            }
+            else
+            {
+                enemy.health = 0;
+                Debug.Log("Win");
+            }
+            
         }
     }
     public void Defence()

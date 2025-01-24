@@ -1,16 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class SetHealth : MonoBehaviour
 {
+    public static SetHealth instance;
     public TextMeshProUGUI playerHealthtext;
     public TextMeshProUGUI enemyHealthtext;
 
     private Player player;
     private SetEnemy enemy;
-    
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     void Start()
     {
         player = FindObjectOfType<Player>();

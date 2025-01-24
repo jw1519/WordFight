@@ -19,6 +19,5 @@ public class SetCard : MonoBehaviour
         {
             description.SetText("This card does a thing");
         }
-        
     }
 }

@@ -55,18 +55,17 @@ public class CardManager : MonoBehaviour
         else
         {
             // put cards from discard pile into deck if deck is empty or doesnt have enough cards
-            discard.Clear();
             foreach (SetCard card in discard)
             {
                 deck.Add(card);
             }
+            discard.Clear();
             DrawCards();
         }
     }
     //discard any unused cards when turn ends
     public void DiscardCards()
     {
-
         foreach (SetCard card in hand)
         {
             discard.Add(card);

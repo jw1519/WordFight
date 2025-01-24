@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using static Enemy;
 
@@ -8,10 +9,10 @@ public class SetEnemy : MonoBehaviour
     public SpriteRenderer actionrenderer;
     private void Awake()
     {
-        SelectnextAction();
+        SelectNextAction();
     }
 
-    public void SelectnextAction()
+    public void SelectNextAction()
     {
         EnemyAction action = GetRandomEnumValue<EnemyAction>();
         enemy.actionForThisTurn = action;
@@ -49,10 +50,12 @@ public class SetEnemy : MonoBehaviour
                 {
                     Player.instance.health = Player.instance.health - enemy.damage;
                 }
+                EndTurn();
                 return;
 
             case EnemyAction.Defend:
                 enemy.defence = enemy.defenceAmount;
+                EndTurn();
                 return;
 
             case EnemyAction.Heal:
@@ -64,7 +67,14 @@ public class SetEnemy : MonoBehaviour
                 {
                     enemy.health = enemy.maxHealth;
                 }
+                EndTurn();
                 return;
         }
+    }
+    public void EndTurn()
+    {
+        SetHealth.instance.UpdatePlayerHealth();
+        SelectNextAction();
+        GameManager.instance.BeginTurn();
     }
 }
