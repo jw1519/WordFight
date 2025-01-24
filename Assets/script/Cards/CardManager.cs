@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -28,10 +27,12 @@ public class CardManager : MonoBehaviour
         {
             instance = this;
         }
-    }
-    public void Start()
-    {
-        deckAmountText.SetText(deck.Count.ToString());
+        //Adds all card to the deck list
+        foreach (Transform transform in cards)
+        {
+            SetCard card = transform.GetComponent<SetCard>();
+            deck.Add(card);
+        }
         DrawCards();
     }
 
@@ -59,6 +60,7 @@ public class CardManager : MonoBehaviour
             {
                 deck.Add(card);
             }
+            DrawCards();
         }
     }
     //discard any unused cards when turn ends

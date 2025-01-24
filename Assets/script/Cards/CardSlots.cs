@@ -1,3 +1,4 @@
+// needs to go on any thing the card can be dropped on
 using UnityEngine;
 using UnityEngine.EventSystems;
 
