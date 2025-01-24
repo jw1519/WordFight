@@ -8,10 +8,10 @@ public class SetEnemy : MonoBehaviour
     public SpriteRenderer actionrenderer;
     private void Awake()
     {
-        StartTurn();
+        SelectnextAction();
     }
 
-    public void StartTurn()
+    public void SelectnextAction()
     {
         EnemyAction action = GetRandomEnumValue<EnemyAction>();
         enemy.actionForThisTurn = action;
@@ -21,10 +21,12 @@ public class SetEnemy : MonoBehaviour
             case EnemyAction.Attack:
                 actionrenderer.sprite = enemy.attackSprite;
                 return;
+
             case EnemyAction.Defend:
                 actionrenderer.sprite = enemy.defenceSprite;
                 return;
-            case EnemyAction.UseAbility:
+
+            case EnemyAction.Heal:
                 actionrenderer.sprite = enemy.abilitySprite;
                 return;
         }  
@@ -33,5 +35,36 @@ public class SetEnemy : MonoBehaviour
     {
         Array enumvalues = Enum.GetValues(typeof(EnemyAction)); // gets all posable values for the enum
         return (EnemyAction)enumvalues.GetValue(UnityEngine.Random.Range(0, enumvalues.Length)); //randomly selcts on of the actions from the enum and returns it
+    }
+    public void StartTurn()
+    {
+        switch (enemy.actionForThisTurn)
+        {
+            case EnemyAction.Attack:
+                if (Player.instance.health - enemy.damage <= 0)
+                {
+                    Debug.Log("game over");
+                }
+                else
+                {
+                    Player.instance.health = Player.instance.health - enemy.damage;
+                }
+                return;
+
+            case EnemyAction.Defend:
+                enemy.defence = enemy.defenceAmount;
+                return;
+
+            case EnemyAction.Heal:
+                if (enemy.health + enemy.healAmount <= enemy.maxHealth)
+                {
+                    enemy.health = enemy.health + enemy.healAmount;
+                }
+                else
+                {
+                    enemy.health = enemy.maxHealth;
+                }
+                return;
+        }
     }
 }

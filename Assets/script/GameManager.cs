@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public Button submitButton;
     public Button endTurnButton;
+    SetEnemy enemy;
 
     public void BeginTurn()
     {
@@ -20,5 +21,7 @@ public class GameManager : MonoBehaviour
         CardManager.instance.DiscardCards();
         submitButton.gameObject.SetActive(false);
         endTurnButton.gameObject.SetActive(false);
+        enemy = FindObjectOfType<SetEnemy>();
+        enemy.StartTurn();
     }
 }

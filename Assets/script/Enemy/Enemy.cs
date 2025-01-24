@@ -12,6 +12,10 @@ public class Enemy : ScriptableObject
     public int maxHealth;
     public int defence;
 
+    [Header("Ability amounts")]
+    public int healAmount;
+    public int defenceAmount;
+
     [Header("Action Sprites")]
     public Sprite attackSprite;
     public Sprite defenceSprite;
@@ -21,6 +25,6 @@ public class Enemy : ScriptableObject
     {
         Attack,
         Defend,
-        UseAbility,
+        Heal,
     }
 }

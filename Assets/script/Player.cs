@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static Player Instance;
-    public int health = 100;
+    public static Player instance;
+    public int health = 30;
+    public int maxHealth = 30;
     public int defence;
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 }
