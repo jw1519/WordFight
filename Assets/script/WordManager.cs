@@ -22,10 +22,23 @@ public class WordManager : MonoBehaviour
             }
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SubmitWord()
     {
-        
+        string word = "";
+        int wordDamage = 0;
+        foreach (Transform card in CardManager.instance.useCards)
+        {
+            string letter = card.GetComponent<SetCard>().card.letter;
+            word = word + letter;
+            wordDamage = wordDamage + card.GetComponent<SetCard>().card.damageOrDefence;
+        }
+        if (wordTrie.Search(word))
+        {
+            CardManager.instance.DiscardUsedCards();
+        }
+        else
+        {
+            Debug.Log("This is not a word");
+        }
     }
 }

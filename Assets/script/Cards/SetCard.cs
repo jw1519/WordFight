@@ -5,13 +5,11 @@ public class SetCard : MonoBehaviour
 {
     public Card card;
     public TextMeshProUGUI cardLetterText;
-    public TextMeshProUGUI cardDamageText;
     public TextMeshProUGUI description;
 
     void Awake()
     {
         cardLetterText.SetText(card.letter);
-        cardDamageText.SetText(card.damageOrDefence.ToString());
 
         if (card.cardType != Card.CardType.Ability)
         {
