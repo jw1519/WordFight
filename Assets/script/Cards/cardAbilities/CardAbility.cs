@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface CardAbilitiy
+public interface CardAbility
 {
     void Apply(GameObject gameObject);
     void Remove(GameObject gameObject);
