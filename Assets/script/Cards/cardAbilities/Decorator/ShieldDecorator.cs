@@ -11,14 +11,17 @@ public class ShieldDecorator : BaseAbilityDecorator
     public override void Apply(GameObject player)
     {
         base.Apply(player); // Log application
-        if (shieldObject != null)
+        if (shieldObject == null)
         {
             // make object
             shieldObject = new GameObject("Shield");
             shieldObject.transform.SetParent(player.transform);
             shieldObject.AddComponent<SpriteRenderer>();
             shieldObject.GetComponent<SpriteRenderer>().sprite = shieldSprite;
-
+        }
+        else
+        {
+            
         }
     }
     public override void Remove(GameObject player)

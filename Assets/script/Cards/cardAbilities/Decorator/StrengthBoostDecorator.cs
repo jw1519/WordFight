@@ -10,7 +10,7 @@ public class StrengthBoostDecorator : BaseAbilityDecorator
     {
         foreach (SetCard cards in CardManager.instance.hand)
         {
-            cards.card.damageOrDefence = cards.card.damageOrDefence * boostMultiplier;
+            cards.card.damage = cards.card.damage * boostMultiplier;
         }
         
     }
@@ -19,7 +19,7 @@ public class StrengthBoostDecorator : BaseAbilityDecorator
     {
         foreach (SetCard cards in CardManager.instance.hand)
         {
-            cards.card.damageOrDefence = cards.card.damageOrDefence / boostMultiplier;
+            cards.card.damage = cards.card.damage / boostMultiplier;
         }
     }
 }

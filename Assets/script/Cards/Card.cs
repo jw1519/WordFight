@@ -4,12 +4,17 @@ using UnityEngine;
 public class Card : ScriptableObject
 {
     public string letter;
-    public int damageOrDefence;
+    public int damage;
+    public int defence;
     public CardType cardType;
     public enum CardType
     {
         Attack,
         Defence,
         Ability
+    }
+    public virtual void Use()
+    {
+
     }
 }

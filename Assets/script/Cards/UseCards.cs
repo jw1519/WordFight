@@ -25,10 +25,10 @@ public class UseCards : MonoBehaviour
         switch (card.card.cardType)
         {
             case Card.CardType.Attack:
-                damage = damage + card.card.damageOrDefence;
+                damage = damage + card.card.damage;
                 return;
             case Card.CardType.Defence:
-                defence = defence + card.card.damageOrDefence;
+                defence = defence + card.card.damage;
                 return;
             case Card.CardType.Ability:
                 return;
