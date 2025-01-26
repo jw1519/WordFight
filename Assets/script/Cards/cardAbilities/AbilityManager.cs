@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
-    private Dictionary<string, CardAbilitiy> activeDecorators;
+    private Dictionary<string, BaseAbilityDecorator> activeDecorators;
     // Start is called before the first frame update
     void Start()
     {
-        activeDecorators = new Dictionary<string, CardAbilitiy>();
+        activeDecorators = new Dictionary<string, BaseAbilityDecorator>();
     }
 
     // Update is called once per frame
@@ -16,7 +16,7 @@ public class AbilityManager : MonoBehaviour
     {
         
     }
-    private void ApplyDecorator(string key, CardAbilitiy decorator)
+    private void ApplyDecorator(string key, BaseAbilityDecorator decorator)
     {
         if (!activeDecorators.ContainsKey(key))
         {

@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseAbilityDecorator : CardAbilitiy
+public abstract class BaseAbilityDecorator : CardAbility
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected GameObject player;
 
-    // Update is called once per frame
-    void Update()
+    // Constructor for initialising the player object
+    public BaseAbilityDecorator(GameObject player)
     {
-        
+        this.player = player;
+    }
+    // Default apply and remove functionality with logging
+    public virtual void Apply(GameObject gameObject)
+    {
+        Debug.Log($"{GetType().Name} applied to {player.name}");
+    }
+    public virtual void Remove(GameObject gameObject)
+    {
+        Debug.Log($"{GetType().Name} removed from {player.name}");
     }
 }

@@ -2,19 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShieldDecorator : CardAbilitiy
+public class ShieldDecorator : BaseAbilityDecorator
 {
-    private Sprite shield;
-    public void Apply(GameObject player)
+    public Sprite shieldSprite;
+    private GameObject shieldObject;
+    public ShieldDecorator(GameObject player) : base(player) { }
+
+    public override void Apply(GameObject player)
     {
-        if (shield == null)
+        base.Apply(player); // Log application
+        if (shieldObject != null)
         {
-            
+            // make object
+            shieldObject = new GameObject("Shield");
+            shieldObject.transform.SetParent(player.transform);
+            shieldObject.AddComponent<SpriteRenderer>();
+            shieldObject.GetComponent<SpriteRenderer>().sprite = shieldSprite;
+
         }
     }
-
-    public void Remove(GameObject player)
+    public override void Remove(GameObject player)
     {
-        throw new System.NotImplementedException();
+        base.Remove(player);
+        if (shieldObject != null)
+        {
+            GameObject.Destroy(shieldObject);
+            shieldObject = null;
+        }
     }
 }
