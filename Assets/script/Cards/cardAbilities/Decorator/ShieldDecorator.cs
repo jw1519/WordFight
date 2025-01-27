@@ -6,6 +6,7 @@ public class ShieldDecorator : BaseAbilityDecorator
 {
     public Sprite shieldSprite;
     private GameObject shieldObject;
+    public int shieldValue;
     public ShieldDecorator(GameObject player) : base(player) { }
 
     public override void Apply(GameObject player)
@@ -18,10 +19,11 @@ public class ShieldDecorator : BaseAbilityDecorator
             shieldObject.transform.SetParent(player.transform);
             shieldObject.AddComponent<SpriteRenderer>();
             shieldObject.GetComponent<SpriteRenderer>().sprite = shieldSprite;
+            shieldValue = 3;
         }
         else
         {
-            
+            shieldValue = shieldValue + 3;
         }
     }
     public override void Remove(GameObject player)

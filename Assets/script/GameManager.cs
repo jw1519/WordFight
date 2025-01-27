@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public Button submitButton;
     public Button endTurnButton;
+
+    int turnCount;
     SetEnemy enemy;
     private void Awake()
     {
@@ -16,16 +18,23 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
         enemy = FindObjectOfType<SetEnemy>();
+        turnCount = 0;
     }
 
     public void BeginTurn()
     {
+        if ( turnCount == 0 )
+        {
+
+        }
         CardManager.instance.DrawCards();
         submitButton.gameObject.SetActive(true);
         endTurnButton.gameObject.SetActive(true);
     }
     public void EndTurn()
     {
+        turnCount++;
+        Player.instance.RemoveDecorator();
         CardManager.instance.DiscardCards();
         submitButton.gameObject.SetActive(false);
         endTurnButton.gameObject.SetActive(false);

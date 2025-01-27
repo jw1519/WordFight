@@ -7,9 +7,12 @@ public class SetCard : MonoBehaviour
     public TextMeshProUGUI cardLetterText;
     public TextMeshProUGUI description;
 
+    private AbilityManager abilityManager;
+
     void Awake()
     {
         cardLetterText.SetText(card.letter);
+        abilityManager = GetComponent<AbilityManager>();
 
         if (card.cardType != Card.CardType.Ability)
         {

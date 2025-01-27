@@ -6,15 +6,13 @@ public class AbilityManager : MonoBehaviour
 {
     private Dictionary<string, BaseAbilityDecorator> activeDecorators;
     bool shieldActive;
-    int amountOfTurns;
     // Start is called before the first frame update
     void Start()
     {
         activeDecorators = new Dictionary<string, BaseAbilityDecorator>();
         shieldActive = false;
-        amountOfTurns = 0;
     }
-    private void ApplyDecorator(string key, BaseAbilityDecorator decorator)
+    public void ApplyDecorator(string key, BaseAbilityDecorator decorator)
     {
         if (!activeDecorators.ContainsKey(key))
         {
@@ -28,12 +26,12 @@ public class AbilityManager : MonoBehaviour
             }
             if (key == "Strength")
             {
-                amountOfTurns = 0;
+
             }
         }
     }
 
-    private void RemoveDecorator(string key)
+    public void RemoveDecorator(string key)
     {
         if (activeDecorators.ContainsKey(key))
         {

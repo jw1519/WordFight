@@ -12,12 +12,28 @@ public class StrengthBoostDecorator : BaseAbilityDecorator
         {
             cards.card.damage = cards.card.damage * boostMultiplier;
         }
-        
+        foreach (SetCard cards in CardManager.instance.deck)
+        {
+            cards.card.damage = cards.card.damage * boostMultiplier;
+        }
+        foreach (SetCard cards in CardManager.instance.discard)
+        {
+            cards.card.damage = cards.card.damage * boostMultiplier;
+        }
+
     }
 
     public void Remove(GameObject gameObject)
     {
         foreach (SetCard cards in CardManager.instance.hand)
+        {
+            cards.card.damage = cards.card.damage / boostMultiplier;
+        }
+        foreach (SetCard cards in CardManager.instance.deck)
+        {
+            cards.card.damage = cards.card.damage / boostMultiplier;
+        }
+        foreach (SetCard cards in CardManager.instance.deck)
         {
             cards.card.damage = cards.card.damage / boostMultiplier;
         }

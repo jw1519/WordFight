@@ -8,10 +8,11 @@ public class DefenceCard : Card
     public int defence;
     public override void Use()
     {
-        Player player = FindFirstObjectByType<Player>();
         if (player != null )
         {
             player.defence = player.defence + defence; // change to decorator later
         }
+        ShieldDecorator shieldDecorator = new ShieldDecorator(player.gameObject);
+        abilityManager.ApplyDecorator("Shield", shieldDecorator);
     }
 }

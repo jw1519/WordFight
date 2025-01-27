@@ -13,4 +13,8 @@ public class Player : MonoBehaviour
     {
         instance = this;
     }
+    public void RemoveDecorator()
+    {
+        GetComponent<AbilityManager>().RemoveDecorator("Shield");
+    }
 }
