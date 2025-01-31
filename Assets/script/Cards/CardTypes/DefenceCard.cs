@@ -14,7 +14,6 @@ public class DefenceCard : Card
         {
             player.defence = player.defence + defence; // change to decorator later
         }
-        ShieldDecorator shieldDecorator = new ShieldDecorator(player.gameObject);
-        abilityManager.ApplyDecorator("Shield", shieldDecorator);
+        AbilityManager.instance.ApplyDefence();
     }
 }

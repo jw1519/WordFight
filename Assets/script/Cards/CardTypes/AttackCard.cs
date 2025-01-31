@@ -10,7 +10,8 @@ public class AttackCard : Card
     }
     public override void Use()
     {
-        Enemy enemy = FindFirstObjectByType<Enemy>();
+        SetEnemy setEnemy = FindFirstObjectByType<SetEnemy>();
+        Enemy enemy = setEnemy.enemy;
         if (enemy != null)
         {
             if (enemy.defence == 0)

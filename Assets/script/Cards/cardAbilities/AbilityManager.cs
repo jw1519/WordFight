@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
+    public static AbilityManager instance;
     private Dictionary<string, BaseAbilityDecorator> activeDecorators;
     int defence;
     bool shieldActive;
-    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         activeDecorators = new Dictionary<string, BaseAbilityDecorator>();
@@ -49,5 +54,9 @@ public class AbilityManager : MonoBehaviour
 
             activeDecorators.Remove(key); // Remove from active decorators
         }
+    }
+    public void ApplyDefence()
+    {
+        ApplyDecorator("Shield", new ShieldDecorator(gameObject));
     }
 }

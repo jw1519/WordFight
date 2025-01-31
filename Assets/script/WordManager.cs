@@ -31,6 +31,7 @@ public class WordManager : MonoBehaviour
             string letter = card.GetComponent<SetCard>().card.letter;
             word = word + letter;
             wordDamage = wordDamage + card.GetComponent<SetCard>().card.damage;
+            card.GetComponent<SetCard>().card.Use();
         }
         
         

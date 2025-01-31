@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     public void EndTurn()
     {
         Player.instance.RemoveDecorator();
+        Player.instance.defence = 0;
         CardManager.instance.DiscardCards();
         submitButton.gameObject.SetActive(false);
         endTurnButton.gameObject.SetActive(false);
