@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Q
   m_EditorClassIdentifier: 
   letter: Q
-  damage: 0
-  defence: 0
+  damage: 10
+  defence: 10
   cardType: 2
   player: {fileID: 0}
   abilityManager: {fileID: 0}

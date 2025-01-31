@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: O
   m_EditorClassIdentifier: 
   letter: O
-  damage: 0
-  defence: 0
+  damage: 1
+  defence: 1
   cardType: 0
   player: {fileID: 0}
   abilityManager: {fileID: 0}

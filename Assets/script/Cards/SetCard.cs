@@ -9,7 +9,7 @@ public class SetCard : MonoBehaviour
 
     private AbilityManager abilityManager;
 
-    void Awake()
+    void Start()
     {
         cardLetterText.SetText(card.letter);
         abilityManager = GetComponent<AbilityManager>();

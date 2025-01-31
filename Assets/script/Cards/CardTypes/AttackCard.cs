@@ -6,6 +6,7 @@ public class AttackCard : Card
     private void Awake()
     {
         cardType = CardType.Attack;
+        defence = 0;
     }
     public override void Use()
     {
