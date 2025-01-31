@@ -27,9 +27,17 @@ public class SetHealth : MonoBehaviour
     public void UpdatePlayerHealth()
     {
         playerHealthtext.SetText(player.health.ToString() + "/" + player.maxHealth);
+        if (player.health <= 0)
+        {
+            Debug.Log("GameOver");
+        }
     }
     public void UpdateEnemyHealth()
     {
         enemyHealthtext.SetText(enemy.enemy.health.ToString() + "/" + enemy.enemy.maxHealth);
+        if (enemy.enemy.health <= 0)
+        {
+            Debug.Log("you've won");
+        }
     }
 }

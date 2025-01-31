@@ -39,17 +39,12 @@ public class SetEnemy : MonoBehaviour
     }
     public void StartTurn()
     {
+        enemy.defence = 0;
         switch (enemy.actionForThisTurn)
         {
             case EnemyAction.Attack:
-                if (Player.instance.health - enemy.damage <= 0)
-                {
-                    Debug.Log("game over");
-                }
-                else
-                {
-                    Player.instance.health = Player.instance.health - enemy.damage;
-                }
+                Player.instance.health = Player.instance.health - enemy.damage;
+                SetHealth.instance.UpdatePlayerHealth();
                 EndTurn();
                 return;
 
@@ -67,6 +62,7 @@ public class SetEnemy : MonoBehaviour
                 {
                     enemy.health = enemy.maxHealth;
                 }
+                SetHealth.instance.UpdateEnemyHealth();
                 EndTurn();
                 return;
         }

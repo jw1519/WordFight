@@ -31,18 +31,12 @@ public class WordManager : MonoBehaviour
             string letter = card.GetComponent<SetCard>().card.letter;
             word = word + letter;
             wordDamage = wordDamage + card.GetComponent<SetCard>().card.damage;
-            card.GetComponent<SetCard>().card.Use();
         }
-        
-        
         if (wordTrie.Search(word))
         {
             foreach (Transform card in CardManager.instance.useCards)
             {
-                SetCard setCard = card.GetComponent<SetCard>();
-                UseCards.instance.GetCardStats(setCard);
-                UseCards.instance.Attack();
-                UseCards.instance.Defence();
+                card.GetComponent<SetCard>().card.Use();
             }
             CardManager.instance.DiscardUsedCards();
         }

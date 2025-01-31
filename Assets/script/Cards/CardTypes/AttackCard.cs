@@ -28,6 +28,7 @@ public class AttackCard : Card
                 enemy.defence = 0;
                 enemy.health = enemy.health - damageTaken;
             }
+            SetHealth.instance.UpdateEnemyHealth();
         }
     }
 }

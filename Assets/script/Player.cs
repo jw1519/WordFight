@@ -16,5 +16,6 @@ public class Player : MonoBehaviour
     public void RemoveDecorator()
     {
         GetComponent<AbilityManager>().RemoveDecorator("Shield");
+        defence = 0;
     }
 }
