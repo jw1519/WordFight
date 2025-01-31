@@ -6,7 +6,7 @@ public class Card : ScriptableObject
     public string letter;
     public int damage;
     public int defence;
-    public CardType cardType;
+    [HideInInspector] public CardType cardType;
 
     [HideInInspector] public Player player;
     [HideInInspector] public AbilityManager abilityManager;

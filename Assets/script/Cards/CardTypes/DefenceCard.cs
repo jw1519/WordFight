@@ -1,9 +1,12 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Card", menuName = "Defence Card")]
+[CreateAssetMenu(fileName = "New Card", menuName = "Cards/Defence Card")]
 public class DefenceCard : Card
 {
-    public int defence;
+    private void Awake()
+    {
+        cardType = CardType.Defence;
+    }
     public override void Use()
     {
         if (player != null )

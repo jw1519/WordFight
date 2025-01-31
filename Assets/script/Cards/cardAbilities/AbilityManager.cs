@@ -17,15 +17,14 @@ public class AbilityManager : MonoBehaviour
     {
         if (!activeDecorators.ContainsKey(key))
         {
-            if (key == "Shield")
-            {
-                shieldActive = true;
-            }
             decorator.Apply(gameObject);
             activeDecorators[key] = decorator;
 
             // Start timer for speed boost
-            
+            if (key == "Shield")
+            {
+                shieldActive = true;
+            }
             if (key == "Strength")
             {
 

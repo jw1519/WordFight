@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Transform cardDeck;
+    public GameObject cardPrefab;
     public Button submitButton;
     public Button endTurnButton;
 
@@ -19,6 +21,10 @@ public class GameManager : MonoBehaviour
         }
         enemy = FindObjectOfType<SetEnemy>();
         turnCount = 0;
+    }
+    public void SetUpGame()
+    {
+
     }
 
     public void BeginTurn()

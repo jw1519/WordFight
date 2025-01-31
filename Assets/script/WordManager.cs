@@ -32,6 +32,8 @@ public class WordManager : MonoBehaviour
             word = word + letter;
             wordDamage = wordDamage + card.GetComponent<SetCard>().card.damage;
         }
+        
+        
         if (wordTrie.Search(word))
         {
             foreach (Transform card in CardManager.instance.useCards)
