@@ -5,6 +5,7 @@ using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
     private Dictionary<string, BaseAbilityDecorator> activeDecorators;
+    int defence;
     bool shieldActive;
     // Start is called before the first frame update
     void Start()
@@ -16,14 +17,15 @@ public class AbilityManager : MonoBehaviour
     {
         if (!activeDecorators.ContainsKey(key))
         {
-            decorator.Apply(gameObject);
-            activeDecorators[key] = decorator;
-
-            // Start timer for speed boost
             if (key == "Shield")
             {
                 shieldActive = true;
             }
+            decorator.Apply(gameObject);
+            activeDecorators[key] = decorator;
+
+            // Start timer for speed boost
+            
             if (key == "Strength")
             {
 
