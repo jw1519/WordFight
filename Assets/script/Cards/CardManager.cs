@@ -14,9 +14,9 @@ public class CardManager : MonoBehaviour
     public Transform discardedCards;
 
     [Header("Lists")]
-    public List<SetCard> deck = new List<SetCard>();
-    public List<SetCard> hand = new List<SetCard>();
-    public List<SetCard> discard = new List<SetCard>();
+    private List<GameObject> deck;
+    private List<GameObject> hand;
+    private List<GameObject> discard;
 
     [Header("Text")]
     public TextMeshProUGUI deckAmountText;
@@ -30,10 +30,14 @@ public class CardManager : MonoBehaviour
         //Adds all card to the deck list
         foreach (Transform transform in cards)
         {
-            SetCard card = transform.GetComponent<SetCard>();
+            GameObject card = transform.GetComponent<GameObject>();
             deck.Add(card);
         }
         DrawCards();
+    }
+    private void Start()
+    {
+       
     }
 
     public void DrawCards()
@@ -43,11 +47,14 @@ public class CardManager : MonoBehaviour
         {
             for (int i = 0; i < maxCards; i++)
             {
-                SetCard RandomCard = deck[Random.Range(0, deck.Count)];
-                RandomCard.gameObject.SetActive(true);
-                RandomCard.transform.SetParent(handCards);
-                hand.Add(RandomCard);
-                deck.Remove(RandomCard);
+                GameObject RandomCard = CardPool.instance.GetPooledCard();
+                if (RandomCard != null )
+                {
+                    RandomCard.gameObject.SetActive(true);
+                    RandomCard.transform.SetParent(handCards);
+                    hand.Add(RandomCard);
+                    deck.Remove(RandomCard);
+                }
             }
             deckAmountText.SetText(deck.Count.ToString());
 
@@ -55,7 +62,7 @@ public class CardManager : MonoBehaviour
         else
         {
             // put cards from discard pile into deck if deck is empty or doesnt have enough cards
-            foreach (SetCard card in discard)
+            foreach (GameObject card in discard)
             {
                 deck.Add(card);
             }
@@ -66,7 +73,7 @@ public class CardManager : MonoBehaviour
     //discard any unused cards when turn ends
     public void DiscardCards()
     {
-        foreach (SetCard card in hand)
+        foreach (GameObject card in hand)
         {
             discard.Add(card);
         }

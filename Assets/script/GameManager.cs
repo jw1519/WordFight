@@ -17,21 +17,11 @@ public class GameManager : MonoBehaviour
     SetEnemy enemy;
     private void Awake()
     {
-        SetUpGame();
         if (instance == null)
         {
             instance = this;
         }
         enemy = FindObjectOfType<SetEnemy>();
-    }
-    public void SetUpGame()
-    {
-        foreach (Card cards in cardSO)
-        {
-            GameObject card = Instantiate(cardPrefab);
-            card.GetComponent<SetCard>().card = cards;
-            card.transform.SetParent(cardDeck);
-        }
     }
 
     public void BeginTurn()

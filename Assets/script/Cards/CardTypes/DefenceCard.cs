@@ -12,7 +12,7 @@ public class DefenceCard : Card
     {
         if (player != null )
         {
-            player.defence = player.defence + defence; // change to decorator later
+            player.defence = player.defence + defence; 
         }
         AbilityManager.instance.ApplyDefence();
     }
