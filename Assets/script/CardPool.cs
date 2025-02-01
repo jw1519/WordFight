@@ -35,7 +35,7 @@ public class CardPool : MonoBehaviour
     {
         for (int i = 0;i < amountToPool;i++)
         {
-            if (!pooledCards[i].activeInHierarchy)
+            if (!pooledCards[i].activeInHierarchy && pooledCards[i].transform.parent == cardParent)
             {
                 GameObject randomCard = pooledCards[Random.Range(0, pooledCards.Count)];
                 return randomCard;

@@ -14,9 +14,9 @@ public class CardManager : MonoBehaviour
     public Transform discardedCards;
 
     [Header("Lists")]
-    private List<GameObject> deck;
-    private List<GameObject> hand;
-    private List<GameObject> discard;
+    public List<GameObject> deck = new List<GameObject>();
+    public List<GameObject> hand = new List<GameObject>();
+    public List<GameObject> discard = new List<GameObject>();
 
     [Header("Text")]
     public TextMeshProUGUI deckAmountText;
@@ -30,14 +30,12 @@ public class CardManager : MonoBehaviour
         //Adds all card to the deck list
         foreach (Transform transform in cards)
         {
-            GameObject card = transform.GetComponent<GameObject>();
-            deck.Add(card);
+            deck.Add(transform.gameObject);
         }
-        DrawCards();
     }
-    private void Start()
+    public void Start()
     {
-       
+        DrawCards();
     }
 
     public void DrawCards()

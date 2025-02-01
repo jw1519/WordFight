@@ -8,34 +8,34 @@ public class StrengthBoostDecorator : BaseAbilityDecorator
 
     public void Apply(GameObject gameObject)
     {
-        foreach (SetCard cards in CardManager.instance.hand)
+        foreach (GameObject cards in CardManager.instance.hand)
         {
-            cards.card.damage = cards.card.damage * boostMultiplier;
+            cards.GetComponent<SetCard>().card.damage = cards.GetComponent<SetCard>().card.damage * boostMultiplier;
         }
-        foreach (SetCard cards in CardManager.instance.deck)
+        foreach (GameObject cards in CardManager.instance.deck)
         {
-            cards.card.damage = cards.card.damage * boostMultiplier;
+            cards.GetComponent<SetCard>().card.damage = cards.GetComponent<SetCard>().card.damage * boostMultiplier;
         }
-        foreach (SetCard cards in CardManager.instance.discard)
+        foreach (GameObject cards in CardManager.instance.discard)
         {
-            cards.card.damage = cards.card.damage * boostMultiplier;
+            cards.GetComponent<SetCard>().card.damage = cards.GetComponent<SetCard>().card.damage * boostMultiplier;
         }
 
     }
 
     public void Remove(GameObject gameObject)
     {
-        foreach (SetCard cards in CardManager.instance.hand)
+        foreach (GameObject cards in CardManager.instance.hand)
         {
-            cards.card.damage = cards.card.damage / boostMultiplier;
+            cards.GetComponent<SetCard>().card.damage = cards.GetComponent<SetCard>().card.damage / boostMultiplier;
         }
-        foreach (SetCard cards in CardManager.instance.deck)
+        foreach (GameObject cards in CardManager.instance.deck)
         {
-            cards.card.damage = cards.card.damage / boostMultiplier;
+            cards.GetComponent<SetCard>().card.damage = cards.GetComponent<SetCard>().card.damage / boostMultiplier;
         }
-        foreach (SetCard cards in CardManager.instance.deck)
+        foreach (GameObject cards in CardManager.instance.deck)
         {
-            cards.card.damage = cards.card.damage / boostMultiplier;
+            cards.GetComponent<SetCard>().card.damage = cards.GetComponent<SetCard>().card.damage / boostMultiplier;
         }
     }
 }

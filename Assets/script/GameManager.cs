@@ -6,11 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public List<Card> cardSO = new List<Card>();
-    public Transform cardDeck;
-    public GameObject cardPrefab;
 
-    [Header("buttons")]
     public Button submitButton;
     public Button endTurnButton;
 

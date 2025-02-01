@@ -2511,6 +2511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1365296065}
   - component: {fileID: 1365296064}
+  - component: {fileID: 1365296066}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2530,6 +2531,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc12d685ff6b89042b1d17b2f6afe9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  submitButton: {fileID: 1881245223}
+  endTurnButton: {fileID: 1224163463}
+--- !u!4 &1365296065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365296063}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 571.5, y: 311.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1620629675}
+  - {fileID: 1495601550}
+  - {fileID: 1992189554}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1365296066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365296063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e8a25a2c7e1e644a089c5bd32b5c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledCards: []
   cardSO:
   - {fileID: 11400000, guid: 4e60b9ecbdf0d284e82e0150bfde774a, type: 2}
   - {fileID: 11400000, guid: 26bee413ed4d9224db747fd5959db25d, type: 2}
@@ -2557,28 +2591,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 64c0f947b9ae9a8489c5a7ddf0c8d617, type: 2}
   - {fileID: 11400000, guid: bff90406755cc794c85d00e065931ba9, type: 2}
   - {fileID: 11400000, guid: 08954774ef2aba3439025508cd65d1a9, type: 2}
-  cardDeck: {fileID: 110058700}
-  cardPrefab: {fileID: 160398082852163787, guid: c6ced23febaee0e4c8e704a45eee020a, type: 3}
-  submitButton: {fileID: 1881245223}
-  endTurnButton: {fileID: 1224163463}
---- !u!4 &1365296065
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365296063}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 571.5, y: 311.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1620629675}
-  - {fileID: 1495601550}
-  - {fileID: 1992189554}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  - {fileID: 11400000, guid: 4e60b9ecbdf0d284e82e0150bfde774a, type: 2}
+  - {fileID: 11400000, guid: ce5a52903ca8549468cc45427b6c54a4, type: 2}
+  - {fileID: 11400000, guid: 617cffe4ca2f006498bf7b7fea5c1616, type: 2}
+  - {fileID: 11400000, guid: ac278d865bf22fe4d8e5fb86c94bde7e, type: 2}
+  - {fileID: 11400000, guid: 5bf2c48e7079e1a45a82bbe09d3fb2ac, type: 2}
+  cardToPool: {fileID: 160398082852163787, guid: c6ced23febaee0e4c8e704a45eee020a, type: 3}
+  cardParent: {fileID: 110058700}
 --- !u!1 &1467315997
 GameObject:
   m_ObjectHideFlags: 0

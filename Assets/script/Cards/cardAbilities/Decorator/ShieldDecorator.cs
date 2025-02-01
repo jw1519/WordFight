@@ -17,8 +17,7 @@ public class ShieldDecorator : BaseAbilityDecorator
             // make object
             shieldObject = new GameObject("Shield");
             shieldObject.transform.SetParent(player.transform);
-            shieldObject.AddComponent<SpriteRenderer>();
-            shieldObject.GetComponent<SpriteRenderer>().sprite = shieldSprite;
+            shieldObject.AddComponent<SpriteRenderer>().sprite = shieldSprite;
         }
     }
     public override void Remove(GameObject player)
