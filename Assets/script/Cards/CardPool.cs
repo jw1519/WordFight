@@ -33,11 +33,12 @@ public class CardPool : MonoBehaviour
     }
     public GameObject GetPooledCard()
     {
-        for (int i = 0;i < amountToPool;i++)
+        List<GameObject> cardDeck = CardManager.instance.deck;
+        for (int i = 0;i < cardDeck.Count;i++)
         {
             if (!pooledCards[i].activeInHierarchy && pooledCards[i].transform.parent == cardParent)
             {
-                GameObject randomCard = pooledCards[Random.Range(0, pooledCards.Count)];
+                GameObject randomCard = cardDeck[Random.Range(0, cardDeck.Count)];
                 return randomCard;
             }
         }
