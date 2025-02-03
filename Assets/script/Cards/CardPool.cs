@@ -11,8 +11,6 @@ public class CardPool : MonoBehaviour
     public GameObject cardToPool;
     public Transform cardParent;
 
-    int amountToPool = 26;
-
     private void Awake()
     {
         if (instance == null)
@@ -34,14 +32,7 @@ public class CardPool : MonoBehaviour
     public GameObject GetPooledCard()
     {
         List<GameObject> cardDeck = CardManager.instance.deck;
-        for (int i = 0;i < cardDeck.Count;i++)
-        {
-            if (!pooledCards[i].activeInHierarchy && pooledCards[i].transform.parent == cardParent)
-            {
-                GameObject randomCard = cardDeck[Random.Range(0, cardDeck.Count)];
-                return randomCard;
-            }
-        }
-        return null;
+        GameObject randomCard = cardDeck[Random.Range(0, cardDeck.Count)];
+        return randomCard;
     }
 }
