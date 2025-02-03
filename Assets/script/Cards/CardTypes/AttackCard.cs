@@ -6,7 +6,6 @@ public class AttackCard : Card
     private void Awake()
     {
         cardType = CardType.Attack;
-        defence = 0;
     }
     public override void Use()
     {
@@ -16,15 +15,15 @@ public class AttackCard : Card
         {
             if (enemy.defence == 0)
             {
-                enemy.health = enemy.health - damage;
+                enemy.health = enemy.health - value;
             }
-            else if (enemy.defence - damage >= 0)
+            else if (enemy.defence - value >= 0)
             {
-                enemy.defence = enemy.defence - damage;
+                enemy.defence = enemy.defence - value;
             }
             else
             {
-                int damageTaken = damage - enemy.defence;
+                int damageTaken = value - enemy.defence;
                 enemy.defence = 0;
                 enemy.health = enemy.health - damageTaken;
             }

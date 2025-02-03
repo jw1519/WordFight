@@ -3,16 +3,19 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Defence Card")]
 public class DefenceCard : Card
 {
+    [HideInInspector] public Player player;
+    [HideInInspector] public AbilityManager abilityManager;
     private void Awake()
     {
         cardType = CardType.Defence;
-        damage = 0;
+        player = FindFirstObjectByType<Player>();
+        abilityManager = player.GetComponent<AbilityManager>();
     }
     public override void Use()
     {
         if (player != null )
         {
-            player.defence = player.defence + defence; 
+            player.defence = player.defence + value; 
         }
         AbilityManager.instance.ApplyDefence();
     }

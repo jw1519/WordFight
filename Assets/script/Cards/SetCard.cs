@@ -16,7 +16,7 @@ public class SetCard : MonoBehaviour
 
         if (card.cardType != Card.CardType.Ability)
         {
-            description.SetText($"This card does {card.damage} {card.cardType}");
+            description.SetText($"This card does {card.value} {card.cardType}");
         }
         else
         {

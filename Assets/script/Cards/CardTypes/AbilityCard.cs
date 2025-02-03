@@ -8,7 +8,5 @@ public class AbilityCard : Card
     private void Awake()
     {
         cardType = CardType.Ability;
-        defence = 0;
-        damage = 0;
     }
 }
