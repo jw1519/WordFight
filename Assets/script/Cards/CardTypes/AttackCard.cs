@@ -7,7 +7,7 @@ public class AttackCard : Card
     {
         cardType = CardType.Attack;
     }
-    public override void Use()
+    public override void Play()
     {
         SetEnemy setEnemy = FindFirstObjectByType<SetEnemy>();
         Enemy enemy = setEnemy.enemy;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Card : ScriptableObject
+public class Card : ScriptableObject, ICard
 {
     public string letter;
     public int value;
@@ -12,6 +12,6 @@ public class Card : ScriptableObject
         Defence,
         Ability
     }
-    public virtual void Use() { }
+    public virtual void Play() { }
 
 }

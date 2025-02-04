@@ -11,7 +11,7 @@ public class DefenceCard : Card
         player = FindFirstObjectByType<Player>();
         abilityManager = player.GetComponent<AbilityManager>();
     }
-    public override void Use()
+    public override void Play()
     {
         if (player != null )
         {

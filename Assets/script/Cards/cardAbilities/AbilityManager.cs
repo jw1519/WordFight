@@ -25,7 +25,6 @@ public class AbilityManager : MonoBehaviour
             decorator.Apply(gameObject);
             activeDecorators[key] = decorator;
 
-            // Start timer for speed boost
             if (key == "Shield")
             {
                 shieldActive = true;
