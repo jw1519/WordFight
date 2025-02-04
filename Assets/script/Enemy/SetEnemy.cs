@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using static Enemy;
 
@@ -28,6 +27,11 @@ public class SetEnemy : MonoBehaviour
                 return;
 
             case EnemyAction.Heal:
+                if (enemy.health == enemy.maxHealth)
+                {
+                    SelectNextAction();
+                    return;
+                }
                 actionrenderer.sprite = enemy.abilitySprite;
                 return;
         }  
@@ -39,6 +43,7 @@ public class SetEnemy : MonoBehaviour
     }
     public void StartTurn()
     {
+        
         enemy.defence = 0;
         switch (enemy.actionForThisTurn)
         {
