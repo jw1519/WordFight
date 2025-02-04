@@ -8,8 +8,6 @@ public class DefenceCard : Card
     private void Awake()
     {
         cardType = CardType.Defence;
-        player = FindFirstObjectByType<Player>();
-        abilityManager = player.GetComponent<AbilityManager>();
     }
     public override void Play()
     {
