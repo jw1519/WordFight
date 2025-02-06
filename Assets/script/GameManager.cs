@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public Button submitButton;
     public Button endTurnButton;
+    public GameObject GameOverPanel;
 
     SetEnemy enemy;
     private void Awake()
@@ -33,5 +34,10 @@ public class GameManager : MonoBehaviour
         submitButton.gameObject.SetActive(false);
         endTurnButton.gameObject.SetActive(false);
         enemy.StartTurn();
+    }
+    public void Gameover()
+    {
+        GameOverPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }
