@@ -8,5 +8,6 @@ public class GameOverManager : MonoBehaviour
     public void OpenMenuScene()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 0;
     }
 }

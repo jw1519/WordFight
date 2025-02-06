@@ -30,6 +30,7 @@ public class SetHealth : MonoBehaviour
         if (player.health <= 0)
         {
             Debug.Log("GameOver");
+            GameManager.instance.Gameover();
         }
     }
     public void UpdateEnemyHealth()
