@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Z
   m_EditorClassIdentifier: 
   letter: Z
-  damage: 10
-  defence: 10
-  cardType: 0
+  value: 10
+  cardType: 1
   player: {fileID: 0}
-  abilityManager: {fileID: 0}

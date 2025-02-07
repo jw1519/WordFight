@@ -21,6 +21,7 @@ public class StrengthBoostDecorator : BaseAbilityDecorator
             {
                 int value = gameObject.GetComponent<AttackCard>().value;
                 value = value * boostMultiplier;
+                gameObject.GetComponent<SetCard>().SetCardvalues();
             }
         }
     }
@@ -34,6 +35,7 @@ public class StrengthBoostDecorator : BaseAbilityDecorator
             {
                 int value = gameObject.GetComponent<AttackCard>().value;
                 value = value / boostMultiplier;
+                gameObject.GetComponent<SetCard>().SetCardvalues();
             }
         }
     }

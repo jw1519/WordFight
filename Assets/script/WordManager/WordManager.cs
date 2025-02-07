@@ -36,7 +36,11 @@ public class WordManager : MonoBehaviour
         {
             foreach (Transform card in CardManager.instance.useCards)
             {
-                card.GetComponent<ICard>().Play();
+                // get the ICard to play the card
+                if (card.GetComponent<SetCard>().card is ICard iCard)
+                {
+                    iCard.Play();
+                }
             }
             CardManager.instance.DiscardUsedCards();
         }

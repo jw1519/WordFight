@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: H
   m_EditorClassIdentifier: 
   letter: H
-  damage: 4
-  defence: 4
+  value: 4
   cardType: 1
   player: {fileID: 0}
-  abilityManager: {fileID: 0}

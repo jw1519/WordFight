@@ -13,8 +13,5 @@ MonoBehaviour:
   m_Name: U
   m_EditorClassIdentifier: 
   letter: U
-  damage: 1
-  defence: 1
+  value: 1
   cardType: 2
-  player: {fileID: 0}
-  abilityManager: {fileID: 0}

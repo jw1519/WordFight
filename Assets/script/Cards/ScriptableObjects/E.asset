@@ -13,8 +13,5 @@ MonoBehaviour:
   m_Name: E
   m_EditorClassIdentifier: 
   letter: E
-  damage: 1
-  defence: 1
+  value: 1
   cardType: 2
-  player: {fileID: 0}
-  abilityManager: {fileID: 0}

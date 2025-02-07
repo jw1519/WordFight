@@ -7,12 +7,13 @@ public class SetCard : MonoBehaviour
     public TextMeshProUGUI cardLetterText;
     public TextMeshProUGUI description;
 
-    private AbilityManager abilityManager;
-
     void Start()
     {
+        SetCardvalues();
+    }
+    public void SetCardvalues()
+    {
         cardLetterText.SetText(card.letter);
-        abilityManager = GetComponent<AbilityManager>();
 
         if (card.cardType != Card.CardType.Ability)
         {
@@ -20,7 +21,8 @@ public class SetCard : MonoBehaviour
         }
         else
         {
-            description.SetText("This card does a thing");
+            description.SetText("This card doubles damage");
         }
     }
+    
 }
