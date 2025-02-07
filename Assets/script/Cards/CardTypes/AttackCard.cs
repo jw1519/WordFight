@@ -9,7 +9,7 @@ public class AttackCard : Card, ICard
     }
     public void Play()
     {
-        SetEnemy setEnemy = FindFirstObjectByType<SetEnemy>();
+        SetEnemy setEnemy = GameObject.FindFirstObjectByType<SetEnemy>();
         Enemy enemy = setEnemy.enemy;
         if (enemy != null)
         {

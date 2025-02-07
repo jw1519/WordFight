@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,10 +28,6 @@ public class AbilityManager : MonoBehaviour
             {
                 shieldActive = true;
             }
-            if (key == "Strength")
-            {
-
-            }
         }
     }
 
@@ -45,10 +40,6 @@ public class AbilityManager : MonoBehaviour
             if (key == "Shield")
             {
                 shieldActive = false;
-            }
-            if (key == "Strength")
-            {
-
             }
 
             activeDecorators.Remove(key); // Remove from active decorators

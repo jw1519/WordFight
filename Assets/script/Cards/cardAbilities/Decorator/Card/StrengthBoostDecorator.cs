@@ -17,7 +17,7 @@ public class StrengthBoostDecorator : BaseAbilityDecorator
         }
         foreach (GameObject gameObject in cardManager.GetComponent<CardPool>().pooledCards)
         {
-            if (gameObject.GetComponent<AttackCard>())
+            if (gameObject.GetComponent<AttackCard>() != null)
             {
                 int value = gameObject.GetComponent<AttackCard>().value;
                 value = value * boostMultiplier;
@@ -30,7 +30,7 @@ public class StrengthBoostDecorator : BaseAbilityDecorator
         base.Remove(player);
         foreach (GameObject gameObject in cardManager.GetComponent<CardPool>().pooledCards)
         {
-            if (gameObject.GetComponent<AttackCard>())
+            if (gameObject.GetComponent<AttackCard>() != null)
             {
                 int value = gameObject.GetComponent<AttackCard>().value;
                 value = value / boostMultiplier;

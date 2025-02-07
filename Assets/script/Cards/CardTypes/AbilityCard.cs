@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Ability Card")]
@@ -11,6 +12,6 @@ public class AbilityCard : Card, ICard
     }
     public void Play()
     {
-       
+        AbilityManager.instance.ApplyDecorator("Strength", new StrengthBoostDecorator(AbilityManager.instance.gameObject));
     }
 }

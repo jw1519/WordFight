@@ -4,7 +4,7 @@ using UnityEngine;
 public class DefenceCard : Card, ICard
 {
     [HideInInspector] public Player player;
-    [HideInInspector] public AbilityManager abilityManager;
+
     private void Awake()
     {
         cardType = CardType.Defence;
@@ -15,6 +15,6 @@ public class DefenceCard : Card, ICard
         {
             player.defence = player.defence + value; 
         }
-        AbilityManager.instance.ApplyDefence();
+        AbilityManager.instance.ApplyDecorator("Shield", new ShieldDecorator(AbilityManager.instance.gameObject));
     }
 }
