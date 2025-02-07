@@ -3904,6 +3904,7 @@ GameObject:
   - component: {fileID: 459427544634284991}
   - component: {fileID: 8438324148955565091}
   - component: {fileID: 5803871496146846968}
+  - component: {fileID: 8438324148955565092}
   m_Layer: 5
   m_Name: SelectDifficultyPanel
   m_TagString: Untagged
@@ -4629,6 +4630,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312065003709114591}
   m_CullTransparentMesh: 1
+--- !u!114 &8438324148955565092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312065003709114591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94db96ce9d7b9ca48ade54a4d748f11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList:
+  - {fileID: 11400000, guid: a2698edf9ae2db242938cb82b60c36f2, type: 2}
+  - {fileID: 11400000, guid: 43659a56ead5eab4bb22099bdd281198, type: 2}
+  - {fileID: 11400000, guid: da8e06ba400af3146975e9dedded0e04, type: 2}
 --- !u!1 &8478893295275938877
 GameObject:
   m_ObjectHideFlags: 0

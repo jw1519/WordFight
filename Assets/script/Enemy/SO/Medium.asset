@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e75457468fab3345a6c45c44ae21774, type: 3}
   m_Name: Medium
   m_EditorClassIdentifier: 
+  actionForThisTurn: 0
   health: 15
   damage: 6
   maxHealth: 15
-  actionForThisTurn: 0
+  defence: 0
+  difficulty: 2
+  healAmount: 0
+  defenceAmount: 0
   attackSprite: {fileID: 21300000, guid: d9d3b84ae200357419cc7f6abb23c1a4, type: 3}
   defenceSprite: {fileID: 21300000, guid: be6a530a444ff0845ac8a41a37c928eb, type: 3}
   abilitySprite: {fileID: 21300000, guid: 09b473d398b7ed9439d1996235a661e1, type: 3}
