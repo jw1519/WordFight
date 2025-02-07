@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e75457468fab3345a6c45c44ae21774, type: 3}
   m_Name: Easy
   m_EditorClassIdentifier: 
-  actionForThisTurn: 0
+  actionForThisTurn: 1
   health: 10
   damage: 3
   maxHealth: 10
