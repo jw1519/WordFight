@@ -11,6 +11,7 @@ public class Enemy : ScriptableObject
     public int damage;
     public int maxHealth;
     public int defence;
+    public EnemyDifficulty difficulty;
 
     [Header("Ability amounts")]
     public int healAmount;
@@ -26,5 +27,23 @@ public class Enemy : ScriptableObject
         Attack,
         Defend,
         Heal,
+    }
+    public enum EnemyDifficulty
+    {
+        Easy,
+        Medium,
+        Hard
+    }
+    public void SetDifficulty()
+    {
+        switch (difficulty)
+        {
+            case EnemyDifficulty.Easy:
+                return;
+                case EnemyDifficulty.Medium:
+                    return;
+                case EnemyDifficulty.Hard:
+                return;
+        }
     }
 }
