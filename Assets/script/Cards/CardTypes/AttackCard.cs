@@ -1,13 +1,13 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Attack Card")]
-public class AttackCard : Card
+public class AttackCard : Card, ICard
 {
     private void Awake()
     {
         cardType = CardType.Attack;
     }
-    public override void Play()
+    public void Play()
     {
         SetEnemy setEnemy = FindFirstObjectByType<SetEnemy>();
         Enemy enemy = setEnemy.enemy;

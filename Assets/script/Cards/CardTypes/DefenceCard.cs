@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Defence Card")]
-public class DefenceCard : Card
+public class DefenceCard : Card, ICard
 {
     [HideInInspector] public Player player;
     [HideInInspector] public AbilityManager abilityManager;
@@ -9,7 +9,7 @@ public class DefenceCard : Card
     {
         cardType = CardType.Defence;
     }
-    public override void Play()
+    public void Play()
     {
         if (player != null )
         {

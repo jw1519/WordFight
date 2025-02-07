@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Ability Card")]
-public class AbilityCard : Card
+public class AbilityCard : Card, ICard
 {
     private void Awake()
     {
         cardType = CardType.Ability;
+    }
+    public void Play()
+    {
+       
     }
 }
