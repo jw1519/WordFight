@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,6 +21,7 @@ public class DifficultyPanel : MonoBehaviour
                 FindFirstObjectByType<SetEnemy>().enemy = Instantiate(enemy);
             }
         }
+        SetUp();
         ClosePanel();
     }
     public void Medium()
@@ -33,6 +33,7 @@ public class DifficultyPanel : MonoBehaviour
                 FindFirstObjectByType<SetEnemy>().enemy = Instantiate(enemy);
             }
         }
+        SetUp();
         ClosePanel();
     }
     public void Hard()
@@ -44,11 +45,13 @@ public class DifficultyPanel : MonoBehaviour
                 FindFirstObjectByType<SetEnemy>().enemy = Instantiate(enemy);
             }
         }
+        SetUp();
         ClosePanel();
     }
-    public void SetEnemyStats()
+    public void SetUp()
     {
         SetHealth.instance.UpdateEnemyHealth();
+        GameManager.instance.BeginTurn();
     }
 
 }

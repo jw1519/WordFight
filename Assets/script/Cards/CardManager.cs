@@ -33,11 +33,6 @@ public class CardManager : MonoBehaviour
             deck.Add(transform.gameObject);
         }
     }
-    public void Start()
-    {
-        DrawCards();
-    }
-
     public void DrawCards()
     {
         DiscardCards();
@@ -55,7 +50,6 @@ public class CardManager : MonoBehaviour
                 }
             }
             deckAmountText.SetText(deck.Count.ToString());
-
         }
         else
         {

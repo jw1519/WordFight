@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Enemy", menuName = "Enemy")]
@@ -33,17 +32,5 @@ public class Enemy : ScriptableObject
         Easy,
         Medium,
         Hard
-    }
-    public void SetDifficulty()
-    {
-        switch (difficulty)
-        {
-            case EnemyDifficulty.Easy:
-                return;
-                case EnemyDifficulty.Medium:
-                    return;
-                case EnemyDifficulty.Hard:
-                return;
-        }
     }
 }
