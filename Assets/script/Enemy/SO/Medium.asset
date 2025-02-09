@@ -17,7 +17,7 @@ MonoBehaviour:
   damage: 6
   maxHealth: 15
   defence: 0
-  difficulty: 2
+  difficulty: 1
   healAmount: 0
   defenceAmount: 0
   attackSprite: {fileID: 21300000, guid: d9d3b84ae200357419cc7f6abb23c1a4, type: 3}
