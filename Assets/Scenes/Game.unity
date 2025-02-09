@@ -2395,8 +2395,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 459427544634284991}
   - {fileID: 397340567}
+  - {fileID: 459427544634284991}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2548,6 +2548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1365296065}
   - component: {fileID: 1365296064}
+  - component: {fileID: 1365296066}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2588,6 +2589,53 @@ Transform:
   - {fileID: 1992189554}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1365296066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365296063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e8a25a2c7e1e644a089c5bd32b5c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledCards: []
+  cardSO:
+  - {fileID: 11400000, guid: 4e60b9ecbdf0d284e82e0150bfde774a, type: 2}
+  - {fileID: 11400000, guid: 26bee413ed4d9224db747fd5959db25d, type: 2}
+  - {fileID: 11400000, guid: 5c8794e360a3b084a83f1b81d904dda3, type: 2}
+  - {fileID: 11400000, guid: c44b04bb8ae470a499682a38d435bef1, type: 2}
+  - {fileID: 11400000, guid: ce5a52903ca8549468cc45427b6c54a4, type: 2}
+  - {fileID: 11400000, guid: 3435adb3296fa4c4ea29083ece570f1c, type: 2}
+  - {fileID: 11400000, guid: 35a33334f7b6e91488d42f215c245feb, type: 2}
+  - {fileID: 11400000, guid: 2a93dea0720915344bccf27d474ec64e, type: 2}
+  - {fileID: 11400000, guid: 617cffe4ca2f006498bf7b7fea5c1616, type: 2}
+  - {fileID: 11400000, guid: 054506aedd1028c4fb76fc5cd0cd9672, type: 2}
+  - {fileID: 11400000, guid: 03653abc45442614b8f38c0818e819d6, type: 2}
+  - {fileID: 11400000, guid: a10db23b25c0c80428ec1b2ac54c24f1, type: 2}
+  - {fileID: 11400000, guid: 87629e1d30ad0d84e8206091cbabc598, type: 2}
+  - {fileID: 11400000, guid: b4a0e42f1cccfa948bd505de397dbcf1, type: 2}
+  - {fileID: 11400000, guid: ac278d865bf22fe4d8e5fb86c94bde7e, type: 2}
+  - {fileID: 11400000, guid: dd6e41474ddb758448a340fd280f416f, type: 2}
+  - {fileID: 11400000, guid: c98f25068b898d442b3fbef796fb779a, type: 2}
+  - {fileID: 11400000, guid: 50954b120b1e5eb4c8bb3663729f29e5, type: 2}
+  - {fileID: 11400000, guid: 8b6500eece4d15448b5bab43eb13ef74, type: 2}
+  - {fileID: 11400000, guid: 2b06c5b7f6e23644cb0f7e4bfbce5369, type: 2}
+  - {fileID: 11400000, guid: 5bf2c48e7079e1a45a82bbe09d3fb2ac, type: 2}
+  - {fileID: 11400000, guid: dd524babced96024c9322ace078f79d0, type: 2}
+  - {fileID: 11400000, guid: 9989fe90d8e390f49b06ce73f883fd3f, type: 2}
+  - {fileID: 11400000, guid: 64c0f947b9ae9a8489c5a7ddf0c8d617, type: 2}
+  - {fileID: 11400000, guid: bff90406755cc794c85d00e065931ba9, type: 2}
+  - {fileID: 11400000, guid: 08954774ef2aba3439025508cd65d1a9, type: 2}
+  - {fileID: 11400000, guid: 4e60b9ecbdf0d284e82e0150bfde774a, type: 2}
+  - {fileID: 11400000, guid: ce5a52903ca8549468cc45427b6c54a4, type: 2}
+  - {fileID: 11400000, guid: 617cffe4ca2f006498bf7b7fea5c1616, type: 2}
+  - {fileID: 11400000, guid: ac278d865bf22fe4d8e5fb86c94bde7e, type: 2}
+  - {fileID: 11400000, guid: 5bf2c48e7079e1a45a82bbe09d3fb2ac, type: 2}
+  cardToPool: {fileID: 160398082852163787, guid: c6ced23febaee0e4c8e704a45eee020a, type: 3}
+  cardParent: {fileID: 110058700}
 --- !u!1 &1467315997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,7 +3159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9937068064dfced4483927db6abb2bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordsTextAsset: {fileID: 4900000, guid: 2baa1f7e85fd0134c8dadb1e4da62a77, type: 3}
+  wordsTextAsset: {fileID: 4900000, guid: 9d8f9ac7b15c1594eb434e45498a9291, type: 3}
   wordList: []
 --- !u!1 &1881245221
 GameObject:
@@ -3379,7 +3427,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2071972568}
-  - component: {fileID: 2071972569}
   m_Layer: 0
   m_Name: UseCards
   m_TagString: Untagged
@@ -3402,22 +3449,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1495601550}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2071972569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071972567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77c1a0894f05ec04daa9efa3c2d07136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  defence: 0
-  enemy: {fileID: 0}
-  player: {fileID: 0}
 --- !u!1 &2079944065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,10 +3830,10 @@ RectTransform:
   - {fileID: 577468944366232718}
   m_Father: {fileID: 1294538589}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 871.5435, y: 624}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &557856957823173540
 CanvasRenderer:
@@ -3896,7 +3927,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2654298452112687720}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8438324148955565092}
+        m_TargetAssemblyTypeName: DifficultyPanel, Assembly-CSharp
+        m_MethodName: Hard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1312065003709114591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,7 +3958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1354288282182336433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4338,7 +4381,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2796625271321881048}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8438324148955565092}
+        m_TargetAssemblyTypeName: DifficultyPanel, Assembly-CSharp
+        m_MethodName: Easy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &4458256907428319110
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4435,7 +4490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.46413317, g: 0.53956044, b: 0.6603774, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4585,10 +4640,10 @@ RectTransform:
   - {fileID: 3316172403878920688}
   m_Father: {fileID: 577468944366232718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 435.77176, y: -240.03}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &7093720768220451160
 RectTransform:
@@ -4605,10 +4660,10 @@ RectTransform:
   - {fileID: 4458256907428319110}
   m_Father: {fileID: 577468944366232718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 435.77176, y: -120.03}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7961247955003685771
 CanvasRenderer:
@@ -4684,10 +4739,10 @@ RectTransform:
   - {fileID: 960804494584258118}
   m_Father: {fileID: 577468944366232718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 435.77176, y: -360.03}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9066650137650021699
 MonoBehaviour:
@@ -4732,7 +4787,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4592886249856393810}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8438324148955565092}
+        m_TargetAssemblyTypeName: DifficultyPanel, Assembly-CSharp
+        m_MethodName: Medium
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

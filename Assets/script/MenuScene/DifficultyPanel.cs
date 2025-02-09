@@ -19,9 +19,10 @@ public class DifficultyPanel : MonoBehaviour
         {
             if (enemy.difficulty == Enemy.EnemyDifficulty.Easy)
             {
-                FindFirstObjectByType<SetEnemy>().enemy = enemy;
+                FindFirstObjectByType<SetEnemy>().enemy = Instantiate(enemy);
             }
         }
+        ClosePanel();
     }
     public void Medium()
     {
@@ -29,9 +30,10 @@ public class DifficultyPanel : MonoBehaviour
         {
             if (enemy.difficulty == Enemy.EnemyDifficulty.Medium)
             {
-                FindFirstObjectByType<SetEnemy>().enemy = enemy;
+                FindFirstObjectByType<SetEnemy>().enemy = Instantiate(enemy);
             }
         }
+        ClosePanel();
     }
     public void Hard()
     {
@@ -39,9 +41,14 @@ public class DifficultyPanel : MonoBehaviour
         {
             if (enemy.difficulty == Enemy.EnemyDifficulty.Hard)
             {
-                FindFirstObjectByType<SetEnemy>().enemy = enemy;
+                FindFirstObjectByType<SetEnemy>().enemy = Instantiate(enemy);
             }
         }
+        ClosePanel();
+    }
+    public void SetEnemyStats()
+    {
+        SetHealth.instance.UpdateEnemyHealth();
     }
 
 }
