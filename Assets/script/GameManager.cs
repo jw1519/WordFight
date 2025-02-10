@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 
     public Button submitButton;
     public Button endTurnButton;
-    public GameObject GameOverPanel;
 
     SetEnemy enemy;
     private void Awake()
@@ -35,7 +34,8 @@ public class GameManager : MonoBehaviour
     }
     public void Gameover()
     {
-        GameOverPanel.SetActive(true);
+        GameOverPanel.instance.gameObject.SetActive(true);
+        GameOverPanel.instance.SetStats();
         Time.timeScale = 0;
     }
 }

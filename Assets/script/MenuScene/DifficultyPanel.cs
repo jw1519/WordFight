@@ -4,6 +4,10 @@ using UnityEngine;
 public class DifficultyPanel : MonoBehaviour
 {
     public List<Enemy> enemyList;
+    private void Awake()
+    {
+        OpenPanel();
+    }
     public void OpenPanel()
     {
         gameObject.SetActive(true);

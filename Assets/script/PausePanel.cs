@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PausePanel : MonoBehaviour
 {
+    private void Awake()
+    {
+        ClosePausePanel();
+    }
     public void OpenPausePanel()
     {
         gameObject.SetActive(true);

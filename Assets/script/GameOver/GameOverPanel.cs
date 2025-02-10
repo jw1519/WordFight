@@ -8,12 +8,13 @@ public class GameOverPanel : MonoBehaviour
 {
     public static GameOverPanel instance;
 
-    public int wordsUsed;
+    [SerializeField] public int wordsUsed;
     public TextMeshProUGUI wordsUsedText;
 
     public void Awake()
     {
         instance = this;
+        gameObject.SetActive(false);
     }
 
     public void SetStats()

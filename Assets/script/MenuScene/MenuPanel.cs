@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuPanel : MonoBehaviour
 {
-    public void OpenPanel()
+    public void StartGame()
     {
-        gameObject.SetActive(true);
-    }
-    public void ClosePanel()
-    {
-        gameObject.SetActive(false);
+        SceneManager.LoadScene("Game");
     }
 }
