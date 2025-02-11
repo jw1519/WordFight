@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class BaseAbilityDecorator : CardAbility
+public abstract class BaseAbilityDecorator : MonoBehaviour, CardAbility
 {
     protected GameObject player;
 
