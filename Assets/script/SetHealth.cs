@@ -39,6 +39,7 @@ public class SetHealth : MonoBehaviour
         if (enemy.enemy.health <= 0)
         {
             Debug.Log("you've won");
+            GameManager.instance.GameWon();
         }
     }
 }

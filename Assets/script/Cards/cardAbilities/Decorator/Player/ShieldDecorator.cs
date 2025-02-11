@@ -6,7 +6,7 @@ public class ShieldDecorator : BaseAbilityDecorator
     GameObject shieldObject;
     GameObject shieldAmountDisplay;
     Material shieldMaterial;
-    public int shieldValue;
+    public int shieldValue = 0;
     public ShieldDecorator(GameObject player) : base(player) { }
 
     public override void Apply(GameObject player)
@@ -24,7 +24,6 @@ public class ShieldDecorator : BaseAbilityDecorator
             //set material
             shieldObject.GetComponent<Renderer>().material = shieldMaterial;
         }
-        shieldAmountDisplay.GetComponent<TextMeshProUGUI>().SetText(shieldValue.ToString());
     }
     public override void Remove(GameObject player)
     {

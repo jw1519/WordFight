@@ -15,6 +15,6 @@ public class DefenceCard : Card, ICard
         {
             player.defence = player.defence + value; 
         }
-        AbilityManager.instance.ApplyDecorator("Shield", new ShieldDecorator(AbilityManager.instance.gameObject));
+        //AbilityManager.instance.ApplyDecorator("Shield", new ShieldDecorator(AbilityManager.instance.gameObject));
     }
 }
