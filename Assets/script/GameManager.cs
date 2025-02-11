@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public Button submitButton;
     public Button endTurnButton;
 
-    GameOverPanel gameOverPanel;
-    GameWonPanel gameWonPanel;
+    public GameObject gameOverPanel;
+    public GameObject gameWonPanel;
 
     SetEnemy enemy;
     private void Awake()
@@ -19,8 +19,6 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
         enemy = FindObjectOfType<SetEnemy>();
-        gameOverPanel = FindAnyObjectByType<GameOverPanel>();
-        gameWonPanel = FindAnyObjectByType<GameWonPanel>();
     }
 
     public void BeginTurn()
@@ -39,12 +37,12 @@ public class GameManager : MonoBehaviour
     }
     public void Gameover()
     {
-        gameOverPanel.gameObject.SetActive(true);
+        gameOverPanel.SetActive(true);
         Time.timeScale = 0;
     }
     public void GameWon()
     {
-        gameWonPanel.gameObject.SetActive(true);
+        gameWonPanel.SetActive(true);
         Time.timeScale = 0;
     }
 }
