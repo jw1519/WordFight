@@ -7,6 +7,7 @@ public class ShieldDecorator : BaseAbilityDecorator
 {
     GameObject shieldObject;
     GameObject shieldAmountDisplay;
+    Material shieldMaterial;
     public int shieldValue;
     public ShieldDecorator(GameObject player) : base(player) { }
 
@@ -19,6 +20,7 @@ public class ShieldDecorator : BaseAbilityDecorator
             shieldObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             shieldObject.transform.SetParent(player.transform);
             shieldObject.GetComponent<Renderer>().material.color = new Color(0, 0, 1, 0.5f);
+            shieldObject.GetComponent<Renderer>().material.SetFloat("_Mode", 3); //makes it transparent
 
             //make text to display amount of shield
             shieldAmountDisplay = new GameObject();
