@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ShieldDecorator : BaseAbilityDecorator
 {
-    public Sprite shieldSprite;
-    private GameObject shieldObject;
+    GameObject shieldObject;
+    GameObject shieldAmountDisplay;
     public int shieldValue;
     public ShieldDecorator(GameObject player) : base(player) { }
 
@@ -15,10 +16,16 @@ public class ShieldDecorator : BaseAbilityDecorator
         if (shieldObject == null)
         {
             // make object
-            shieldObject = new GameObject("Shield");
+            shieldObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             shieldObject.transform.SetParent(player.transform);
-            shieldObject.AddComponent<SpriteRenderer>().sprite = shieldSprite;
+            shieldObject.GetComponent<Renderer>().material.color = new Color(0, 0, 1, 0.5f);
+
+            //make text to display amount of shield
+            shieldAmountDisplay = new GameObject();
+            shieldAmountDisplay.transform.SetParent(shieldObject.transform);
+            shieldAmountDisplay.AddComponent<TextMeshProUGUI>();
         }
+        shieldAmountDisplay.GetComponent<TextMeshProUGUI>().SetText(shieldValue.ToString());
     }
     public override void Remove(GameObject player)
     {
