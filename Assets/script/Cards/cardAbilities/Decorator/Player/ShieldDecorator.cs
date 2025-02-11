@@ -19,13 +19,12 @@ public class ShieldDecorator : BaseAbilityDecorator
             // make object
             shieldObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             shieldObject.transform.SetParent(player.transform);
-            shieldObject.GetComponent<Renderer>().material.color = new Color(0, 0, 1, 0.5f);
-            shieldObject.GetComponent<Renderer>().material.SetFloat("_Mode", 3); //makes it transparent
-
-            //make text to display amount of shield
-            shieldAmountDisplay = new GameObject();
-            shieldAmountDisplay.transform.SetParent(shieldObject.transform);
-            shieldAmountDisplay.AddComponent<TextMeshProUGUI>();
+            //make material
+            shieldMaterial = shieldObject.GetComponent<Renderer>().material;
+            shieldMaterial.color = new Color(0, 0, 1, 0.5f);
+            shieldMaterial.SetFloat("_Mode", 3); //makes it transparent
+            //set material
+            shieldObject.GetComponent<Renderer>().material = shieldMaterial;
         }
         shieldAmountDisplay.GetComponent<TextMeshProUGUI>().SetText(shieldValue.ToString());
     }
