@@ -18,8 +18,6 @@ public class ShieldDecorator : BaseAbilityDecorator
             shieldObject.transform.localPosition = Vector3.zero;
             //set material
             SetMaterialTransparent(shieldObject.GetComponent<Renderer>().material);
-
-
         }
     }
     public override void Remove(GameObject player)

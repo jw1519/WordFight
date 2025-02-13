@@ -9,10 +9,6 @@ public class SetCard : MonoBehaviour
 
     void Start()
     {
-        SetCardvalues();
-    }
-    public void SetCardvalues()
-    {
         cardLetterText.SetText(card.letter);
 
         if (card.cardType != Card.CardType.Ability)
@@ -22,6 +18,14 @@ public class SetCard : MonoBehaviour
         else
         {
             description.SetText("This card doubles damage");
+        }
+    }
+    public void SetCardvalues(int value)
+    {
+        card.value = value;
+        if (card.cardType != Card.CardType.Ability)
+        {
+            description.SetText($"This card does {card.value} {card.cardType}");
         }
     }
     
