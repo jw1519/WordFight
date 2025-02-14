@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Attack Card")]
 public class AttackCard : Card, ICard
 {
-    private void Awake()
+    private void OnEnable()
     {
         cardType = CardType.Attack;
     }

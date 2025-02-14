@@ -6,7 +6,7 @@ public class DefenceCard : Card, ICard
 {
     Player player;
 
-    public void Start()
+    private void OnEnable()
     {
         cardType = CardType.Defence;
     }
