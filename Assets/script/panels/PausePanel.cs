@@ -12,10 +12,12 @@ public class PausePanel : MonoBehaviour
     public void OpenPausePanel()
     {
         gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
     public void ClosePausePanel()
     {
         gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
     public void QuitGame()
     {

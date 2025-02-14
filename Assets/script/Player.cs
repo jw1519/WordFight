@@ -6,14 +6,13 @@ public class Player : MonoBehaviour
     public static Player instance;
     public int health = 30;
     public int maxHealth = 30;
-    public int defence;
+    int defence = 0;
 
     public TextMeshProUGUI defenceText;
 
     private void Awake()
     {
         instance = this;
-        defence = 0;
     }
     public void RemoveDecorator()
     {
@@ -26,6 +25,6 @@ public class Player : MonoBehaviour
     public void SetDefence(int value)
     {
         defence = defence + value;
-        defenceText.text = value.ToString();
+        defenceText.text = defence.ToString();
     }
 }
