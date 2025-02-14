@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Defence Card")]
@@ -9,10 +8,10 @@ public class DefenceCard : Card, ICard
     private void OnEnable()
     {
         cardType = CardType.Defence;
+        player = FindObjectOfType<Player>();
     }
     public void Play()
     {
-        player = FindObjectOfType<Player>();
         if (player != null )
         {
             player.SetDefence(value);

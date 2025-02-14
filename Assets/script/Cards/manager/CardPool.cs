@@ -23,7 +23,7 @@ public class CardPool : MonoBehaviour
         foreach (Card card in cardSO)
         {
             gameObject = Instantiate(cardToPool);
-            gameObject.GetComponent<SetCard>().card = card;
+            gameObject.GetComponent<SetCard>().card = Instantiate(card);
             gameObject.SetActive(false);
             gameObject.transform.SetParent(cardParent);
             pooledCards.Add(gameObject);

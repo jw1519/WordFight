@@ -5,8 +5,6 @@ public class AbilityManager : MonoBehaviour
 {
     public static AbilityManager instance;
     private Dictionary<string, BaseAbilityDecorator> activeDecorators;
-    int defence;
-
 
     private void Awake()
     {
