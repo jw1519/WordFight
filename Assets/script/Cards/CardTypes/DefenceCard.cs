@@ -1,19 +1,21 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Defence Card")]
 public class DefenceCard : Card, ICard
 {
-    [HideInInspector] public Player player;
+    Player player;
 
-    private void Awake()
+    public void Start()
     {
         cardType = CardType.Defence;
     }
     public void Play()
     {
+        player = FindObjectOfType<Player>();
         if (player != null )
         {
-            player.defence = player.defence + value; 
+            player.SetDefence(value);
         }
         AbilityManager.instance.ApplyDecorator("Shield", new ShieldDecorator(AbilityManager.instance.gameObject));
     }

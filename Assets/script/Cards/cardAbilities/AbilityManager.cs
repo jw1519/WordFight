@@ -6,7 +6,7 @@ public class AbilityManager : MonoBehaviour
     public static AbilityManager instance;
     private Dictionary<string, BaseAbilityDecorator> activeDecorators;
     int defence;
-    bool shieldActive;
+
 
     private void Awake()
     {
@@ -15,7 +15,6 @@ public class AbilityManager : MonoBehaviour
     void Start()
     {
         activeDecorators = new Dictionary<string, BaseAbilityDecorator>();
-        shieldActive = false;
     }
     public void ApplyDecorator(string key, BaseAbilityDecorator decorator)
     {
@@ -23,11 +22,6 @@ public class AbilityManager : MonoBehaviour
         {
             decorator.Apply(gameObject);
             activeDecorators[key] = decorator;
-
-            if (key == "Shield")
-            {
-                shieldActive = true;
-            }
         }
     }
 
@@ -36,11 +30,6 @@ public class AbilityManager : MonoBehaviour
         if (activeDecorators.ContainsKey(key))
         {
             activeDecorators[key].Remove(gameObject); // Call the specific decorator's Remove method
-
-            if (key == "Shield")
-            {
-                shieldActive = false;
-            }
 
             activeDecorators.Remove(key); // Remove from active decorators
         }

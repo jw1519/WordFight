@@ -27,7 +27,6 @@ public class ShieldDecorator : BaseAbilityDecorator
         {
             Object.Destroy(shieldObject);
             shieldObject = null;
-            player.GetComponent<Player>().defence = 0;
         }
     }
     void SetMaterialTransparent(Material mat)
