@@ -23,13 +23,13 @@ public class GameManager : MonoBehaviour
 
     public void BeginTurn()
     {
+        Player.instance.RemoveDecorator();
         CardManager.instance.DrawCards();
         submitButton.gameObject.SetActive(true);
         endTurnButton.gameObject.SetActive(true);
     }
     public void EndTurn()
     {
-        Player.instance.RemoveDecorator();
         CardManager.instance.DiscardCards();
         submitButton.gameObject.SetActive(false);
         endTurnButton.gameObject.SetActive(false);
