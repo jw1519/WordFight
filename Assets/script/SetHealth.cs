@@ -15,13 +15,12 @@ public class SetHealth : MonoBehaviour
         {
             instance = this;
         }
+        player = FindObjectOfType<Player>();
+        enemy = FindObjectOfType<SetEnemy>();
     }
     void Start()
     {
-        player = FindObjectOfType<Player>();
-        enemy = FindObjectOfType<SetEnemy>();
         playerHealthtext.SetText(player.maxHealth + "/" + player.maxHealth);
-        enemyHealthtext.SetText(enemy.enemy.maxHealth + "/" + enemy.enemy.maxHealth);
     }
 
     public void UpdatePlayerHealth()

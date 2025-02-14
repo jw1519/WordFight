@@ -7,28 +7,28 @@ public class StrengthBoostDecorator : BaseAbilityDecorator
 
     public StrengthBoostDecorator(GameObject player) : base(player) { }
 
-    public void Apply(GameObject player)
+    public override void Apply(GameObject player)
     {
         base.Apply(player);
         foreach (GameObject gameObject in GameManager.instance.GetComponent<CardPool>().pooledCards)
         {
-            if (gameObject.GetComponent<AttackCard>() != null)
+            if (gameObject.GetComponent<SetCard>().card.cardType == Card.CardType.Attack)
             {
-                int value = gameObject.GetComponent<AttackCard>().value;
+                int value = gameObject.GetComponent<SetCard>().card.value;
                 value = value * boostMultiplier;
                 gameObject.GetComponent<SetCard>().SetCardvalues(value);
             }
         }
     }
 
-    public void Remove(GameObject player)
+    public override void Remove(GameObject player)
     {
         base.Remove(player);
         foreach (GameObject gameObject in GameManager.instance.GetComponent<CardPool>().pooledCards)
         {
-            if (gameObject.GetComponent<AttackCard>() != null)
+            if (gameObject.GetComponent<SetCard>().card.cardType == Card.CardType.Attack)
             {
-                int value = gameObject.GetComponent<AttackCard>().value;
+                int value = gameObject.GetComponent<SetCard>().card.value;
                 value = value / boostMultiplier;
                 gameObject.GetComponent<SetCard>().SetCardvalues(value);
             }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -16,6 +14,7 @@ public class Player : MonoBehaviour
     public void RemoveDecorator()
     {
         GetComponent<AbilityManager>().RemoveDecorator("Shield");
+        GetComponent<AbilityManager>().RemoveDecorator("Strength");
         defence = 0;
     }
 }
