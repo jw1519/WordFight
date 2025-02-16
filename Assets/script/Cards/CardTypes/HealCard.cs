@@ -1,4 +1,7 @@
 
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "New Card", menuName = "Cards/Ability/Heal")]
 public class HealCard : Card, ICard
 {
     Player player;

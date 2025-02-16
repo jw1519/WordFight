@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards/Ability Card")]
-public class AbilityCard : Card, ICard
+public class StrengthBoostCard : Card, ICard
 {
     private void OnEnable()
     {
