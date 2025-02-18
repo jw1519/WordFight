@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject gameWonPanel;
 
+    Player player;
     SetEnemy enemy;
     private void Awake()
     {
@@ -19,11 +20,12 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
         enemy = FindObjectOfType<SetEnemy>();
+        player = FindObjectOfType<Player>();
     }
 
     public void BeginTurn()
     {
-        Player.instance.RemoveDecorator();
+        player.RemoveDecorator();
         CardManager.instance.DrawCards();
         submitButton.gameObject.SetActive(true);
         endTurnButton.gameObject.SetActive(true);

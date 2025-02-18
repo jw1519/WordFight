@@ -1,11 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class HealStrategy : IActionStrategy
 {
-    public void Action()
+    public void Action(Enemy enemy)
     {
-        //heal
+        if (enemy.health + enemy.healAmount <= enemy.maxHealth)
+        {
+            enemy.health += enemy.healAmount;
+        }
+        else
+        {
+            enemy.health = enemy.maxHealth;
+        }
     }
 }

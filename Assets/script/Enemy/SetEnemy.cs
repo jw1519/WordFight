@@ -6,8 +6,10 @@ public class SetEnemy : MonoBehaviour
 {
     public Enemy enemy;
     public SpriteRenderer actionrenderer;
+    Player player;
     private void Awake()
     {
+        player = FindAnyObjectByType<Player>();
         SelectNextAction();
     }
 
@@ -48,13 +50,13 @@ public class SetEnemy : MonoBehaviour
         switch (enemy.actionForThisTurn)
         {
             case EnemyAction.Attack:
-                Player.instance.health = Player.instance.health - enemy.damage;
-                SetHealth.instance.UpdatePlayerHealth();
+                player.Attacked(enemy.damage);
                 EndTurn();
                 return;
 
             case EnemyAction.Defend:
                 enemy.defence = enemy.defenceAmount;
+                GetComponent<SetEnemyUI>().UpdateDefence(enemy.defenceAmount);
                 EndTurn();
                 return;
 

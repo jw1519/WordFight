@@ -3,17 +3,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public static Player instance;
     public int health = 30;
     public int maxHealth = 30;
     int defence = 0;
 
     public TextMeshProUGUI defenceText;
 
-    private void Awake()
-    {
-        instance = this;
-    }
     public void RemoveDecorator()
     {
         GetComponent<AbilityManager>().RemoveDecorator("Shield");
@@ -26,5 +21,21 @@ public class Player : MonoBehaviour
     {
         defence = defence + value;
         defenceText.text = defence.ToString();
+    }
+    public void Attacked(int damageTaken)
+    {
+        if (defence > 0)
+        {
+            damageTaken = damageTaken - defence;
+        }
+        if (health - damageTaken > 0)
+        {
+            health = health - damageTaken;
+        }
+        else
+        {
+            health = 0;
+            GameManager.instance.Gameover();
+        }
     }
 }

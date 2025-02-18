@@ -1,11 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackStrategy : IActionStrategy
+public class AttackStrategy : MonoBehaviour, IActionStrategy
 {
-    public void Action()
+    Player player;
+    void Awake()
     {
-        //Attack
+        player = FindAnyObjectByType<Player>(); 
+    }
+    public void Action(Enemy enemy)
+    {
+        if (player != null)
+        {
+            if(player.health - enemy.damage > 0)
+            {
+                player.health -= enemy.damage;
+            }
+            else
+            {
+                player.health = 0;
+            }
+            SetHealth.instance.UpdatePlayerHealth();
+        }
     }
 }
