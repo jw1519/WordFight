@@ -7,8 +7,12 @@ public class Player : MonoBehaviour
     public int maxHealth = 30;
     int defence = 0;
 
-    public TextMeshProUGUI defenceText;
+    SetPlayerUI playerUI;
 
+    public void Awake()
+    {
+        playerUI = GetComponent<SetPlayerUI>();
+    }
     public void RemoveDecorator()
     {
         GetComponent<AbilityManager>().RemoveDecorator("Shield");
@@ -20,7 +24,7 @@ public class Player : MonoBehaviour
     public void SetDefence(int value)
     {
         defence = defence + value;
-        defenceText.text = defence.ToString();
+        playerUI.UpdateDefence(defence);
     }
     public void TakeDamage(int damageTaken)
     {
@@ -37,6 +41,6 @@ public class Player : MonoBehaviour
             health = 0;
             GameManager.instance.Gameover();
         }
-        GetComponent<SetPlayerUI>().UpdatePlayerHealth(this);
+        playerUI.UpdatePlayerHealth(this);
     }
 }
