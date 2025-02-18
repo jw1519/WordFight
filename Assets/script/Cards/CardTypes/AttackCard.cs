@@ -10,24 +10,9 @@ public class AttackCard : Card, ICard
     public void Play()
     {
         SetEnemy setEnemy = FindFirstObjectByType<SetEnemy>();
-        Enemy enemy = setEnemy.enemy;
-        if (enemy != null)
+        if (setEnemy != null)
         {
-            if (enemy.defence == 0)
-            {
-                enemy.health = enemy.health - value;
-            }
-            else if (enemy.defence - value >= 0)
-            {
-                enemy.defence = enemy.defence - value;
-            }
-            else
-            {
-                int damageTaken = value - enemy.defence;
-                enemy.defence = 0;
-                enemy.health = enemy.health - damageTaken;
-            }
-            SetHealth.instance.UpdateEnemyHealth();
+            setEnemy.TakeDamnage(value);
         }
     }
 }

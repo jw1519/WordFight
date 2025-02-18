@@ -33,5 +33,4 @@ public class Enemy : ScriptableObject
         Medium,
         Hard
     }
-    public IActionStrategy actionStrategy { get; set; }
 }

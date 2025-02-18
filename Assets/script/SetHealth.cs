@@ -1,44 +1,17 @@
 using TMPro;
 using UnityEngine;
 
-public class SetHealth : MonoBehaviour
+public class SetPlayerUI : MonoBehaviour
 {
-    public static SetHealth instance;
     public TextMeshProUGUI playerHealthtext;
-    public TextMeshProUGUI enemyHealthtext;
 
-    private Player player;
-    private SetEnemy enemy;
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        player = FindObjectOfType<Player>();
-        enemy = FindObjectOfType<SetEnemy>();
-    }
-    void Start()
-    {
-        playerHealthtext.SetText(player.maxHealth + "/" + player.maxHealth);
-    }
-
-    public void UpdatePlayerHealth()
+    public void UpdatePlayerHealth(Player player)
     {
         playerHealthtext.SetText(player.health.ToString() + "/" + player.maxHealth);
         if (player.health <= 0)
         {
             Debug.Log("GameOver");
             GameManager.instance.Gameover();
-        }
-    }
-    public void UpdateEnemyHealth()
-    {
-        enemyHealthtext.SetText(enemy.enemy.health.ToString() + "/" + enemy.enemy.maxHealth);
-        if (enemy.enemy.health <= 0)
-        {
-            Debug.Log("you've won");
-            GameManager.instance.GameWon();
         }
     }
 }

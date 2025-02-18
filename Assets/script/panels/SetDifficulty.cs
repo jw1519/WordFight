@@ -14,7 +14,6 @@ public class SetDifficulty : MonoBehaviour
                 FindFirstObjectByType<SetEnemy>().enemy = Instantiate(enemy);
             }
         }
-        SetHealth.instance.UpdateEnemyHealth();
         GameManager.instance.BeginTurn();
     }
 }

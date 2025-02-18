@@ -50,7 +50,7 @@ public class SetEnemy : MonoBehaviour
         switch (enemy.actionForThisTurn)
         {
             case EnemyAction.Attack:
-                player.Attacked(enemy.damage);
+                player.TakeDamage(enemy.damage);
                 EndTurn();
                 return;
 
@@ -69,14 +69,29 @@ public class SetEnemy : MonoBehaviour
                 {
                     enemy.health = enemy.maxHealth;
                 }
-                SetHealth.instance.UpdateEnemyHealth();
                 EndTurn();
                 return;
         }
     }
+    public void TakeDamnage(int damageTaken)
+    {
+        if (enemy.defence > 0)
+        {
+            damageTaken = damageTaken - enemy.defence;
+        }
+        if (enemy.health - damageTaken > 0)
+        {
+            enemy.health = enemy.health - damageTaken;
+        }
+        else
+        {
+            enemy.health = 0;
+            GameManager.instance.GameWon();
+        }
+        GetComponent<SetEnemyUI>().UpdateHealth(enemy);
+    }
     public void EndTurn()
     {
-        SetHealth.instance.UpdatePlayerHealth();
         SelectNextAction();
         GameManager.instance.BeginTurn();
     }

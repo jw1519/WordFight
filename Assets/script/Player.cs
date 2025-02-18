@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
         defence = defence + value;
         defenceText.text = defence.ToString();
     }
-    public void Attacked(int damageTaken)
+    public void TakeDamage(int damageTaken)
     {
         if (defence > 0)
         {
@@ -37,5 +37,6 @@ public class Player : MonoBehaviour
             health = 0;
             GameManager.instance.Gameover();
         }
+        GetComponent<SetPlayerUI>().UpdatePlayerHealth(this);
     }
 }
