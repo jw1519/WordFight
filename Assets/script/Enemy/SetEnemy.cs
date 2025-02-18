@@ -78,4 +78,5 @@ public class SetEnemy : MonoBehaviour
         SelectNextAction();
         GameManager.instance.BeginTurn();
     }
+
 }

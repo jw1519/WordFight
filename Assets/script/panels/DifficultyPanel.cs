@@ -5,9 +5,11 @@ public class DifficultyPanel : MonoBehaviour
 {
     public List<Enemy> enemyList;
     Enemy.EnemyDifficulty difficulty;
+    SetDifficulty setDifficulty;
 
     private void Awake()
     {
+        setDifficulty = gameObject.GetComponent<SetDifficulty>();
         OpenPanel();
     }
     public void OpenPanel()
@@ -21,30 +23,19 @@ public class DifficultyPanel : MonoBehaviour
     public void Easy()
     {
         difficulty = Enemy.EnemyDifficulty.Easy;
-        SetUp();
+        setDifficulty.SetUp(difficulty);
+        ClosePanel();
     }
     public void Medium()
     {
         difficulty = Enemy.EnemyDifficulty.Medium;
-        SetUp();
+        setDifficulty.SetUp(difficulty);
+        ClosePanel();
     }
     public void Hard()
     {
         difficulty = Enemy.EnemyDifficulty.Hard;
-        SetUp();
-    }
-    public void SetUp()
-    {
-        foreach (Enemy enemy in enemyList)
-        {
-            if (enemy.difficulty == difficulty)
-            {
-                FindFirstObjectByType<SetEnemy>().enemy = Instantiate(enemy);
-            }
-        }
-        SetHealth.instance.UpdateEnemyHealth();
-        GameManager.instance.BeginTurn();
+        setDifficulty.SetUp(difficulty);
         ClosePanel();
     }
-
 }
