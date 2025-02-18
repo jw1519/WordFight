@@ -1,6 +1,5 @@
 using UnityEngine;
-
-public class Card : ScriptableObject
+public abstract class Card : ScriptableObject
 {
     public string letter;
     public int value;
