@@ -4,6 +4,8 @@ using UnityEngine;
 public class DifficultyPanel : MonoBehaviour
 {
     public List<Enemy> enemyList;
+    Enemy.EnemyDifficulty difficulty;
+
     private void Awake()
     {
         OpenPanel();
@@ -18,44 +20,31 @@ public class DifficultyPanel : MonoBehaviour
     }
     public void Easy()
     {
-        foreach (Enemy enemy in enemyList)
-        {
-            if (enemy.difficulty == Enemy.EnemyDifficulty.Easy)
-            {
-                FindFirstObjectByType<SetEnemy>().enemy = Instantiate(enemy);
-            }
-        }
+        difficulty = Enemy.EnemyDifficulty.Easy;
         SetUp();
-        ClosePanel();
     }
     public void Medium()
     {
-        foreach (Enemy enemy in enemyList)
-        {
-            if (enemy.difficulty == Enemy.EnemyDifficulty.Medium)
-            {
-                FindFirstObjectByType<SetEnemy>().enemy = Instantiate(enemy);
-            }
-        }
+        difficulty = Enemy.EnemyDifficulty.Medium;
         SetUp();
-        ClosePanel();
     }
     public void Hard()
     {
+        difficulty = Enemy.EnemyDifficulty.Hard;
+        SetUp();
+    }
+    public void SetUp()
+    {
         foreach (Enemy enemy in enemyList)
         {
-            if (enemy.difficulty == Enemy.EnemyDifficulty.Hard)
+            if (enemy.difficulty == difficulty)
             {
                 FindFirstObjectByType<SetEnemy>().enemy = Instantiate(enemy);
             }
         }
-        SetUp();
-        ClosePanel();
-    }
-    public void SetUp()
-    {
         SetHealth.instance.UpdateEnemyHealth();
         GameManager.instance.BeginTurn();
+        ClosePanel();
     }
 
 }
