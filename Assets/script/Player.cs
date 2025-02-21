@@ -12,14 +12,14 @@ public class Player : MonoBehaviour
     public void Awake()
     {
         playerUI = GetComponent<SetPlayerUI>();
+        playerUI.UpdatePlayerHealth(this);
     }
     public void RemoveDecorator()
     {
+        GetComponent<AbilityManager>().RemoveDecorator("Strength");
         GetComponent<AbilityManager>().RemoveDecorator("Shield");
         defence = 0;
         SetDefence(defence);
-
-        GetComponent<AbilityManager>().RemoveDecorator("Strength");
     }
     public void SetDefence(int value)
     {

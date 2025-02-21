@@ -50,25 +50,18 @@ public class SetEnemy : MonoBehaviour
         switch (enemy.actionForThisTurn)
         {
             case EnemyAction.Attack:
-                player.TakeDamage(enemy.damage);
+                EventQueue.EnqueueEvent(new EnemyAttackEvent(player, enemy.damage));
                 EndTurn();
                 return;
 
             case EnemyAction.Defend:
-                enemy.defence = enemy.defenceAmount;
+                EventQueue.EnqueueEvent(new EnemyDefenceEvent(enemy, enemy.defenceAmount));
                 GetComponent<SetEnemyUI>().UpdateDefence(enemy.defenceAmount);
                 EndTurn();
                 return;
 
             case EnemyAction.Heal:
-                if (enemy.health + enemy.healAmount <= enemy.maxHealth)
-                {
-                    enemy.health = enemy.health + enemy.healAmount;
-                }
-                else
-                {
-                    enemy.health = enemy.maxHealth;
-                }
+                EventQueue.EnqueueEvent(new EnemyHealEvent(enemy, enemy.healAmount, enemy.health));
                 EndTurn();
                 return;
         }
