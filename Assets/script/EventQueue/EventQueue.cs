@@ -37,6 +37,7 @@ public class EventQueue : MonoBehaviour
         if (gameEvent is PlayerAttackEvent playerAttack)
         {
             playerAttack.Target.TakeDamage(playerAttack.Damage);
+            playerAttack.EnemyUI.UpdateHealth(playerAttack.Target);
 
             Debug.Log($"Player attacks {playerAttack.Target} for {playerAttack.Damage} damage");
             yield return new WaitForSeconds(1); //do animation here

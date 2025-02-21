@@ -13,8 +13,7 @@ public class AttackCard : Card, ICard
         Enemy enemy = FindFirstObjectByType<Enemy>();
         if (enemy != null)
         {
-            EventQueue.EnqueueEvent(new PlayerAttackEvent(enemy, value));
-            setEnemy.gameObject.GetComponent<SetEnemyUI>().UpdateHealth(enemy);
+            EventQueue.EnqueueEvent(new PlayerAttackEvent(enemy, value, setEnemy.enemyUI));
         }
     }
 }

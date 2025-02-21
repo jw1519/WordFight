@@ -17,7 +17,6 @@ public class SetEnemy : MonoBehaviour
 
     public void SelectNextAction()
     {
-        enemyUI.UpdateHealth(enemy);
         EnemyAction action = GetRandomEnumValue<EnemyAction>();
         enemy.actionForThisTurn = action;
 
@@ -48,7 +47,6 @@ public class SetEnemy : MonoBehaviour
     }
     public void StartTurn()
     {
-        
         enemy.defence = 0;
         switch (enemy.actionForThisTurn)
         {
