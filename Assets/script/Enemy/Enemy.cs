@@ -33,10 +33,6 @@ public class Enemy : ScriptableObject
         Medium,
         Hard
     }
-    private void Awake()
-    {
-        
-    }
     public void TakeDamage(int damageTaken)
     {
         if (defence > 0)
