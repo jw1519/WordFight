@@ -5,9 +5,9 @@ public class Player : MonoBehaviour
 {
     public int health = 30;
     public int maxHealth = 30;
-    int defence = 0;
+    public int defence;
 
-    SetPlayerUI playerUI;
+    public SetPlayerUI playerUI;
 
     public void Awake()
     {
@@ -19,12 +19,7 @@ public class Player : MonoBehaviour
         GetComponent<AbilityManager>().RemoveDecorator("Strength");
         GetComponent<AbilityManager>().RemoveDecorator("Shield");
         defence = 0;
-        SetDefence(defence);
-    }
-    public void SetDefence(int value)
-    {
-        defence = defence + value;
-        playerUI.UpdateDefence(defence);
+        EventQueue.EnqueueEvent(new PlayerDefenceEvent(this, defence));
     }
     public void TakeDamage(int damageTaken)
     {

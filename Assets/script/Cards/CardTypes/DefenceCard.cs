@@ -14,7 +14,7 @@ public class DefenceCard : Card, ICard
     {
         if (player != null )
         {
-            player.SetDefence(value);
+            EventQueue.EnqueueEvent(new PlayerDefenceEvent(player, value));
         }
         AbilityManager.instance.ApplyDecorator("Shield", new ShieldDecorator(AbilityManager.instance.gameObject));
     }

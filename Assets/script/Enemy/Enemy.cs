@@ -20,7 +20,7 @@ public class Enemy : ScriptableObject
     public Sprite attackSprite;
     public Sprite defenceSprite;
     public Sprite abilitySprite;
-    
+
     public enum EnemyAction
     {
         Attack,
@@ -32,5 +32,25 @@ public class Enemy : ScriptableObject
         Easy,
         Medium,
         Hard
+    }
+    private void Awake()
+    {
+        
+    }
+    public void TakeDamage(int damageTaken)
+    {
+        if (defence > 0)
+        {
+            damageTaken = damageTaken - defence;
+        }
+        if (health - damageTaken > 0)
+        {
+            health = health - damageTaken;
+        }
+        else
+        {
+            health = 0;
+            GameManager.instance.GameWon();
+        }
     }
 }

@@ -36,18 +36,30 @@ public class EventQueue : MonoBehaviour
     {
         if (gameEvent is PlayerAttackEvent playerAttack)
         {
+            playerAttack.Target.TakeDamage(playerAttack.Damage);
+
             Debug.Log($"Player attacks {playerAttack.Target} for {playerAttack.Damage} damage");
+            yield return new WaitForSeconds(1); //do animation here
+        }
+        else if (gameEvent is PlayerDefenceEvent playerDefence)
+        {
+            playerDefence.Target.defence = playerDefence.Target.defence + playerDefence.Defence;
+            playerDefence.Target.playerUI.UpdateDefence(playerDefence.Target.defence);
+
+            Debug.Log($"Player defends for {playerDefence.Defence} defence");
             yield return new WaitForSeconds(1); //do animation here
         }
         else if (gameEvent is EnemyAttackEvent enemyAttack)
         {
             enemyAttack.Target.TakeDamage(enemyAttack.Damage);
+
             Debug.Log($"Enemy attacks {enemyAttack.Target} for {enemyAttack.Damage} damage");
             yield return new WaitForSeconds(1); //do animation here
         }
         else if (gameEvent is EnemyDefenceEvent enemyDefence)
         {
             enemyDefence.Target.defence = enemyDefence.Target.defenceAmount;
+
             Debug.Log($"Enemy defends for {enemyDefence.Defence} defence");
             yield return new WaitForSeconds(1);
         }
@@ -61,6 +73,7 @@ public class EventQueue : MonoBehaviour
             {
                 enemyHeal.Health = enemyHeal.Target.maxHealth;
             }
+
             Debug.Log($"Enemy Heals for {enemyHeal.healAmount} health");
             yield return new WaitForSeconds(1);
 

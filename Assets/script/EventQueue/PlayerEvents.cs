@@ -14,4 +14,15 @@ public class PlayerAttackEvent : GameEvent
         Damage = damage;
     }
 }
+public class PlayerDefenceEvent : GameEvent
+{
+    public Player Target;
+    public int Defence;
+
+    public PlayerDefenceEvent(Player target, int defence)
+    {
+        Target = target;
+        Defence = defence;
+    }
+}
 

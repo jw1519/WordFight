@@ -7,14 +7,17 @@ public class SetEnemy : MonoBehaviour
     public Enemy enemy;
     public SpriteRenderer actionrenderer;
     Player player;
+    public SetEnemyUI enemyUI;
     private void Awake()
     {
         player = FindAnyObjectByType<Player>();
+        enemyUI = GetComponent<SetEnemyUI>();
         SelectNextAction();
     }
 
     public void SelectNextAction()
     {
+        enemyUI.UpdateHealth(enemy);
         EnemyAction action = GetRandomEnumValue<EnemyAction>();
         enemy.actionForThisTurn = action;
 
@@ -65,23 +68,6 @@ public class SetEnemy : MonoBehaviour
                 EndTurn();
                 return;
         }
-    }
-    public void TakeDamnage(int damageTaken)
-    {
-        if (enemy.defence > 0)
-        {
-            damageTaken = damageTaken - enemy.defence;
-        }
-        if (enemy.health - damageTaken > 0)
-        {
-            enemy.health = enemy.health - damageTaken;
-        }
-        else
-        {
-            enemy.health = 0;
-            GameManager.instance.GameWon();
-        }
-        GetComponent<SetEnemyUI>().UpdateHealth(enemy);
     }
     public void EndTurn()
     {

@@ -10,9 +10,11 @@ public class AttackCard : Card, ICard
     public void Play()
     {
         SetEnemy setEnemy = FindFirstObjectByType<SetEnemy>();
-        if (setEnemy != null)
+        Enemy enemy = FindFirstObjectByType<Enemy>();
+        if (enemy != null)
         {
-            setEnemy.TakeDamnage(value);
+            EventQueue.EnqueueEvent(new PlayerAttackEvent(enemy, value));
+            setEnemy.gameObject.GetComponent<SetEnemyUI>().UpdateHealth(enemy);
         }
     }
 }
