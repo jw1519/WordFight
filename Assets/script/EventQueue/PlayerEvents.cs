@@ -1,5 +1,3 @@
-
-public abstract class GameEvent { }
 public class PlayerAttackEvent : GameEvent
 {
     public Enemy Target;
