@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, ITakeDamage
 {
     public int health = 30;
     public int maxHealth = 30;
