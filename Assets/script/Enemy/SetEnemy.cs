@@ -5,7 +5,7 @@ using static Enemy;
 public class SetEnemy : MonoBehaviour
 {
     public Enemy enemy;
-    public SpriteRenderer actionrenderer;
+    public SpriteRenderer actionRenderer;
     Player player;
     public SetEnemyUI enemyUI;
     private void Awake()
@@ -23,11 +23,11 @@ public class SetEnemy : MonoBehaviour
         switch (enemy.actionForThisTurn)
         {
             case EnemyAction.Attack:
-                actionrenderer.sprite = enemy.attackSprite;
+                actionRenderer.sprite = enemy.attackSprite;
                 return;
 
             case EnemyAction.Defend:
-                actionrenderer.sprite = enemy.defenceSprite;
+                actionRenderer.sprite = enemy.defenceSprite;
                 return;
 
             case EnemyAction.Heal:
@@ -36,7 +36,7 @@ public class SetEnemy : MonoBehaviour
                     SelectNextAction();
                     return;
                 }
-                actionrenderer.sprite = enemy.abilitySprite;
+                actionRenderer.sprite = enemy.abilitySprite;
                 return;
         }  
     }

@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class DifficultyPanel : MonoBehaviour
 {
-    public List<Enemy> enemyList;
     Enemy.EnemyDifficulty difficulty;
     SetDifficulty setDifficulty;
 

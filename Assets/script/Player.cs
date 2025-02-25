@@ -12,7 +12,10 @@ public class Player : MonoBehaviour, ITakeDamage
     public void Awake()
     {
         playerUI = GetComponent<SetPlayerUI>();
-        playerUI.UpdatePlayerHealth(this);
+        if (playerUI != null)
+        {
+            playerUI.UpdatePlayerHealth(this);
+        }
     }
     public void RemoveDecorator()
     {
@@ -23,9 +26,19 @@ public class Player : MonoBehaviour, ITakeDamage
     }
     public void TakeDamage(int damageTaken)
     {
+        //check for defences
         if (defence > 0)
         {
-            damageTaken = damageTaken - defence;
+            if (defence >= damageTaken)
+            {
+                defence = defence - damageTaken;
+                damageTaken = 0;
+            }
+            else
+            {
+                damageTaken = damageTaken - defence;
+                defence = 0;
+            }
         }
         if (health - damageTaken > 0)
         {
@@ -36,6 +49,9 @@ public class Player : MonoBehaviour, ITakeDamage
             health = 0;
             GameManager.instance.Gameover();
         }
-        playerUI.UpdatePlayerHealth(this);
+        if (playerUI != null)
+        {
+            playerUI.UpdatePlayerHealth(this);
+        }
     }
 }

@@ -35,9 +35,19 @@ public class Enemy : ScriptableObject, ITakeDamage
     }
     public void TakeDamage(int damageTaken)
     {
+        //check for defences
         if (defence > 0)
         {
-            damageTaken = damageTaken - defence;
+            if (defence >= damageTaken)
+            {
+                defence = defence - damageTaken;
+                damageTaken = 0;
+            }
+            else
+            {
+                damageTaken = damageTaken - defence;
+                defence = 0;
+            }
         }
         if (health - damageTaken > 0)
         {
