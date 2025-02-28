@@ -4193,7 +4193,7 @@ MonoBehaviour:
   hand: []
   discard: []
   deckAmountText: {fileID: 124066123}
-  DiscardedAmountText: {fileID: 1269850591}
+  discardedAmountText: {fileID: 0}
 --- !u!1 &1514007451
 GameObject:
   m_ObjectHideFlags: 0
@@ -4428,7 +4428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: a2698edf9ae2db242938cb82b60c36f2, type: 2}
-  actionrenderer: {fileID: 847532938}
+  actionRenderer: {fileID: 0}
   enemyUI: {fileID: 0}
 --- !u!114 &1583372446
 MonoBehaviour:
@@ -6748,10 +6748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94db96ce9d7b9ca48ade54a4d748f11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyList:
-  - {fileID: 11400000, guid: a2698edf9ae2db242938cb82b60c36f2, type: 2}
-  - {fileID: 11400000, guid: 43659a56ead5eab4bb22099bdd281198, type: 2}
-  - {fileID: 11400000, guid: da8e06ba400af3146975e9dedded0e04, type: 2}
 --- !u!114 &8438324148955565093
 MonoBehaviour:
   m_ObjectHideFlags: 0

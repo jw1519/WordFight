@@ -20,7 +20,7 @@ public class CardManager : MonoBehaviour
 
     [Header("Text")]
     public TextMeshProUGUI deckAmountText;
-    public TextMeshProUGUI DiscardedAmountText;
+    public TextMeshProUGUI discardedAmountText;
     private void Awake()
     {
         if (instance == null)
@@ -88,6 +88,6 @@ public class CardManager : MonoBehaviour
             child.SetParent(discardedCards);
             child.gameObject.SetActive(false);
         }
-        DiscardedAmountText.SetText(discard.Count.ToString());
+        discardedAmountText.SetText(discard.Count.ToString());
     }
 }
