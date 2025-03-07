@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +14,6 @@ public class SetDifficulty : MonoBehaviour
                 setEnemy = FindAnyObjectByType<SetEnemy>();
                 setEnemy.enemy = Instantiate(enemy);
                 setEnemy.enemyUI.UpdateHealth(setEnemy.enemy);
-                
             }
         }
         GameManager.instance.BeginTurn();
