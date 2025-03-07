@@ -50,6 +50,11 @@ public class CardManager : MonoBehaviour
                 }
             }
             deckAmountText.SetText(deck.Count.ToString());
+            //if doesnt have any vowels draw a new hand
+            if (CheckForVowels() == false)
+            {
+                DrawCards();
+            }
         }
         else
         {
@@ -89,5 +94,17 @@ public class CardManager : MonoBehaviour
             child.gameObject.SetActive(false);
         }
         discardedAmountText.SetText(discard.Count.ToString());
+    }
+    // check if hand contains at least one vowel
+    public bool CheckForVowels()
+    {
+        foreach (GameObject go in hand)
+        {
+            if (go.GetComponent<SetCard>().card.isVowel == true)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
