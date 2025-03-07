@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   letter: A
   value: 1
+  isVowel: 1
   cardType: 1
-  player: {fileID: 0}
