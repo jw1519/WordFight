@@ -12,7 +12,7 @@ public class ActionScrollRect : MonoBehaviour
     }
     public void AddText(TextMeshProUGUI text)
     {
-        if (actionTextContainer.childCount == 5)
+        if (actionTextContainer.childCount >= 5)
         {
             Destroy(actionTextContainer.GetChild(0).gameObject);
         }

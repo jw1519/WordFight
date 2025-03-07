@@ -1,19 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class EventQueue : MonoBehaviour
 {
     private static Queue<GameEvent> eventQueue = new Queue<GameEvent>();
     private static bool isProcessing = false;
-    public static EventQueue instance;
+    private static EventQueue instance;
 
     private void Awake()
     {
         instance = this;
     }
-
     public static void EnqueueEvent(GameEvent gameEvent)
     {
         eventQueue.Enqueue(gameEvent);
@@ -32,7 +30,6 @@ public class EventQueue : MonoBehaviour
         }
         isProcessing = false;
     }
-
     private static IEnumerator HandleEvent(GameEvent gameEvent)
     {
         if (gameEvent is PlayerAttackEvent playerAttack)
@@ -68,6 +65,7 @@ public class EventQueue : MonoBehaviour
             {
                 enemyHeal.Health = enemyHeal.Target.maxHealth;
             }
+            enemyHeal.UI.UpdateHealth(enemyHeal.Target);
             yield return new WaitForSeconds(1);
 
         }
