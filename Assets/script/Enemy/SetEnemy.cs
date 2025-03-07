@@ -52,17 +52,20 @@ public class SetEnemy : MonoBehaviour
         {
             case EnemyAction.Attack:
                 EventQueue.EnqueueEvent(new EnemyAttackEvent(player, enemy.damage));
+                EventQueue.instance.Display(new EnemyAttackEvent(player, enemy.damage));
                 EndTurn();
                 return;
 
             case EnemyAction.Defend:
                 EventQueue.EnqueueEvent(new EnemyDefenceEvent(enemy, enemy.defenceAmount));
+                EventQueue.instance.Display(new EnemyDefenceEvent(enemy, enemy.defenceAmount));
                 GetComponent<SetEnemyUI>().UpdateDefence(enemy.defenceAmount);
                 EndTurn();
                 return;
 
             case EnemyAction.Heal:
                 EventQueue.EnqueueEvent(new EnemyHealEvent(enemy, enemy.healAmount, enemy.health));
+                EventQueue.instance.Display(new EnemyHealEvent(enemy, enemy.healAmount, enemy.health));
                 EndTurn();
                 return;
         }

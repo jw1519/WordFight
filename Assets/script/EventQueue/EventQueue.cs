@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EventQueue : MonoBehaviour
 {
     private static Queue<GameEvent> eventQueue = new Queue<GameEvent>();
     private static bool isProcessing = false;
-    private static EventQueue instance;
+    public static EventQueue instance;
+
+    public Transform actionTextContainer;
+    public TextMeshProUGUI text;
 
     private void Awake()
     {
@@ -38,8 +42,6 @@ public class EventQueue : MonoBehaviour
         {
             playerAttack.Target.TakeDamage(playerAttack.Damage);
             playerAttack.EnemyUI.UpdateHealth(playerAttack.Target);
-
-            Debug.Log($"Player attacks {playerAttack.Target} for {playerAttack.Damage} damage");
             yield return new WaitForSeconds(1); //do animation here
         }
         else if (gameEvent is PlayerDefenceEvent playerDefence)
@@ -47,21 +49,16 @@ public class EventQueue : MonoBehaviour
             playerDefence.Target.defence = playerDefence.Target.defence + playerDefence.Defence;
             playerDefence.Target.playerUI.UpdateDefence(playerDefence.Target.defence);
 
-            Debug.Log($"Player defends for {playerDefence.Defence} defence");
             yield return new WaitForSeconds(1); //do animation here
         }
         else if (gameEvent is EnemyAttackEvent enemyAttack)
         {
             enemyAttack.Target.TakeDamage(enemyAttack.Damage);
-
-            Debug.Log($"Enemy attacks {enemyAttack.Target} for {enemyAttack.Damage} damage");
             yield return new WaitForSeconds(1); //do animation here
         }
         else if (gameEvent is EnemyDefenceEvent enemyDefence)
         {
             enemyDefence.Target.defence = enemyDefence.Target.defenceAmount;
-
-            Debug.Log($"Enemy defends for {enemyDefence.Defence} defence");
             yield return new WaitForSeconds(1);
         }
         else if (gameEvent is EnemyHealEvent enemyHeal)
@@ -74,10 +71,32 @@ public class EventQueue : MonoBehaviour
             {
                 enemyHeal.Health = enemyHeal.Target.maxHealth;
             }
-
-            Debug.Log($"Enemy Heals for {enemyHeal.healAmount} health");
             yield return new WaitForSeconds(1);
 
         }
+    }
+    public void Display(GameEvent gameEvent)
+    {
+        if (gameEvent is PlayerAttackEvent playerAttack)
+        {
+            text.text = $"Player attacks {playerAttack.Target} for {playerAttack.Damage} damage";
+        }
+        else if (gameEvent is PlayerDefenceEvent playerDefence)
+        {
+            text.text = $"Player defends for {playerDefence.Defence} defence";
+        }
+        else if (gameEvent is EnemyAttackEvent enemyAttack)
+        {
+            text.text = $"Enemy attacks {enemyAttack.Target} for {enemyAttack.Damage} damage";
+        }
+        else if (gameEvent is EnemyDefenceEvent enemyDefence)
+        {
+            text.text = $"Enemy defends for {enemyDefence.Defence} defence";
+        }
+        else if (gameEvent is EnemyHealEvent enemyHeal)
+        {
+            text.text = $"Enemy Heals for {enemyHeal.healAmount} health";
+        }
+        Instantiate(text, actionTextContainer);
     }
 }
