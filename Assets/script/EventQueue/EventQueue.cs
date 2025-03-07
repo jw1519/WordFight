@@ -9,9 +9,6 @@ public class EventQueue : MonoBehaviour
     private static bool isProcessing = false;
     public static EventQueue instance;
 
-    public Transform actionTextContainer;
-    public TextMeshProUGUI text;
-
     private void Awake()
     {
         instance = this;
@@ -74,29 +71,5 @@ public class EventQueue : MonoBehaviour
             yield return new WaitForSeconds(1);
 
         }
-    }
-    public void Display(GameEvent gameEvent)
-    {
-        if (gameEvent is PlayerAttackEvent playerAttack)
-        {
-            text.text = $"Player attacks {playerAttack.Target} for {playerAttack.Damage} damage";
-        }
-        else if (gameEvent is PlayerDefenceEvent playerDefence)
-        {
-            text.text = $"Player defends for {playerDefence.Defence} defence";
-        }
-        else if (gameEvent is EnemyAttackEvent enemyAttack)
-        {
-            text.text = $"Enemy attacks {enemyAttack.Target} for {enemyAttack.Damage} damage";
-        }
-        else if (gameEvent is EnemyDefenceEvent enemyDefence)
-        {
-            text.text = $"Enemy defends for {enemyDefence.Defence} defence";
-        }
-        else if (gameEvent is EnemyHealEvent enemyHeal)
-        {
-            text.text = $"Enemy Heals for {enemyHeal.healAmount} health";
-        }
-        Instantiate(text, actionTextContainer);
     }
 }

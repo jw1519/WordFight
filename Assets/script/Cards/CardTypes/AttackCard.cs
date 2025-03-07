@@ -14,7 +14,7 @@ public class AttackCard : Card, ICard
         if (enemy != null)
         {
             EventQueue.EnqueueEvent(new PlayerAttackEvent(enemy, value, setEnemy.enemyUI));
-            EventQueue.instance.Display(new PlayerAttackEvent(enemy, value, setEnemy.enemyUI));
+            ActionScrollRect.instance.Display(new PlayerAttackEvent(enemy, value, setEnemy.enemyUI));
         }
     }
 }
