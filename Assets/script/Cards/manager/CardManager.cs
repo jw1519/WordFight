@@ -14,9 +14,10 @@ public class CardManager : MonoBehaviour
     public Transform discardedCards;
 
     [Header("Lists")]
-    public List<GameObject> deck = new List<GameObject>();
-    public List<GameObject> hand = new List<GameObject>();
-    public List<GameObject> discard = new List<GameObject>();
+    public List<GameObject> deck = new();
+    public List<GameObject> hand = new();
+    public List<GameObject> discard = new();
+    public List<GameObject> savedCards = new();
 
     [Header("Text")]
     public TextMeshProUGUI deckAmountText;
