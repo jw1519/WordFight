@@ -15,6 +15,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     public void OnBeginDrag(PointerEventData eventData)
     {
         parentAfterDrag = transform.parent;
+        parentAfterDrag.gameObject.GetComponent<CardSlots>().cards.Remove(gameObject);
         transform.SetParent(transform.root);
         //transform.SetAsFirstSibling();
         canvasGroup.blocksRaycasts = false;
