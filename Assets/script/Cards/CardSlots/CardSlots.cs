@@ -5,11 +5,13 @@ using UnityEngine.EventSystems;
 
 public class CardSlots : MonoBehaviour, IDropHandler
 {
+    public int maxCards;
     public List<GameObject> cards;
     public virtual void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
         {
+            
             eventData.pointerDrag.transform.SetParent(transform, false);
             if (!cards.Contains(eventData.pointerDrag.gameObject))
             {

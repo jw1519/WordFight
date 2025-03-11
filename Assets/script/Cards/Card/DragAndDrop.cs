@@ -34,7 +34,6 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
             transform.SetParent(parentAfterDrag);
             parentAfterDrag.GetComponent<CardSlots>().cards.Add(eventData.pointerDrag);
             parentAfterDrag.GetComponent<CardSlots>().UpdateCards();
-
         }
     }
 }

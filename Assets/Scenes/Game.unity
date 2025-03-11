@@ -1653,7 +1653,6 @@ RectTransform:
   - {fileID: 234763960}
   - {fileID: 1467315998}
   - {fileID: 958691343}
-  - {fileID: 951159516}
   - {fileID: 744412548}
   - {fileID: 1618043727}
   - {fileID: 125544937}
@@ -2516,37 +2515,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 1
---- !u!1 &951159515
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 951159516}
-  m_Layer: 0
-  m_Name: DiscardedCards
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &951159516
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951159515}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -61.136536, y: 13.804626, z: 3.5335736}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 397340567}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &958691342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4403,7 +4371,6 @@ MonoBehaviour:
   cards: {fileID: 110058700}
   handCards: {fileID: 234763960}
   useCards: {fileID: 1467315998}
-  discardedCards: {fileID: 951159516}
   deck: []
   hand: []
   discard: []
