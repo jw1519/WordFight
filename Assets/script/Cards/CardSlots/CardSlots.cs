@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardSlots : MonoBehaviour, IDropHandler
+public abstract class CardSlots : MonoBehaviour, IDropHandler
 {
     public List<GameObject> cards;
     public virtual void OnDrop(PointerEventData eventData)
