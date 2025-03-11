@@ -7,8 +7,6 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     CanvasGroup canvasGroup;
     RectTransform rectTransform;
 
-    GameObject placeholder = null;
-
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -17,11 +15,6 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     public void OnBeginDrag(PointerEventData eventData)
     {
         parentAfterDrag = transform.parent;
-
-        placeholder = new GameObject();
-        placeholder.transform.parent = parentAfterDrag;
-        placeholder.transform.localScale = gameObject.transform.localScale;
-
         parentAfterDrag.gameObject.GetComponent<CardSlots>().cards.Remove(gameObject);
         transform.SetParent(transform.root);
         canvasGroup.blocksRaycasts = false;
@@ -39,9 +32,8 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         if (transform.parent == transform.root)
         {
             transform.SetParent(parentAfterDrag);
-            parentAfterDrag.GetComponent<CardSlots>().cards.Add(eventData.pointerDrag);
-            parentAfterDrag.GetComponent<CardSlots>().UpdateCards();
+            parentAfterDrag.GetComponent<CardSlots>().cards.Add(eventData.pointerDrag);  
         }
-        Destroy(placeholder);
+        parentAfterDrag.GetComponent<CardSlots>().UpdateCards();
     }
 }

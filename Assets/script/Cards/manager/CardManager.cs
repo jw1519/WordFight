@@ -21,6 +21,8 @@ public class CardManager : MonoBehaviour
     [Header("Text")]
     public TextMeshProUGUI deckAmountText;
     public TextMeshProUGUI discardedAmountText;
+
+    CardSlots handSlot;
     private void Awake()
     {
         if (instance == null)
@@ -32,6 +34,7 @@ public class CardManager : MonoBehaviour
         {
             deck.Add(transform.gameObject);
         }
+        handSlot = handCards.GetComponent<CardSlots>();
     }
     public void DrawCards()
     {
@@ -47,15 +50,16 @@ public class CardManager : MonoBehaviour
                     RandomCard.transform.SetParent(handCards);
                     hand.Add(RandomCard);
                     deck.Remove(RandomCard);
+                    handSlot.cards.Add(RandomCard);
                 }
             }
-            deckAmountText.SetText(deck.Count.ToString());
-
             //if doesnt have any vowels draw a new hand
             if (CheckForVowels() == false)
             {
                 DrawCards();
             }
+            deckAmountText.SetText(deck.Count.ToString());
+            handCards.GetComponent<CardSlots>().UpdateCards();
         }
         else
         {
@@ -90,9 +94,10 @@ public class CardManager : MonoBehaviour
                 discard.Add(child.gameObject);
             }
         }
-        //discard any cards left in use cards
+        //discard any cards left in use cards and lists
         DiscardUsedCards();
         hand.Clear();
+        handSlot.cards.Clear();
     }
     public void DiscardUsedCards()
     {

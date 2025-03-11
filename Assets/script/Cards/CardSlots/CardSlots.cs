@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class CardSlots : MonoBehaviour, IDropHandler
 {
-    public int maxCards;
     public List<GameObject> cards;
     public virtual void OnDrop(PointerEventData eventData)
     {
@@ -13,9 +12,9 @@ public class CardSlots : MonoBehaviour, IDropHandler
         {
             
             eventData.pointerDrag.transform.SetParent(transform, false);
-            if (!cards.Contains(eventData.pointerDrag.gameObject))
+            if (!cards.Contains(eventData.pointerDrag))
             {
-                cards.Add(eventData.pointerDrag.gameObject);
+                cards.Add(eventData.pointerDrag);
             }
             UpdateCards();
         }
@@ -24,7 +23,7 @@ public class CardSlots : MonoBehaviour, IDropHandler
     {
         for (int i = 0; i < cards.Count; i++)
         {
-            cards[i].transform.localPosition = new Vector2(-i * 20, 0);
+            cards[i].transform.localPosition = new Vector2(i * 60, 0);
             cards[i].transform.localScale = new Vector2(1, 1);
         }
     }
