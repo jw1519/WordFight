@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7107218184073478818}
   - component: {fileID: 344073241830509113}
   - component: {fileID: 3659057723800801268}
-  - component: {fileID: 5804798360972878081}
   m_Layer: 5
   m_Name: Card
   m_TagString: card
@@ -120,18 +119,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &5804798360972878081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160398082852163787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58588d1bec1c3fd44aab4025dd5f4737, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4385630488377881760
 GameObject:
   m_ObjectHideFlags: 0
