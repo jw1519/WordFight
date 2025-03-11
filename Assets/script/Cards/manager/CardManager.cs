@@ -11,7 +11,6 @@ public class CardManager : MonoBehaviour
     public Transform cards;
     public Transform handCards;
     public Transform useCards;
-    public Transform discardedCards;
 
     [Header("Lists")]
     public List<GameObject> deck = new();
@@ -51,6 +50,7 @@ public class CardManager : MonoBehaviour
                 }
             }
             deckAmountText.SetText(deck.Count.ToString());
+
             //if doesnt have any vowels draw a new hand
             if (CheckForVowels() == false)
             {
@@ -71,6 +71,7 @@ public class CardManager : MonoBehaviour
     //discard any unused cards when turn ends
     public void DiscardCards()
     {
+        // add all cards in hand to discard list
         foreach (GameObject card in hand)
         {
             discard.Add(card);
@@ -79,8 +80,15 @@ public class CardManager : MonoBehaviour
         for (int i = handCards.childCount - 1; i >= 0; i--)
         {
             Transform child = handCards.GetChild(i);
-            child.SetParent(discardedCards);
+            child.SetParent(cards);
             child.gameObject.SetActive(false);
+
+            // remove from saved cards list if they are in it
+            if (savedCards.Contains(child.gameObject))
+            {
+                savedCards.Remove(child.gameObject);
+                discard.Add(child.gameObject);
+            }
         }
         //discard any cards left in use cards
         DiscardUsedCards();
@@ -91,8 +99,15 @@ public class CardManager : MonoBehaviour
         for (int i = useCards.childCount - 1; i >= 0; i--)
         {
             Transform child = useCards.GetChild(i);
-            child.SetParent(discardedCards);
+            child.SetParent(cards);
             child.gameObject.SetActive(false);
+
+            // remove from saved cards list if they are in it
+            if (savedCards.Contains(child.gameObject))
+            {
+                savedCards.Remove(child.gameObject);
+                discard.Add(child.gameObject);
+            }
         }
         discardedAmountText.SetText(discard.Count.ToString());
     }

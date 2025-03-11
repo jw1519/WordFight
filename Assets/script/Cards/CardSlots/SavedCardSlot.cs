@@ -8,7 +8,11 @@ public class SavedCardSlot: CardSlots
         base.OnDrop(eventData);
         if (eventData.pointerDrag != null)
         {
-            CardManager.instance.savedCards.Add(eventData.pointerDrag);
+            if (!CardManager.instance.savedCards.Contains(eventData.pointerDrag))
+            {
+                CardManager.instance.savedCards.Add(eventData.pointerDrag);
+                CardManager.instance.hand.Remove(eventData.pointerDrag);
+            }
         }
     }
     public override void UpdateCards()

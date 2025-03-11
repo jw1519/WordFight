@@ -17,7 +17,6 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         parentAfterDrag = transform.parent;
         parentAfterDrag.gameObject.GetComponent<CardSlots>().cards.Remove(gameObject);
         transform.SetParent(transform.root);
-        //transform.SetAsFirstSibling();
         canvasGroup.blocksRaycasts = false;
     }
 
@@ -33,6 +32,9 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         if (transform.parent == transform.root)
         {
             transform.SetParent(parentAfterDrag);
+            parentAfterDrag.GetComponent<CardSlots>().cards.Add(eventData.pointerDrag);
+            parentAfterDrag.GetComponent<CardSlots>().UpdateCards();
+
         }
     }
 }
