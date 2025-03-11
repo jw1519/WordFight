@@ -3,9 +3,11 @@ using UnityEngine.EventSystems;
 
 public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    private Transform parentAfterDrag;
-    private CanvasGroup canvasGroup;
-    private RectTransform rectTransform;
+    Transform parentAfterDrag;
+    CanvasGroup canvasGroup;
+    RectTransform rectTransform;
+
+    GameObject placeholder = null;
 
     private void Awake()
     {
@@ -15,6 +17,11 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     public void OnBeginDrag(PointerEventData eventData)
     {
         parentAfterDrag = transform.parent;
+
+        placeholder = new GameObject();
+        placeholder.transform.parent = parentAfterDrag;
+        placeholder.transform.localScale = gameObject.transform.localScale;
+
         parentAfterDrag.gameObject.GetComponent<CardSlots>().cards.Remove(gameObject);
         transform.SetParent(transform.root);
         canvasGroup.blocksRaycasts = false;
@@ -35,5 +42,6 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
             parentAfterDrag.GetComponent<CardSlots>().cards.Add(eventData.pointerDrag);
             parentAfterDrag.GetComponent<CardSlots>().UpdateCards();
         }
+        Destroy(placeholder);
     }
 }
