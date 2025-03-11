@@ -10,6 +10,7 @@ public abstract class Card : ScriptableObject
     {
         Attack,
         Defence,
-        Ability
+        Strength,
+        Heal,
     }
 }

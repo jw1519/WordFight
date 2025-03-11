@@ -5,7 +5,7 @@ public class StrengthBoostCard : Card, ICard
 {
     private void OnEnable()
     {
-        cardType = CardType.Ability;
+        cardType = CardType.Strength;
     }
     public void Play()
     {

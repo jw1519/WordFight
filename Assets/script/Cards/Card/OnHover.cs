@@ -8,4 +8,8 @@ public class OnHover : MonoBehaviour
     {
         Debug.Log("hover");
     }
+    private void OnMouseExit()
+    {
+        
+    }
 }

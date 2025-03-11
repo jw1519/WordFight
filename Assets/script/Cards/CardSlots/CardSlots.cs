@@ -1,4 +1,4 @@
-// needs to go on any thing the card can be dropped on
+// base class for objects that need to hold cards must have
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;

@@ -18,6 +18,10 @@ public class SavedCardSlot: CardSlots
                 }
             }
         }
+        else
+        {
+            Debug.Log("Only 5 cards can be saved");
+        }
     }
     public override void UpdateCards()
     {

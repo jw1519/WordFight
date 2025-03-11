@@ -7,7 +7,7 @@ public class HealCard : Card, ICard
     Player player;
     private void OnEnable()
     {
-        cardType = CardType.Ability;
+        cardType = CardType.Heal;
         player = FindObjectOfType<Player>();
     }
     public void Play()
@@ -22,6 +22,7 @@ public class HealCard : Card, ICard
             {
                 player.health = player.maxHealth;
             }
+            Debug.Log("healed");
         }
         
     }
