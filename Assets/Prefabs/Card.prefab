@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5394846610878019420}
   - component: {fileID: 7107218184073478818}
   - component: {fileID: 344073241830509113}
+  - component: {fileID: -538286128032245905}
   - component: {fileID: 3659057723800801268}
   m_Layer: 5
   m_Name: Card
@@ -105,6 +106,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8087d3073c35ff47be2da948b41b0f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentAfterDrag: {fileID: 0}
+  isDragging: 0
+--- !u!114 &-538286128032245905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160398082852163787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52be1e6067d8954fb0722ba07ecea67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!225 &3659057723800801268

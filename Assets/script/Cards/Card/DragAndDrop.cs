@@ -1,13 +1,14 @@
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    Transform parentAfterDrag;
+    public Transform parentAfterDrag;
     CanvasGroup canvasGroup;
     RectTransform rectTransform;
 
-    bool isDragging;
+    public bool isDragging;
 
     private void Awake()
     {
@@ -41,24 +42,5 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         parentAfterDrag.GetComponent<CardSlots>().UpdateCards();
         parentAfterDrag = transform.parent;
         isDragging = false;
-    }
-
-    int cardposition;
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (isDragging == false)
-        {
-            parentAfterDrag = transform.parent;
-            transform.SetParent(transform.root);
-        }
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if (isDragging == false)
-        {
-            transform.SetParent(parentAfterDrag);
-            parentAfterDrag.GetComponent<CardSlots>().UpdateCards();
-        }
     }
 }
