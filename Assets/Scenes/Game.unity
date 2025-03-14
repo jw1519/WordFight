@@ -207,8 +207,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1258111927}
-        m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
-        m_MethodName: OpenPausePanel
+        m_TargetAssemblyTypeName: BasePanel, scriptsAssemblyDefinition
+        m_MethodName: OpenPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

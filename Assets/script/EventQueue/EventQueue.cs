@@ -11,6 +11,7 @@ public class EventQueue : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        isProcessing = false;
     }
     public static void EnqueueEvent(GameEvent gameEvent)
     {
