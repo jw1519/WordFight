@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverPanel : MonoBehaviour
+public class GameOverPanel : BasePanel
 {
     public static GameOverPanel instance;
 
@@ -12,7 +12,7 @@ public class GameOverPanel : MonoBehaviour
     public void Awake()
     {
         instance = this;
-        gameObject.SetActive(false);
+        OpenPanel();
     }
 
     public void SetStats()
