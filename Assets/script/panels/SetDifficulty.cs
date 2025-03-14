@@ -1,3 +1,4 @@
+//sets the difficulty of the enemy
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,3 +1,4 @@
+//Manages dealing and discarding cards
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;

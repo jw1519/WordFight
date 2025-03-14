@@ -1,4 +1,4 @@
-// base class for objects that need to hold cards must have
+// base class for objects that need to hold cards 
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;

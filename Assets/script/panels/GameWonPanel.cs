@@ -2,7 +2,6 @@ using UnityEngine.SceneManagement;
 
 public class GameWonPanel : BasePanel
 {
-
     public void Awake()
     {
         OpenPanel();

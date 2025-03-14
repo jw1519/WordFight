@@ -21,7 +21,6 @@ public class HealCard : Card, ICard
             {
                 player.health = player.maxHealth;
             }
-            Debug.Log("healed");
             player.GetComponent<SetPlayerUI>().UpdatePlayerHealth(player);
         }
         
