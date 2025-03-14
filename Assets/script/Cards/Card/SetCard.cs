@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SetCard : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class SetCard : MonoBehaviour
         else
         {
             description.SetText($"This card does {card.value} {card.cardType}");
+        }
+        if (card.sprite != null)
+        {
+            gameObject.GetComponent<Image>().sprite = card.sprite;
         }
     }
     public void SetCardvalues(int value)
