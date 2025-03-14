@@ -9,10 +9,11 @@ public class GameOverPanel : BasePanel
     [SerializeField] public int wordsUsed;
     public TextMeshProUGUI wordsUsedText;
 
-    public void Awake()
+    public override void Awake()
     {
+        base.Awake();
         instance = this;
-        OpenPanel();
+        ClosePanel();
     }
 
     public void SetStats()

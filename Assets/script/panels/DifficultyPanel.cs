@@ -4,8 +4,9 @@ public class DifficultyPanel : BasePanel
     Enemy.EnemyDifficulty difficulty;
     SetDifficulty setDifficulty;
 
-    public void Awake()
+    public override void Awake()
     {
+        base.Awake();
         setDifficulty = gameObject.GetComponent<SetDifficulty>();
     }
     public void Easy()

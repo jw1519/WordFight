@@ -2,9 +2,10 @@ using UnityEngine.SceneManagement;
 
 public class GameWonPanel : BasePanel
 {
-    public void Awake()
+    public override void Awake()
     {
-        OpenPanel();
+        base.Awake();
+        ClosePanel();
     }
     public void OpenMenuScene()
     {

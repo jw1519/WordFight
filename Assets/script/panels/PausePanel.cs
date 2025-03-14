@@ -3,8 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class PausePanel : BasePanel
 {
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
         ClosePanel();
     }
 
