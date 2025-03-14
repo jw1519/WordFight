@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameWonPanel : MonoBehaviour
+public class GameWonPanel : BasePanel
 {
-
-    public void Awake()
+    public override void Awake()
     {
-        gameObject.SetActive(false);
+        base.Awake();
+        ClosePanel();
     }
     public void OpenMenuScene()
     {

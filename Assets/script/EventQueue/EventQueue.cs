@@ -11,6 +11,7 @@ public class EventQueue : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        isProcessing = false;
     }
     public static void EnqueueEvent(GameEvent gameEvent)
     {
@@ -36,6 +37,7 @@ public class EventQueue : MonoBehaviour
         {
             playerAttack.Target.TakeDamage(playerAttack.Damage);
             playerAttack.EnemyUI.UpdateHealth(playerAttack.Target);
+            playerAttack.EnemyUI.UpdateDefence(playerAttack.Target.defence);
             yield return new WaitForSeconds(1); //do animation here
         }
         else if (gameEvent is PlayerDefenceEvent playerDefence)

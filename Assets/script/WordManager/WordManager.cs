@@ -42,7 +42,7 @@ public class WordManager : MonoBehaviour
                     iCard.Play();
                 }
             }
-            //GameOverPanel.instance.wordsUsed++;
+            GameOverPanel.instance.wordsUsed++;
             CardManager.instance.DiscardUsedCards();
         }
         else

@@ -2,17 +2,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverPanel : MonoBehaviour
+public class GameOverPanel : BasePanel
 {
     public static GameOverPanel instance;
 
     [SerializeField] public int wordsUsed;
     public TextMeshProUGUI wordsUsedText;
 
-    public void Awake()
+    public override void Awake()
     {
+        base.Awake();
         instance = this;
-        gameObject.SetActive(false);
+        ClosePanel();
     }
 
     public void SetStats()

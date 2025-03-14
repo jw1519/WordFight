@@ -1,4 +1,4 @@
-// base class for objects that need to hold cards must have
+// base class for objects that need to hold cards 
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -25,10 +25,6 @@ public abstract class CardSlots : MonoBehaviour, IDropHandler
         {
             cards[i].transform.localPosition = new Vector2(-100 + i * 80, 0);
             cards[i].transform.localScale = new Vector2(1, 1);
-        }
-        for (int i = 0; i < transform.childCount; i++)
-        {
-
         }
     }
 }
