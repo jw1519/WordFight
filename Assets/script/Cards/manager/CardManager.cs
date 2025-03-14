@@ -115,6 +115,7 @@ public class CardManager : MonoBehaviour
             }
         }
         discardedAmountText.SetText(discard.Count.ToString());
+        useCards.GetComponent<CardSlots>().cards.Clear();
     }
     // check if hand contains at least one vowel
     public bool CheckForVowels()
