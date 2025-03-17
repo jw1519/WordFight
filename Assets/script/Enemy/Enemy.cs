@@ -20,6 +20,7 @@ public class Enemy : ScriptableObject, ITakeDamage
     public Sprite attackSprite;
     public Sprite defenceSprite;
     public Sprite abilitySprite;
+    public Sprite enemySprite;
 
     public enum EnemyAction
     {

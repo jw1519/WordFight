@@ -15,6 +15,7 @@ public class SetDifficulty : MonoBehaviour
                 setEnemy = FindAnyObjectByType<SetEnemy>();
                 setEnemy.enemy = Instantiate(enemy);
                 setEnemy.enemyUI.UpdateHealth(setEnemy.enemy);
+                setEnemy.SetEnemySprite(enemy.enemySprite);
             }
         }
         GameManager.instance.BeginTurn();

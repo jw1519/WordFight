@@ -75,5 +75,9 @@ public class SetEnemy : MonoBehaviour
         SelectNextAction();
         GameManager.instance.BeginTurn();
     }
+    public void SetEnemySprite(Sprite sprite)
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+    }
 
 }
