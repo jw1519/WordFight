@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using static Enemy;
 
@@ -6,6 +7,7 @@ public class SetEnemy : MonoBehaviour
 {
     public Enemy enemy;
     public SpriteRenderer actionRenderer;
+    public TextMeshProUGUI actionText;
     Player player;
     public SetEnemyUI enemyUI;
     private void Awake()
@@ -24,10 +26,12 @@ public class SetEnemy : MonoBehaviour
         {
             case EnemyAction.Attack:
                 actionRenderer.sprite = enemy.attackSprite;
+                actionText.text = enemy.damage.ToString();
                 return;
 
             case EnemyAction.Defend:
                 actionRenderer.sprite = enemy.defenceSprite;
+                actionText.text = enemy.defenceAmount.ToString();
                 return;
 
             case EnemyAction.Heal:
@@ -37,6 +41,7 @@ public class SetEnemy : MonoBehaviour
                     return;
                 }
                 actionRenderer.sprite = enemy.abilitySprite;
+                actionText.text = enemy.healAmount.ToString();
                 return;
         }  
     }
