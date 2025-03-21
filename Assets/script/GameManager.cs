@@ -1,3 +1,4 @@
+/// <summary> this class manages the start and end of player turns, gameover and game won </summary>
 using UnityEngine;
 using UnityEngine.UI;
 

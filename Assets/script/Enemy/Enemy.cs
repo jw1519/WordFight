@@ -1,3 +1,4 @@
+/// <summary> this class is a basic class for enemies scriptable objects</summary>
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Enemy", menuName = "Enemy")]
