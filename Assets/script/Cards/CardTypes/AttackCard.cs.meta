@@ -3,7 +3,9 @@ guid: b379a914440afd54383f298bebe046f6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sprite: {instanceID: 0}
+  - endTurnButton: {fileID: 8914916354718439705, guid: eb9f92a86e7cb4e4f8a90565df35f8db, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

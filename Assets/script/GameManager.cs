@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         CardManager.instance.DrawCards();
         submitButton.gameObject.SetActive(true);
         endTurnButton.gameObject.SetActive(true);
+        EventQueue.instance.ResetProcessing();
     }
     public void EndTurn()
     {

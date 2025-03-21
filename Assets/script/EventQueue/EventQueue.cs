@@ -1,17 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EventQueue : MonoBehaviour
 {
     private static Queue<GameEvent> eventQueue = new Queue<GameEvent>();
     private static bool isProcessing = false;
-    private static EventQueue instance;
+    public static EventQueue instance;
+    public Button button;
+    private static Button endTurnButton;
 
     private void Awake()
     {
         instance = this;
         isProcessing = false;
+        endTurnButton = button;
+    }
+    public void ResetProcessing()
+    {
+        isProcessing = false;
+        endTurnButton.enabled = true;
+        eventQueue.Clear();
     }
     public static void EnqueueEvent(GameEvent gameEvent)
     {
@@ -19,6 +29,7 @@ public class EventQueue : MonoBehaviour
         if (!isProcessing)
         {
             isProcessing = true;
+            //endTurnButton.enabled = false;
             instance.StartCoroutine(ProcessEvents());
         }
     }
@@ -29,7 +40,10 @@ public class EventQueue : MonoBehaviour
             GameEvent gameEvent = eventQueue.Dequeue();
             yield return HandleEvent(gameEvent);
         }
+        //endTurnButton.enabled = true;
+        Debug.Log("got here");
         isProcessing = false;
+        eventQueue.Clear();
     }
     private static IEnumerator HandleEvent(GameEvent gameEvent)
     {
