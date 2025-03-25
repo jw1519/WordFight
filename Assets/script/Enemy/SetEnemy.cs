@@ -53,6 +53,7 @@ public class SetEnemy : MonoBehaviour
     public void StartTurn()
     {
         enemy.defence = 0;
+        GetComponent<SetEnemyUI>().UpdateDefence(enemy.defence);
         switch (enemy.actionForThisTurn)
         {
             case EnemyAction.Attack:
