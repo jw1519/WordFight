@@ -53,7 +53,7 @@ public class SetEnemy : MonoBehaviour
     public void StartTurn()
     {
         enemy.defence = 0;
-        GetComponent<SetEnemyUI>().UpdateDefence(enemy.defence);
+        enemyUI.UpdateDefence(enemy.defence);
         switch (enemy.actionForThisTurn)
         {
             case EnemyAction.Attack:
@@ -65,7 +65,7 @@ public class SetEnemy : MonoBehaviour
             case EnemyAction.Defend:
                 EventQueue.EnqueueEvent(new EnemyDefenceEvent(enemy, enemy.defenceAmount));
                 ActionScrollRect.instance.Display(new EnemyDefenceEvent(enemy, enemy.defenceAmount));
-                GetComponent<SetEnemyUI>().UpdateDefence(enemy.defenceAmount);
+                enemyUI.UpdateDefence(enemy.defenceAmount);
                 EndTurn();
                 return;
 
