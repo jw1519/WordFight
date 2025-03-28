@@ -70,8 +70,8 @@ public class SetEnemy : MonoBehaviour
                 return;
 
             case EnemyAction.Heal:
-                EventQueue.EnqueueEvent(new EnemyHealEvent(enemy, enemyUI, enemy.healAmount, enemy.health));
-                ActionScrollRect.instance.Display(new EnemyHealEvent(enemy, enemyUI, enemy.healAmount, enemy.health));
+                EventQueue.EnqueueEvent(new EnemyHealEvent(enemy, enemyUI));
+                ActionScrollRect.instance.Display(new EnemyHealEvent(enemy, enemyUI));
                 EndTurn();
                 return;
         }

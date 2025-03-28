@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Enemy", menuName = "Enemy")]
-public class Enemy : ScriptableObject, ITakeDamage
+public class Enemy : ScriptableObject, ITakeDamage, IHeal
 {
     public EnemyAction actionForThisTurn;
 
@@ -59,6 +59,18 @@ public class Enemy : ScriptableObject, ITakeDamage
         {
             health = 0;
             GameManager.instance.GameWon();
+        }
+    }
+
+    public void Heal(int healAmount)
+    {
+        if (health + healAmount <= maxHealth)
+        {
+            health += healAmount;
+        }
+        else
+        {
+            health = maxHealth;
         }
     }
 }

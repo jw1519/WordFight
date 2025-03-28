@@ -73,14 +73,7 @@ public class EventQueue : MonoBehaviour
         }
         else if (gameEvent is EnemyHealEvent enemyHeal)
         {
-            if (enemyHeal.Health + enemyHeal.healAmount <= enemyHeal.Target.maxHealth)
-            {
-                enemyHeal.Health += enemyHeal.healAmount;
-            }
-            else
-            {
-                enemyHeal.Health = enemyHeal.Target.maxHealth;
-            }
+            enemyHeal.Target.Heal(enemyHeal.healAmount);
             enemyHeal.UI.UpdateHealth(enemyHeal.Target);
             yield return new WaitForSeconds(1);
 
