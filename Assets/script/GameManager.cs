@@ -1,3 +1,4 @@
+/// <summary> this class manages the start and end of player turns, gameover and game won </summary>
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         CardManager.instance.DrawCards();
         submitButton.gameObject.SetActive(true);
         endTurnButton.gameObject.SetActive(true);
+        EventQueue.instance.ResetProcessing();
     }
     public void EndTurn()
     {

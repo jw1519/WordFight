@@ -5,7 +5,7 @@ public class CardPool : MonoBehaviour
 {
     public static CardPool instance;
     public List<GameObject> pooledCards;
-    public List<Card> cardSO;
+    public List<Card> cardSO = new List<Card>();
 
     public GameObject cardToPool;
     public Transform cardParent;
@@ -16,7 +16,10 @@ public class CardPool : MonoBehaviour
         {
             instance = this;
         }
-
+        SetUp();
+    }
+    public void SetUp()
+    {
         pooledCards = new List<GameObject>();
         GameObject gameObject;
         foreach (Card card in cardSO)

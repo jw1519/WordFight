@@ -3,7 +3,9 @@ guid: 86e8a25a2c7e1e644a089c5bd32b5c32
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cardToPool: {fileID: 160398082852163787, guid: c6ced23febaee0e4c8e704a45eee020a, type: 3}
+  - cardParent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

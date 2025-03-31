@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class Player : MonoBehaviour, ITakeDamage
+public class Player : MonoBehaviour, ITakeDamage, IHeal
 {
     public int health = 30;
     public int maxHealth = 30;
@@ -48,6 +48,21 @@ public class Player : MonoBehaviour, ITakeDamage
         {
             health = 0;
             GameManager.instance.Gameover();
+        }
+        if (playerUI != null)
+        {
+            playerUI.UpdatePlayerHealth(this);
+        }
+    }
+    public void Heal(int healAmount)
+    {
+        if (health + healAmount <= maxHealth)
+        {
+            health += healAmount;
+        }
+        else
+        {
+            health = maxHealth;
         }
         if (playerUI != null)
         {

@@ -1,4 +1,4 @@
-using System.Collections;
+/// <summary> this class manages the submited words and checking if they are valid </summary>
 using System.Collections.Generic;
 using UnityEngine;
 

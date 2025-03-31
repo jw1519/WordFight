@@ -13,16 +13,7 @@ public class HealCard : Card, ICard
     {
         if (player != null)
         {
-            if (player.health + value < player.maxHealth)
-            {
-                player.health += value;
-            }
-            else
-            {
-                player.health = player.maxHealth;
-            }
-            player.GetComponent<SetPlayerUI>().UpdatePlayerHealth(player);
+            player.Heal(value);
         }
-        
     }
 }

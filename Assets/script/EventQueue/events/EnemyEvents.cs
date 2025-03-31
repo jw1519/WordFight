@@ -15,14 +15,12 @@ public class EnemyHealEvent : GameEvent
     public Enemy Target;
     public SetEnemyUI UI;
     public int healAmount;
-    public int Health;
 
-    public EnemyHealEvent(Enemy target, SetEnemyUI ui, int heal, int health)
+    public EnemyHealEvent(Enemy target, SetEnemyUI ui)
     {
         Target = target;
         UI = ui;
-        healAmount = heal;
-        Health = health;
+        healAmount = target.healAmount;
     }
 }
 public class EnemyDefenceEvent : GameEvent
