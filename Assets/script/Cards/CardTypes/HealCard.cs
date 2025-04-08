@@ -13,7 +13,6 @@ public class HealCard : Card, ICard
     {
         if (player != null)
         {
-            //player.Heal(value);
             EventQueue.EnqueueEvent(new PlayerHealEvent(player, value));
             ActionScrollRect.instance.Display(new PlayerHealEvent(player, value));
         }

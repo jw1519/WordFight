@@ -29,7 +29,6 @@ public class EventQueue : MonoBehaviour
         if (!isProcessing)
         {
             isProcessing = true;
-            //endTurnButton.enabled = false;
             instance.StartCoroutine(ProcessEvents());
         }
     }
@@ -40,8 +39,6 @@ public class EventQueue : MonoBehaviour
             GameEvent gameEvent = eventQueue.Dequeue();
             yield return HandleEvent(gameEvent);
         }
-        //endTurnButton.enabled = true;
-        Debug.Log("got here");
         isProcessing = false;
         eventQueue.Clear();
     }
