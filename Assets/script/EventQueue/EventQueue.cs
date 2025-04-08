@@ -49,7 +49,7 @@ public class EventQueue : MonoBehaviour
     {
         if (gameEvent is PlayerAttackEvent playerAttack)
         {
-            playerAttack.Target.TakeDamage(playerAttack.Damage);
+            ApplyDamage(playerAttack.Target, playerAttack.Damage);
             playerAttack.EnemyUI.UpdateHealth(playerAttack.Target);
             playerAttack.EnemyUI.UpdateDefence(playerAttack.Target.defence);
             yield return new WaitForSeconds(1); //do animation here
@@ -58,12 +58,16 @@ public class EventQueue : MonoBehaviour
         {
             playerDefence.Target.defence = playerDefence.Target.defence + playerDefence.Defence;
             playerDefence.Target.playerUI.UpdateDefence(playerDefence.Target.defence);
-
+            yield return new WaitForSeconds(1); //do animation here
+        }
+        else if (gameEvent is PlayerHealEvent playerHeal)
+        {
+            ApplyHeal(playerHeal.Target, playerHeal.HealAmount);
             yield return new WaitForSeconds(1); //do animation here
         }
         else if (gameEvent is EnemyAttackEvent enemyAttack)
         {
-            enemyAttack.Target.TakeDamage(enemyAttack.Damage);
+            ApplyDamage(enemyAttack.Target, enemyAttack.Damage);
             yield return new WaitForSeconds(1); //do animation here
         }
         else if (gameEvent is EnemyDefenceEvent enemyDefence)
@@ -73,10 +77,18 @@ public class EventQueue : MonoBehaviour
         }
         else if (gameEvent is EnemyHealEvent enemyHeal)
         {
-            enemyHeal.Target.Heal(enemyHeal.healAmount);
+            ApplyHeal(enemyHeal.Target, enemyHeal.healAmount);
             enemyHeal.UI.UpdateHealth(enemyHeal.Target);
             yield return new WaitForSeconds(1);
 
         }
+    }
+    public static void ApplyDamage(ITakeDamage target, int damage)
+    {
+        target.TakeDamage(damage);
+    }
+    public static void ApplyHeal(IHeal target, int healAmount)
+    {
+        target.Heal(healAmount);
     }
 }

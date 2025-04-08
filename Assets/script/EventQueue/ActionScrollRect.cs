@@ -29,6 +29,10 @@ public class ActionScrollRect : MonoBehaviour
         {
             text.text = $"Player defends for {playerDefence.Defence} defence";
         }
+        else if (gameEvent is PlayerHealEvent playerHeal)
+        {
+            text.text = $"Player healed for {playerHeal.HealAmount} health";
+        }
         else if (gameEvent is EnemyAttackEvent enemyAttack)
         {
             text.text = $"Enemy attacks {enemyAttack.Target} for {enemyAttack.Damage} damage";

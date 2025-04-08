@@ -22,4 +22,15 @@ public class PlayerDefenceEvent : GameEvent
         Defence = defence;
     }
 }
+public class PlayerHealEvent : GameEvent
+{
+    public Player Target;
+    public int HealAmount;
+
+    public PlayerHealEvent(Player target, int healAmount)
+    {
+        Target = target;
+        HealAmount = healAmount;
+    }
+}
 
