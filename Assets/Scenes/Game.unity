@@ -933,11 +933,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291836831}
   m_CullTransparentMesh: 1
---- !u!1 &394258153 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2703970082178891581, guid: acb44aa08dbc8614fa0bf81b9bbd4fa9, type: 3}
-  m_PrefabInstance: {fileID: 8962657945262005832}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &394258154 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6130125556757700227, guid: acb44aa08dbc8614fa0bf81b9bbd4fa9, type: 3}
@@ -948,7 +943,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 260797249519966886, guid: acb44aa08dbc8614fa0bf81b9bbd4fa9, type: 3}
   m_PrefabInstance: {fileID: 8962657945262005832}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394258153}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af0ba775d6d24c2459697a9712214a40, type: 3}
@@ -2534,8 +2529,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   submitButton: {fileID: 1881245223}
   endTurnButton: {fileID: 1224163463}
-  gameOverPanel: {fileID: 1394796682}
-  gameWonPanel: {fileID: 394258153}
+  gameOverPanel: {fileID: 0}
+  gameWonPanel: {fileID: 0}
 --- !u!4 &1365296065
 Transform:
   m_ObjectHideFlags: 0
@@ -2602,11 +2597,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5bf2c48e7079e1a45a82bbe09d3fb2ac, type: 2}
   cardToPool: {fileID: 160398082852163787, guid: c6ced23febaee0e4c8e704a45eee020a, type: 3}
   cardParent: {fileID: 110058700}
---- !u!1 &1394796682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4146816914899377257, guid: d3f99d775c317db4f970a5547e3c843d, type: 3}
-  m_PrefabInstance: {fileID: 5549657880940039155}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1394796683 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 432502678330012292, guid: d3f99d775c317db4f970a5547e3c843d, type: 3}
@@ -2617,7 +2607,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7476285505851757320, guid: d3f99d775c317db4f970a5547e3c843d, type: 3}
   m_PrefabInstance: {fileID: 5549657880940039155}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394796682}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6e1d8131fb027740abc633db4eca070, type: 3}
