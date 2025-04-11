@@ -42,6 +42,8 @@ public class WordManager : MonoBehaviour
                     iCard.Play();
                 }
             }
+            GameWonPanel.amountOfWordsUsed++;
+            GameOverPanel.amountOfWordsUsed++;
             CardManager.instance.DiscardUsedCards();
         }
         else

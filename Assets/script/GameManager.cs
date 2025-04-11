@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public Button submitButton;
     public Button endTurnButton;
+    public int amountOfWordsUsed;
 
     GameOverPanel gameOverPanel;
     GameWonPanel gameWonPanel;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
                 gameWonPanel = panel.GetComponent<GameWonPanel>();
             }
         }
+        amountOfWordsUsed = 0;
     }
 
     public void BeginTurn()
@@ -54,11 +56,13 @@ public class GameManager : MonoBehaviour
     public void Gameover()
     {
         gameOverPanel.OpenPanel();
+        gameOverPanel.SetStats();
         Time.timeScale = 0;
     }
     public void GameWon()
     {
         gameWonPanel.OpenPanel();
+        gameWonPanel.SetStats();
         Time.timeScale = 0;
     }
 }
