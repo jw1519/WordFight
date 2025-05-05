@@ -12,6 +12,7 @@ public class Enemy : ScriptableObject, ITakeDamage, IHeal
     public int maxHealth;
     public int defence;
     public EnemyDifficulty difficulty;
+    public string weakness;
 
     [Header("Ability amounts")]
     public int healAmount;
