@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "characters", menuName = "Player")]
 public class PlayerSO : ScriptableObject, ITakeDamage, IHeal
