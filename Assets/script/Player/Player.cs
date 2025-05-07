@@ -2,10 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, ITakeDamage, IHeal
 {
-    public int health = 30;
-    public int maxHealth = 30;
-    public int defence;
-
+    public PlayerSO PlayerSO;
     public SetPlayerUI playerUI;
 
     public void Awake()
@@ -20,49 +17,49 @@ public class Player : MonoBehaviour, ITakeDamage, IHeal
     {
         GetComponent<AbilityManager>().RemoveDecorator("Strength");
         GetComponent<AbilityManager>().RemoveDecorator("Shield");
-        defence = 0;
-        EventQueue.EnqueueEvent(new PlayerDefenceEvent(this, defence));
+        PlayerSO.defence = 0;
+        EventQueue.EnqueueEvent(new PlayerDefenceEvent(this, PlayerSO.defence));
     }
     public void TakeDamage(int damageTaken)
     {
         //check for defences
-        if (defence > 0)
+        if (PlayerSO.defence > 0)
         {
-            if (defence >= damageTaken)
+            if (PlayerSO.defence >= damageTaken)
             {
-                defence = defence - damageTaken;
+                PlayerSO.defence = PlayerSO.defence - damageTaken;
                 damageTaken = 0;
             }
             else
             {
-                damageTaken = damageTaken - defence;
-                defence = 0;
+                damageTaken = damageTaken - PlayerSO.defence;
+                PlayerSO.defence = 0;
             }
         }
-        if (health - damageTaken > 0)
+        if (PlayerSO.health - damageTaken > 0)
         {
-            health = health - damageTaken;
+            PlayerSO.health = PlayerSO.health - damageTaken;
         }
         else
         {
-            health = 0;
+            PlayerSO.health = 0;
             GameManager.instance.Gameover();
         }
         if (playerUI != null)
         {
             playerUI.UpdatePlayerHealth(this);
-            playerUI.UpdateDefence(defence);
+            playerUI.UpdateDefence(PlayerSO.defence);
         }
     }
     public void Heal(int healAmount)
     {
-        if (health + healAmount <= maxHealth)
+        if (PlayerSO.health + healAmount <= PlayerSO.maxHealth)
         {
-            health += healAmount;
+            PlayerSO.health += healAmount;
         }
         else
         {
-            health = maxHealth;
+            PlayerSO.health = PlayerSO.maxHealth;
         }
         if (playerUI != null)
         {

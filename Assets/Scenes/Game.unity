@@ -2049,10 +2049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c55410040f6d9b4e8d562ac310983a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
-  maxHealth: 30
-  defence: 0
-  playerUI: {fileID: 0}
+  PlayerSO: {fileID: 11400000, guid: d6965b6245f065443a6a59a9c9883046, type: 2}
 --- !u!212 &991535681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2207,7 +2204,7 @@ MonoBehaviour:
   m_Content: {fileID: 2084930371}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135

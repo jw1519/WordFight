@@ -10,9 +10,9 @@ public class SetPlayerUI : MonoBehaviour
 
     public void UpdatePlayerHealth(Player player)
     {
-        playerHealthtext.SetText(player.health.ToString() + "/" + player.maxHealth);
-        healthBar.value = player.health;
-        if (player.health <= 0)
+        playerHealthtext.SetText(player.PlayerSO.health.ToString() + "/" + player.PlayerSO.maxHealth);
+        healthBar.value = player.PlayerSO.health;
+        if (player.PlayerSO.health <= 0)
         {
             Debug.Log("GameOver");
             GameManager.instance.Gameover();

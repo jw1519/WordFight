@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public abstract class PlayerSO : ScriptableObject, ITakeDamage, IHeal
+[CreateAssetMenu(fileName = "characters", menuName = "Player")]
+public class PlayerSO : ScriptableObject, ITakeDamage, IHeal
 {
     public int health = 30;
     public int maxHealth = 30;
