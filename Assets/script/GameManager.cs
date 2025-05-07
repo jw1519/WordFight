@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     GameOverPanel gameOverPanel;
     GameWonPanel gameWonPanel;
+    ShopPanel shopPanel;
 
     Player player;
     SetEnemy enemy;
@@ -34,6 +35,10 @@ public class GameManager : MonoBehaviour
             else if (panel.GetComponent<GameWonPanel>() != null)
             {
                 gameWonPanel = panel.GetComponent<GameWonPanel>();
+            }
+            else if (panel.GetComponent<ShopPanel>() != null)
+            {
+                shopPanel = panel.GetComponent<ShopPanel>();
             }
         }
         NewGame();
@@ -79,12 +84,9 @@ public class GameManager : MonoBehaviour
     {
         gameOverPanel.OpenPanel();
         gameOverPanel.SetStats();
-        Time.timeScale = 0;
     }
     public void GameWon()
     {
-        gameWonPanel.OpenPanel();
-        gameWonPanel.SetStats();
-        Time.timeScale = 0;
+        shopPanel.OpenPanel();
     }
 }
