@@ -54,7 +54,7 @@ public class EventQueue : MonoBehaviour
         else if (gameEvent is PlayerDefenceEvent playerDefence)
         {
             playerDefence.Target.PlayerSO.defence = playerDefence.Target.PlayerSO.defence + playerDefence.Defence;
-            playerDefence.Target.PlayerSO.playerUI.UpdateDefence(playerDefence.Target.PlayerSO.defence);
+            playerDefence.Target.playerUI.UpdateDefence(playerDefence.Target.PlayerSO.defence);
             yield return new WaitForSeconds(1); //do animation here
         }
         else if (gameEvent is PlayerHealEvent playerHeal)
