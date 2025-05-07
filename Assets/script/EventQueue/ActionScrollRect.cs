@@ -47,4 +47,11 @@ public class ActionScrollRect : MonoBehaviour
         }
         AddText(text);
     }
+    public void ClearActions()
+    {
+        while (actionTextContainer.childCount > 0)
+        {
+            Destroy(actionTextContainer.GetChild(0).gameObject);
+        }
+    }
 }

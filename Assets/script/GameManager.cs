@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
         }
         enemy = FindObjectOfType<SetEnemy>();
         player = FindObjectOfType<Player>();
+        
 
         foreach (BasePanel panel in UIManager.instance.panels)
         {
@@ -35,6 +36,27 @@ public class GameManager : MonoBehaviour
                 gameWonPanel = panel.GetComponent<GameWonPanel>();
             }
         }
+        NewGame();
+    }
+    public void NewGame()
+    {
+        //close panels
+        foreach (BasePanel panel in UIManager.instance.panels)
+        {
+            if (panel.GetComponent<DifficultyPanel>() != null)
+            {
+                panel.GetComponent<DifficultyPanel>().gameObject.SetActive(true);
+            }
+            else
+            {
+                panel.gameObject.SetActive(false);
+            }
+        }
+        //update player health
+        player.PlayerSO.health = player.PlayerSO.maxHealth;
+        player.playerUI.UpdatePlayerHealth(player);
+
+        FindFirstObjectByType<ActionScrollRect>().ClearActions();
         amountOfWordsUsed = 0;
     }
 

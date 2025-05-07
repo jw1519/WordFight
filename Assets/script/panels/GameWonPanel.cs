@@ -18,4 +18,8 @@ public class GameWonPanel : BasePanel
     {
         SceneManager.LoadScene("Menu");
     }
+    public void NewGame()
+    {
+        GameManager.instance.NewGame();
+    }
 }

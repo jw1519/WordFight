@@ -12,6 +12,7 @@ public class Player : MonoBehaviour, ITakeDamage, IHeal
         {
             playerUI.UpdatePlayerHealth(this);
         }
+        PlayerSO = Instantiate(PlayerSO);
     }
     public void RemoveDecorator()
     {
