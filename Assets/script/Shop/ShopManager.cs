@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    List <Item> items;
 
-    // Update is called once per frame
-    void Update()
+    public void AddItemToList(Item item)
     {
-        
+        items.Add(item);
+    }
+    public void RemoveItemFromList(Item item)
+    {
+        items.Remove(item);
     }
 }
