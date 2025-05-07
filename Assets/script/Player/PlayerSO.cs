@@ -1,27 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, ITakeDamage, IHeal
+public abstract class PlayerSO : ScriptableObject, ITakeDamage, IHeal
 {
     public int health = 30;
     public int maxHealth = 30;
     public int defence;
-
     public SetPlayerUI playerUI;
-
     public void Awake()
     {
-        playerUI = GetComponent<SetPlayerUI>();
         if (playerUI != null)
         {
-            playerUI.UpdatePlayerHealth(this);
+            //playerUI.UpdatePlayerHealth(this);
         }
-    }
-    public void RemoveDecorator()
-    {
-        GetComponent<AbilityManager>().RemoveDecorator("Strength");
-        GetComponent<AbilityManager>().RemoveDecorator("Shield");
-        defence = 0;
-        EventQueue.EnqueueEvent(new PlayerDefenceEvent(this, defence));
     }
     public void TakeDamage(int damageTaken)
     {
@@ -50,8 +42,7 @@ public class Player : MonoBehaviour, ITakeDamage, IHeal
         }
         if (playerUI != null)
         {
-            playerUI.UpdatePlayerHealth(this);
-            playerUI.UpdateDefence(defence);
+            //playerUI.UpdatePlayerHealth(this);
         }
     }
     public void Heal(int healAmount)
@@ -66,7 +57,7 @@ public class Player : MonoBehaviour, ITakeDamage, IHeal
         }
         if (playerUI != null)
         {
-            playerUI.UpdatePlayerHealth(this);
+            //playerUI.UpdatePlayerHealth(this);
         }
     }
 }
