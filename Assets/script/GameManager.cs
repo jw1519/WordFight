@@ -82,6 +82,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameWon()
     {
+        gameWonPanel.SetStats();
         gameWonPanel.OpenPanel();
     }
 }

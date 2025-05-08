@@ -26,6 +26,7 @@ public class Enemy : ScriptableObject, ITakeDamage, IHeal
 
     [Header("Extra")]
     public int goldEarnedOnDefeat;
+    bool isGameOver = false;
 
     public enum EnemyAction
     {
@@ -41,28 +42,31 @@ public class Enemy : ScriptableObject, ITakeDamage, IHeal
     }
     public void TakeDamage(int damageTaken)
     {
-        //check for defences
-        if (defence > 0)
+        //make sure its not called after game is over
+        if (!isGameOver)
         {
-            if (defence >= damageTaken)
+            if (defence > 0)
             {
-                defence = defence - damageTaken;
-                damageTaken = 0;
+                if (defence >= damageTaken)
+                {
+                    defence = defence - damageTaken;
+                    damageTaken = 0;
+                }
+                else
+                {
+                    damageTaken = damageTaken - defence;
+                    defence = 0;
+                }
+            }
+            if (health - damageTaken > 0)
+            {
+                health = health - damageTaken;
             }
             else
             {
-                damageTaken = damageTaken - defence;
-                defence = 0;
+                health = 0;
+                GameManager.instance.GameWon();
             }
-        }
-        if (health - damageTaken > 0)
-        {
-            health = health - damageTaken;
-        }
-        else
-        {
-            health = 0;
-            GameManager.instance.GameWon();
         }
     }
 

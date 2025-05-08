@@ -1808,6 +1808,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401031068}
   m_CullTransparentMesh: 1
+--- !u!114 &404100098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5299390939346378135, guid: acb44aa08dbc8614fa0bf81b9bbd4fa9, type: 3}
+  m_PrefabInstance: {fileID: 8962657945262005832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &413622400
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,7 +4126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthtext: {fileID: 2135262114}
   defenceText: {fileID: 291836833}
-  goldText: {fileID: 0}
+  goldText: {fileID: 624094343}
   healthBar: {fileID: 696591719}
 --- !u!1 &1008334160
 GameObject:
@@ -8860,7 +8871,7 @@ PrefabInstance:
     - target: {fileID: 260797249519966886, guid: acb44aa08dbc8614fa0bf81b9bbd4fa9, type: 3}
       propertyPath: goldEarnedText
       value: 
-      objectReference: {fileID: 624094343}
+      objectReference: {fileID: 404100098}
     - target: {fileID: 2703970082178891581, guid: acb44aa08dbc8614fa0bf81b9bbd4fa9, type: 3}
       propertyPath: m_Name
       value: GameWon

@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0ba775d6d24c2459697a9712214a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldEarnedText: {fileID: 0}
+  goldEarnedText: {fileID: 5299390939346378135}
 --- !u!114 &410891481564573541
 MonoBehaviour:
   m_ObjectHideFlags: 0

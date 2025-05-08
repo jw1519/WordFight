@@ -19,7 +19,7 @@ public class GameWonPanel : BasePanel
     {
         goldEarnedText.text = "Gold Earned: " + enemy.goldEarnedOnDefeat.ToString();
         player.gold += enemy.goldEarnedOnDefeat;
-        player.playerUI.UpdateGoldText(player.gold);// dont work yet
+        player.playerUI.UpdateGoldText(player.gold);
     }
     public void Continue()
     {
