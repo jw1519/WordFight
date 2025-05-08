@@ -4,7 +4,7 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     public static ShopManager instance;
-    List <Item> items;
+    List <BaseItem> items;
     BasePlayer player;
 
     private void Awake()
@@ -15,11 +15,11 @@ public class ShopManager : MonoBehaviour
         }
         player = FindFirstObjectByType<BasePlayer>();
     }
-    public void AddItemToList(Item item)
+    public void AddItemToList(BaseItem item)
     {
         items.Add(item);
     }
-    public void BuyItem(int price, Item item)
+    public void BuyItem(int price, BaseItem item)
     {
         if (player.gold - price >= 0)
         {

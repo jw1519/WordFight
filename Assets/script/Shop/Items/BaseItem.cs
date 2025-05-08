@@ -1,9 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Item : ScriptableObject
+public abstract class BaseItem : MonoBehaviour
 {
-    public string itemName;
     public string itemDescription;
+    public Sprite cardSprite;
     public int itemPrice;
 
     public void BuyItem()

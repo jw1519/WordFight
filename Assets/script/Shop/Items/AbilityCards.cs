@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IUseItem
+public class AbilityCards : BaseItem
 {
-    public void Use(Item item);
+
 }
