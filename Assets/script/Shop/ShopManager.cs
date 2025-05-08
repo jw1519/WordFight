@@ -21,7 +21,7 @@ public class ShopManager : MonoBehaviour
     }
     public void BuyItem(int price, Item item)
     {
-        if (player.money - price >= 0)
+        if (player.gold - price >= 0)
         {
             items.Remove(item);
             //add item to items UI

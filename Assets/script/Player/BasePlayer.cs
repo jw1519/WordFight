@@ -7,7 +7,7 @@ public abstract class BasePlayer : MonoBehaviour, ITakeDamage, IHeal
     public int health = 30;
     public int maxHealth = 30;
     public int defence;
-    public int money;
+    public int gold;
     public SetPlayerUI playerUI;
     public void RemoveDecorator()
     {

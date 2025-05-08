@@ -2612,7 +2612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10g
+  m_text: 0g
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4015,7 +4015,7 @@ MonoBehaviour:
   health: 30
   maxHealth: 30
   defence: 0
-  money: 0
+  gold: 0
   playerUI: {fileID: 0}
 --- !u!212 &991535681
 SpriteRenderer:
@@ -4115,6 +4115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthtext: {fileID: 2135262114}
   defenceText: {fileID: 291836833}
+  goldText: {fileID: 0}
   healthBar: {fileID: 696591719}
 --- !u!1 &1008334160
 GameObject:
@@ -8856,6 +8857,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 8962657945262005833}
+    - target: {fileID: 260797249519966886, guid: acb44aa08dbc8614fa0bf81b9bbd4fa9, type: 3}
+      propertyPath: goldEarnedText
+      value: 
+      objectReference: {fileID: 624094343}
     - target: {fileID: 2703970082178891581, guid: acb44aa08dbc8614fa0bf81b9bbd4fa9, type: 3}
       propertyPath: m_Name
       value: GameWon
