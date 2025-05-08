@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     GameWonPanel gameWonPanel;
     ShopPanel shopPanel;
 
-    Player player;
+    BasePlayer player;
     SetEnemy enemy;
     private void Awake()
     {
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
             }
         }
         //update player health
-        player.PlayerSO.health = player.PlayerSO.maxHealth;
+        player.health = player.maxHealth;
         player.playerUI.UpdatePlayerHealth(player);
 
         FindFirstObjectByType<ActionScrollRect>().ClearActions();

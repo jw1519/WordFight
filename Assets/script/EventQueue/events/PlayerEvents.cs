@@ -13,10 +13,10 @@ public class PlayerAttackEvent : GameEvent
 }
 public class PlayerDefenceEvent : GameEvent
 {
-    public Player Target;
+    public BasePlayer Target;
     public int Defence;
 
-    public PlayerDefenceEvent(Player target, int defence)
+    public PlayerDefenceEvent(BasePlayer target, int defence)
     {
         Target = target;
         Defence = defence;
@@ -24,10 +24,10 @@ public class PlayerDefenceEvent : GameEvent
 }
 public class PlayerHealEvent : GameEvent
 {
-    public Player Target;
+    public BasePlayer Target;
     public int HealAmount;
 
-    public PlayerHealEvent(Player target, int healAmount)
+    public PlayerHealEvent(BasePlayer target, int healAmount)
     {
         Target = target;
         HealAmount = healAmount;

@@ -1,17 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "characters", menuName = "Player")]
-public class PlayerSO : ScriptableObject, ITakeDamage, IHeal
+
+public abstract class BasePlayer : MonoBehaviour, ITakeDamage, IHeal
 {
     public int health = 30;
     public int maxHealth = 30;
     public int defence;
+    public int money;
     public SetPlayerUI playerUI;
-    public void Awake()
+    public void RemoveDecorator()
     {
-        if (playerUI != null)
-        {
-            //playerUI.UpdatePlayerHealth(this);
-        }
+        GetComponent<AbilityManager>().RemoveDecorator("Strength");
+        GetComponent<AbilityManager>().RemoveDecorator("Shield");
+        defence = 0;
+        EventQueue.EnqueueEvent(new PlayerDefenceEvent(this, defence));
     }
     public void TakeDamage(int damageTaken)
     {
@@ -40,7 +43,7 @@ public class PlayerSO : ScriptableObject, ITakeDamage, IHeal
         }
         if (playerUI != null)
         {
-            //playerUI.UpdatePlayerHealth(this);
+            playerUI.UpdatePlayerHealth(this);
         }
     }
     public void Heal(int healAmount)
@@ -55,7 +58,7 @@ public class PlayerSO : ScriptableObject, ITakeDamage, IHeal
         }
         if (playerUI != null)
         {
-            //playerUI.UpdatePlayerHealth(this);
+            playerUI.UpdatePlayerHealth(this);
         }
     }
 }
