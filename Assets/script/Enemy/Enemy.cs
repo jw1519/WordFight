@@ -24,6 +24,9 @@ public class Enemy : ScriptableObject, ITakeDamage, IHeal
     public Sprite abilitySprite;
     public Sprite enemySprite;
 
+    [Header("Extra")]
+    public int goldEarnedOnDefeat;
+
     public enum EnemyAction
     {
         Attack,

@@ -12,17 +12,16 @@ public class GameManager : MonoBehaviour
 
     GameOverPanel gameOverPanel;
     GameWonPanel gameWonPanel;
-    ShopPanel shopPanel;
 
     BasePlayer player;
-    SetEnemy enemy;
+    SetEnemy setEnemy;
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
-        enemy = FindObjectOfType<SetEnemy>();
+        setEnemy = FindObjectOfType<SetEnemy>();
         player = FindObjectOfType<Player>();
         
 
@@ -35,10 +34,6 @@ public class GameManager : MonoBehaviour
             else if (panel.GetComponent<GameWonPanel>() != null)
             {
                 gameWonPanel = panel.GetComponent<GameWonPanel>();
-            }
-            else if (panel.GetComponent<ShopPanel>() != null)
-            {
-                shopPanel = panel.GetComponent<ShopPanel>();
             }
         }
         NewGame();
@@ -78,7 +73,7 @@ public class GameManager : MonoBehaviour
         CardManager.instance.DiscardCards();
         submitButton.gameObject.SetActive(false);
         endTurnButton.gameObject.SetActive(false);
-        enemy.StartTurn();
+        setEnemy.StartTurn();
     }
     public void Gameover()
     {
@@ -87,6 +82,6 @@ public class GameManager : MonoBehaviour
     }
     public void GameWon()
     {
-        shopPanel.OpenPanel();
+        gameWonPanel.OpenPanel();
     }
 }

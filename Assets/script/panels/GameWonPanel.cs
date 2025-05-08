@@ -1,25 +1,25 @@
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class GameWonPanel : BasePanel
 {
     public static int amountOfWordsUsed;
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI goldEarnedText;
+    Enemy enemy;
+    ShopPanel shopPanel;
     public override void Awake()
     {
         base.Awake();
+        enemy = FindAnyObjectByType<SetEnemy>().enemy;
+        shopPanel = FindAnyObjectByType<ShopPanel>();
         ClosePanel();
     }
     public void SetStats()
     {
-        text.text = "Amount Of Words Used: " + amountOfWordsUsed.ToString();
+        goldEarnedText.text = "Gold Earned: " + enemy.goldEarnedOnDefeat.ToString();
     }
-    public void OpenMenuScene()
+    public void Continue()
     {
-        SceneManager.LoadScene("Menu");
-    }
-    public void NewGame()
-    {
-        GameManager.instance.NewGame();
+        shopPanel.OpenPanel();
+        ClosePanel();
     }
 }
