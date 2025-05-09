@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: N
   m_EditorClassIdentifier: 
   letter: N
-  value: 5
-  cardType: 0
+  value: 1
+  isVowel: 0
+  sprite: {fileID: 0}
+  cardType: 3

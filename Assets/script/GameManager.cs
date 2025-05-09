@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
     }
     public void Gameover()
     {
-        if (!isGameDone) 
+        if (isGameDone == false) 
         {
             gameOverPanel.OpenPanel();
             gameOverPanel.SetStats();
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameWon()
     {
-        if (!isGameDone)
+        if (isGameDone == false)
         {
             gameWonPanel.SetStats();
             gameWonPanel.OpenPanel();

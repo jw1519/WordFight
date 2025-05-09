@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   letter: P
   value: 3
+  isVowel: 0
+  sprite: {fileID: 0}
   cardType: 0

@@ -15,4 +15,5 @@ MonoBehaviour:
   letter: E
   value: 1
   isVowel: 1
+  sprite: {fileID: 0}
   cardType: 0
