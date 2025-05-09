@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class ShopPanel : BasePanel
 {
+    private void OnEnable()
+    {
+        ShopManager.instance.UpdatePrices();
+    }
 
 }

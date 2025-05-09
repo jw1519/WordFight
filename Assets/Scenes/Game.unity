@@ -3695,7 +3695,7 @@ MonoBehaviour:
   playerHealthtext: {fileID: 2135262114}
   defenceText: {fileID: 291836833}
   goldText: {fileID: 624094343}
-  amountOfItemsText: {fileID: 0}
+  amountOfItemsText: {fileID: 1675975624}
   healthBar: {fileID: 696591719}
 --- !u!1 &1008334160
 GameObject:
@@ -4241,6 +4241,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad7411eaacd18e40ba1a6560f6df5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1264181924 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5767572332958101426, guid: 324db3485aba83e48a2af449b23595bd, type: 3}
+  m_PrefabInstance: {fileID: 8109135023642418359}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c2f2028dca1214190de1b830dbde6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1269850589
 GameObject:
   m_ObjectHideFlags: 0
@@ -4774,7 +4785,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4940a5ff72b099249933bcba0202351b, type: 2}
   - {fileID: 11400000, guid: ac278d865bf22fe4d8e5fb86c94bde7e, type: 2}
   - {fileID: 11400000, guid: 5bf2c48e7079e1a45a82bbe09d3fb2ac, type: 2}
-  cardToPool: {fileID: 160398082852163787, guid: c6ced23febaee0e4c8e704a45eee020a, type: 3}
   cardParent: {fileID: 110058700}
 --- !u!224 &1394796683 stripped
 RectTransform:
@@ -5020,6 +5030,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4815567551154809220, guid: 3b8166be5a4aed746bb73a3f18c5c842, type: 3}
   m_PrefabInstance: {fileID: 7573204499307988692}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1468222262 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5840652791102767694, guid: 3b8166be5a4aed746bb73a3f18c5c842, type: 3}
+  m_PrefabInstance: {fileID: 7573204499307988692}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce0d927f85ae3f44895dbbd78f45802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1495601549
 GameObject:
   m_ObjectHideFlags: 0
@@ -5787,7 +5808,9 @@ MonoBehaviour:
   possibleItemsForShop:
   - {fileID: 5767572332958101426, guid: 324db3485aba83e48a2af449b23595bd, type: 3}
   - {fileID: 5840652791102767694, guid: 3b8166be5a4aed746bb73a3f18c5c842, type: 3}
-  itemsInShop: []
+  itemsInShop:
+  - {fileID: 1264181924}
+  - {fileID: 1468222262}
   cardPackContainer: {fileID: 535891899}
   abilityCardContainer: {fileID: 1275360476}
   cardPackContainerMaxAmount: 0
@@ -6737,8 +6760,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardPrefab: {fileID: 160398082852163787, guid: c6ced23febaee0e4c8e704a45eee020a, type: 3}
-  cardParent: {fileID: 110058700}
-  cards: []
 --- !u!4 &2110722414
 Transform:
   m_ObjectHideFlags: 0

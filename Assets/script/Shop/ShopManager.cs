@@ -54,9 +54,11 @@ public class ShopManager : MonoBehaviour
     {
         if (player.gold - price >= 0)
         {
-            itemsInShop.Remove(item);
+            
             player.gold -= price;
+            UpdatePrices();
             player.items.Add(item);
+            itemsInShop.Remove(item);
             player.playerUI.UpdateItemsText(player.itemsAmount);
             //add item to items UI
             return true;
@@ -65,6 +67,20 @@ public class ShopManager : MonoBehaviour
         {
             Debug.Log("Not enough money");
             return false;
+        }
+    }
+    public void UpdatePrices()
+    {
+        foreach (BaseItem item in itemsInShop)
+        {
+            if (item.itemPrice <= player.gold)
+            {
+                item.priceText.color = Color.green;
+            }
+            else
+            {
+                item.priceText.color = Color.red;
+            }
         }
     }
 }
