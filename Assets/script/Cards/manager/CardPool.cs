@@ -5,7 +5,7 @@ public class CardPool : MonoBehaviour
 {
     public static CardPool instance;
     public List<GameObject> pooledCards;
-    public List<Card> cardSO = new List<Card>();
+    public List<Card> cardSO = new();
 
     public Transform cardParent;
 
