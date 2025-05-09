@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour
                 gameWonPanel = panel.GetComponent<GameWonPanel>();
             }
         }
+    }
+    private void Start()
+    {
         NewGame();
     }
     public void NewGame()

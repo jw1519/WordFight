@@ -30,6 +30,9 @@ public class CardManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+    private void Start()
+    {
         //Adds all card to the deck list
         foreach (Transform transform in cards)
         {
