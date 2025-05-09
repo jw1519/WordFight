@@ -15,6 +15,6 @@ public class AbilityCards : BaseItem, IUse
     }
     public void Use()
     {
-        
+        Destroy(gameObject);
     }
 }

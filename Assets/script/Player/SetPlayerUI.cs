@@ -28,8 +28,8 @@ public class SetPlayerUI : MonoBehaviour
     {
         goldText.text = gold.ToString();
     }
-    public void UpdateItemsText(int itemsAmount)
+    public void UpdateItemsText(int itemsAmount, int maxItemAmount)
     {
-        amountOfItemsText.text = itemsAmount.ToString();
+        amountOfItemsText.text = itemsAmount.ToString() + "/" + maxItemAmount.ToString();
     }
 }

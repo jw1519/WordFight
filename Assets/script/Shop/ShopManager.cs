@@ -54,13 +54,16 @@ public class ShopManager : MonoBehaviour
     {
         if (player.gold - price >= 0)
         {
-            
+
             player.gold -= price;
             UpdatePrices();
-            player.items.Add(item);
             itemsInShop.Remove(item);
-            player.playerUI.UpdateItemsText(player.itemsAmount);
+            player.AddItem(item);
             //add item to items UI
+            if (item.type != BaseItem.ItemType.constantCardPack && item.type != BaseItem.ItemType.vowelCardpack)
+            {
+                
+            }
             return true;
         }
         else

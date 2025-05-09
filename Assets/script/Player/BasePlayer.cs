@@ -15,7 +15,7 @@ public abstract class BasePlayer : MonoBehaviour, ITakeDamage, IHeal
     [Header("PlayerItems")]
     public List <BaseItem> items;
     public int maxItems;
-    public int itemsAmount;
+    public Transform itemParent;
 
     public virtual void Awake()
     {
@@ -23,6 +23,7 @@ public abstract class BasePlayer : MonoBehaviour, ITakeDamage, IHeal
         if (playerUI != null)
         {
             playerUI.UpdatePlayerHealth(this);
+            playerUI.UpdateItemsText(items.Count, maxItems);
         }
     }
     public void RemoveDecorator()
@@ -77,5 +78,16 @@ public abstract class BasePlayer : MonoBehaviour, ITakeDamage, IHeal
         {
             playerUI.UpdatePlayerHealth(this);
         }
+    }
+    public void AddItem(BaseItem item)
+    {
+        item.transform.parent = itemParent;
+        items.Add(item);
+        playerUI.UpdateItemsText(items.Count, maxItems);
+    }
+    public void RemoveItem(BaseItem item)
+    {
+        items.Remove(item);
+        playerUI?.UpdateItemsText(items.Count, maxItems);
     }
 }
