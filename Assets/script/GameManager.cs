@@ -1,4 +1,5 @@
 /// <summary> this class manages the start and end of player turns, gameover and game won </summary>
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     BasePlayer player;
     SetEnemy setEnemy;
+    public bool isGameDone;
     private void Awake()
     {
         if (instance == null)
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
     }
     public void NewGame()
     {
+        isGameDone = false;
         //close panels
         foreach (BasePanel panel in UIManager.instance.panels)
         {
@@ -77,12 +80,18 @@ public class GameManager : MonoBehaviour
     }
     public void Gameover()
     {
-        gameOverPanel.OpenPanel();
-        gameOverPanel.SetStats();
+        if (!isGameDone) 
+        {
+            gameOverPanel.OpenPanel();
+            gameOverPanel.SetStats();
+        }
     }
     public void GameWon()
     {
-        gameWonPanel.SetStats();
-        gameWonPanel.OpenPanel();
+        if (!isGameDone)
+        {
+            gameWonPanel.SetStats();
+            gameWonPanel.OpenPanel();
+        }
     }
 }

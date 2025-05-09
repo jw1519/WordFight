@@ -9,6 +9,15 @@ public abstract class BasePlayer : MonoBehaviour, ITakeDamage, IHeal
     public int defence;
     public int gold;
     public SetPlayerUI playerUI;
+
+    public virtual void Awake()
+    {
+        playerUI = GetComponent<SetPlayerUI>();
+        if (playerUI != null)
+        {
+            playerUI.UpdatePlayerHealth(this);
+        }
+    }
     public void RemoveDecorator()
     {
         GetComponent<AbilityManager>().RemoveDecorator("Strength");
@@ -40,6 +49,7 @@ public abstract class BasePlayer : MonoBehaviour, ITakeDamage, IHeal
         {
             health = 0;
             GameManager.instance.Gameover();
+            GameManager.instance.isGameDone = true;
         }
         if (playerUI != null)
         {

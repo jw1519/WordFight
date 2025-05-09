@@ -4,9 +4,19 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     public static ShopManager instance;
-    List <BaseItem> items;
+
+    public List<BaseItem> possibleItemsForShop;
+
+    public Transform cardPackContainer;
+    public Transform abilityCardContainer;
+
+    public List <BaseItem> itemsInShop;
     BasePlayer player;
 
+    private void OnEnable()
+    {
+        AddItemToShop(possibleItemsForShop[0]);
+    }
     private void Awake()
     {
         if (instance == null)
@@ -15,20 +25,32 @@ public class ShopManager : MonoBehaviour
         }
         player = FindFirstObjectByType<BasePlayer>();
     }
-    public void AddItemToList(BaseItem item)
+    public void AddItemToShop(BaseItem item)
     {
-        items.Add(item);
+        itemsInShop.Add(item);
+        switch (item.type)
+        {
+            case BaseItem.ItemType.cardpack:
+                Instantiate(item, cardPackContainer);
+                break;
+
+            case BaseItem.ItemType.abilitycard:
+                Instantiate(item, abilityCardContainer);
+                break;
+        }
     }
-    public void BuyItem(int price, BaseItem item)
+    public bool BuyItem(int price, BaseItem item)
     {
         if (player.gold - price >= 0)
         {
-            items.Remove(item);
+            itemsInShop.Remove(item);
             //add item to items UI
+            return true;
         }
         else
         {
             Debug.Log("Not enough money");
+            return false;
         }
     }
 }

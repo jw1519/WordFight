@@ -1,20 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public abstract class BaseItem : MonoBehaviour
 {
-    public string itemDescription;
     public Sprite cardSprite;
+
+    [Header("Price")]
     public int itemPrice;
+    public TextMeshProUGUI priceText;
+
+    public ItemType type;
+    public enum ItemType
+    {
+        cardpack,
+        abilitycard
+    }
 
     public virtual void Awake()
     {
         gameObject.GetComponent<Image>().sprite = cardSprite;
+        priceText.text = itemPrice.ToString();
     }
-    public void BuyItem()
+    public virtual void BuyItem()
     {
-        ShopManager.instance.BuyItem(itemPrice, this);
+        bool isSold = ShopManager.instance.BuyItem(itemPrice, this);
+        if (isSold)
+        {
+            priceText.enabled = false;
+        }
     }
 }
