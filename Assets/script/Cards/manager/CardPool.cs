@@ -7,7 +7,6 @@ public class CardPool : MonoBehaviour
     public List<GameObject> pooledCards;
     public List<Card> cardSO = new List<Card>();
 
-    public GameObject cardToPool;
     public Transform cardParent;
 
     private void Awake()
@@ -24,8 +23,7 @@ public class CardPool : MonoBehaviour
         GameObject gameObject;
         foreach (Card card in cardSO)
         {
-            gameObject = Instantiate(cardToPool);
-            gameObject.GetComponent<SetCard>().card = Instantiate(card);
+            gameObject = CardFactory.instance.CreateCard(Instantiate(card));
             gameObject.SetActive(false);
             gameObject.transform.SetParent(cardParent);
             pooledCards.Add(gameObject);

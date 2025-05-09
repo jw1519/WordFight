@@ -6,7 +6,6 @@ public class CardFactory : MonoBehaviour
 {
     public static CardFactory instance;
     public GameObject cardPrefab;
-    public Transform cardParent;
 
     public void Awake()
     {
@@ -15,9 +14,10 @@ public class CardFactory : MonoBehaviour
             instance = this;
         }
     }
-    public void CreateCard(Card card)
+    public GameObject CreateCard(Card card)
     {
         GameObject instance = Instantiate(cardPrefab);
         instance.GetComponent<SetCard>().card = card;
+        return instance;
     }
 }
