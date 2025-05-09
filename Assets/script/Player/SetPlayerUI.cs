@@ -7,6 +7,7 @@ public class SetPlayerUI : MonoBehaviour
     public TextMeshProUGUI playerHealthtext;
     public TextMeshProUGUI defenceText;
     public TextMeshProUGUI goldText;
+    public TextMeshProUGUI amountOfItemsText;
     public Slider healthBar;
 
     public void UpdatePlayerHealth(BasePlayer player)
@@ -26,5 +27,9 @@ public class SetPlayerUI : MonoBehaviour
     public void UpdateGoldText(int gold)
     {
         goldText.text = gold.ToString();
+    }
+    public void UpdateItemsText(int itemsAmount)
+    {
+        amountOfItemsText.text = itemsAmount.ToString();
     }
 }

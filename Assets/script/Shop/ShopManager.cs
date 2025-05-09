@@ -29,7 +29,13 @@ public class ShopManager : MonoBehaviour
         itemsInShop.Add(item);
         switch (item.type)
         {
-            case BaseItem.ItemType.cardpack:
+            case BaseItem.ItemType.constantCardPack:
+                if (cardPackContainer.childCount < cardPackContainerMaxAmount)
+                {
+                    Instantiate(item, cardPackContainer);
+                }
+                break;
+            case BaseItem.ItemType.vowelCardpack:
                 if (cardPackContainer.childCount < cardPackContainerMaxAmount)
                 {
                     Instantiate(item, cardPackContainer);
@@ -49,6 +55,9 @@ public class ShopManager : MonoBehaviour
         if (player.gold - price >= 0)
         {
             itemsInShop.Remove(item);
+            player.gold -= price;
+            player.items.Add(item);
+            player.playerUI.UpdateItemsText(player.itemsAmount);
             //add item to items UI
             return true;
         }

@@ -4,11 +4,18 @@ using UnityEngine;
 
 public abstract class BasePlayer : MonoBehaviour, ITakeDamage, IHeal
 {
+    [SerializeField] public SetPlayerUI playerUI;
+
+    [Header("PlayerStats")]
     public int health = 30;
     public int maxHealth = 30;
     public int defence;
     public int gold;
-    public SetPlayerUI playerUI;
+    
+    [Header("PlayerItems")]
+    public List <BaseItem> items;
+    public int maxItems;
+    public int itemsAmount;
 
     public virtual void Awake()
     {

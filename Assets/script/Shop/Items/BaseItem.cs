@@ -13,7 +13,8 @@ public abstract class BaseItem : MonoBehaviour
     public ItemType type;
     public enum ItemType
     {
-        cardpack,
+        vowelCardpack,
+        constantCardPack,
         abilitycard
     }
 
