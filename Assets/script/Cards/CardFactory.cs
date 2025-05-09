@@ -13,6 +13,7 @@ public class CardFactory : MonoBehaviour
         {
             instance = this;
         }
+        
     }
     public GameObject CreateCard(Card card)
     {

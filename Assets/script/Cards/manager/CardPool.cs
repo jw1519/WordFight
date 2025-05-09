@@ -15,6 +15,9 @@ public class CardPool : MonoBehaviour
         {
             instance = this;
         }
+    }
+    private void Start()
+    {
         SetUp();
     }
     public void SetUp()
@@ -23,7 +26,7 @@ public class CardPool : MonoBehaviour
         GameObject gameObject;
         foreach (Card card in cardSO)
         {
-            gameObject = CardFactory.instance.CreateCard(Instantiate(card));
+            gameObject = CardFactory.instance.CreateCard(card);
             gameObject.SetActive(false);
             gameObject.transform.SetParent(cardParent);
             pooledCards.Add(gameObject);
