@@ -3588,11 +3588,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c55410040f6d9b4e8d562ac310983a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerUI: {fileID: 0}
   health: 30
   maxHealth: 30
   defence: 0
   gold: 0
-  playerUI: {fileID: 0}
+  items: []
+  maxItems: 0
+  itemsAmount: 0
 --- !u!212 &991535681
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3692,6 +3695,7 @@ MonoBehaviour:
   playerHealthtext: {fileID: 2135262114}
   defenceText: {fileID: 291836833}
   goldText: {fileID: 624094343}
+  amountOfItemsText: {fileID: 0}
   healthBar: {fileID: 696591719}
 --- !u!1 &1008334160
 GameObject:
@@ -4705,6 +4709,7 @@ MonoBehaviour:
   submitButton: {fileID: 1881245223}
   endTurnButton: {fileID: 1224163463}
   amountOfWordsUsed: 0
+  isGameDone: 0
 --- !u!4 &1365296065
 Transform:
   m_ObjectHideFlags: 0
@@ -5782,9 +5787,11 @@ MonoBehaviour:
   possibleItemsForShop:
   - {fileID: 5767572332958101426, guid: 324db3485aba83e48a2af449b23595bd, type: 3}
   - {fileID: 5840652791102767694, guid: 3b8166be5a4aed746bb73a3f18c5c842, type: 3}
+  itemsInShop: []
   cardPackContainer: {fileID: 535891899}
   abilityCardContainer: {fileID: 1275360476}
-  itemsInShop: []
+  cardPackContainerMaxAmount: 0
+  abilityCardContainerMaxAmount: 0
 --- !u!4 &1726592109
 Transform:
   m_ObjectHideFlags: 0
@@ -6700,6 +6707,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2110722412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2110722414}
+  - component: {fileID: 2110722413}
+  m_Layer: 0
+  m_Name: CardFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2110722413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110722412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35687d87e5b0bb342a19b2f0897a8e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 160398082852163787, guid: c6ced23febaee0e4c8e704a45eee020a, type: 3}
+  cardParent: {fileID: 110058700}
+  cards: []
+--- !u!4 &2110722414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110722412}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 616.8657, y: 220.49132, z: 2.3545983}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2116076545
 GameObject:
   m_ObjectHideFlags: 0
@@ -8053,3 +8107,4 @@ SceneRoots:
   - {fileID: 1579656337}
   - {fileID: 1726592109}
   - {fileID: 2100671944}
+  - {fileID: 2110722414}

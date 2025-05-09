@@ -11,18 +11,20 @@ public class SetCard : MonoBehaviour
     void Start()
     {
         cardLetterText.SetText(card.letter);
-
-        if (card.cardType == Card.CardType.Strength)
+        switch (card.cardType)
         {
-            description.SetText("This card doubles damage");
-        }
-        else if (card.cardType == Card.CardType.Heal)
-        {
-            description.SetText($"This card heals for {card.value}");
-        }
-        else
-        {
-            description.SetText($"This card does {card.value} {card.cardType}");
+            case Card.CardType.Strength:
+                description.SetText("This card doubles damage");
+                break;
+            case Card.CardType.Heal:
+                description.SetText($"This card heals for {card.value}");
+                break;
+            case Card.CardType.Defence:
+                description.SetText($"This card defends for {card.value}");
+                break;
+            case Card.CardType.Attack:
+                description.SetText($"This card Attacks for {card.value}");
+                break;
         }
         if (card.sprite != null)
         {
