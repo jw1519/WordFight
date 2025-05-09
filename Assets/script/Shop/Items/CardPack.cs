@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class CardPack : BaseItem
 {
-    public void OpenPack()
+    CardPackManager cardPackManager;
+    public override void Awake()
     {
-        switch (type)
-        {
-            case ItemType.constantCardPack:
-                break;
-
-            case ItemType.vowelCardpack:
-                break;
-        }
+        base.Awake();
+        cardPackManager = FindFirstObjectByType<CardPackManager>();
+    }
+    public void Open()
+    {
+        cardPackManager.OpenPack(this);
     }
 }

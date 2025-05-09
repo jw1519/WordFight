@@ -81,7 +81,7 @@ public abstract class BasePlayer : MonoBehaviour, ITakeDamage, IHeal
     }
     public void AddItem(BaseItem item)
     {
-        item.transform.parent = itemParent;
+        item.transform.SetParent(itemParent);
         items.Add(item);
         playerUI.UpdateItemsText(items.Count, maxItems);
     }

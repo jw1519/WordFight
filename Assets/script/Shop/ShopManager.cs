@@ -59,13 +59,13 @@ public class ShopManager : MonoBehaviour
             UpdatePrices();
             itemsInShop.Remove(item);
             //add item to items UI
-            if (item.type != BaseItem.ItemType.constantCardPack && item.type != BaseItem.ItemType.vowelCardpack)
+            if (item.type == BaseItem.ItemType.abilitycard)
             {
-                
+                player.AddItem(item);
             }
             else
             {
-                player.AddItem(item);
+                
             }
             return true;
         }
