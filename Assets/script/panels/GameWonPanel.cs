@@ -13,7 +13,6 @@ public class GameWonPanel : BasePanel
         enemy = FindAnyObjectByType<SetEnemy>().enemy;
         shopPanel = FindAnyObjectByType<ShopPanel>();
         player = FindAnyObjectByType<Player>();
-        ClosePanel();
     }
     public void SetStats()
     {
