@@ -6,17 +6,16 @@ public class ShopManager : MonoBehaviour
     public static ShopManager instance;
 
     public List<BaseItem> possibleItemsForShop;
+    public List<BaseItem> itemsInShop;
 
+    [Header("itemsPanels")]
     public Transform cardPackContainer;
     public Transform abilityCardContainer;
+    public int cardPackContainerMaxAmount;
+    public int abilityCardContainerMaxAmount;
 
-    public List <BaseItem> itemsInShop;
     BasePlayer player;
 
-    private void OnEnable()
-    {
-        AddItemToShop(possibleItemsForShop[0]);
-    }
     private void Awake()
     {
         if (instance == null)
@@ -31,11 +30,17 @@ public class ShopManager : MonoBehaviour
         switch (item.type)
         {
             case BaseItem.ItemType.cardpack:
-                Instantiate(item, cardPackContainer);
+                if (cardPackContainer.childCount < cardPackContainerMaxAmount)
+                {
+                    Instantiate(item, cardPackContainer);
+                }
                 break;
 
             case BaseItem.ItemType.abilitycard:
-                Instantiate(item, abilityCardContainer);
+                if (abilityCardContainer.childCount < abilityCardContainerMaxAmount)
+                {
+                    Instantiate(item, abilityCardContainer);
+                }
                 break;
         }
     }
