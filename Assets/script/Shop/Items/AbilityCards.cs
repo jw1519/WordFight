@@ -7,14 +7,21 @@ public class AbilityCards : BaseItem, IUse
 {
     public string itemDescription;
     public TextMeshProUGUI descriptionText;
+    public Player player;
 
     public override void Awake()
     {
         base.Awake();
+        player = FindAnyObjectByType<Player>();
         descriptionText.text = itemDescription;
     }
-    public void Use()
+    public virtual void Use()
     {
-        Destroy(gameObject);
+        if (isSold == true)
+        {
+            player.RemoveItem(this);
+            Destroy(gameObject);
+            //do thing
+        } 
     }
 }

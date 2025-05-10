@@ -88,6 +88,6 @@ public abstract class BasePlayer : MonoBehaviour, ITakeDamage, IHeal
     public void RemoveItem(BaseItem item)
     {
         items.Remove(item);
-        playerUI?.UpdateItemsText(items.Count, maxItems);
+        playerUI.UpdateItemsText(items.Count, maxItems);
     }
 }

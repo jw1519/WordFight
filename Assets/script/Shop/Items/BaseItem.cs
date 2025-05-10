@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public abstract class BaseItem : MonoBehaviour
 {
     public Sprite cardSprite;
-
+    public bool isSold;
     [Header("Price")]
     public int itemPrice;
     public TextMeshProUGUI priceText;
@@ -22,13 +22,18 @@ public abstract class BaseItem : MonoBehaviour
     {
         gameObject.GetComponent<Image>().sprite = cardSprite;
         priceText.text = itemPrice.ToString();
+        isSold = false;
     }
     public virtual void BuyItem()
     {
-        bool isSold = ShopManager.instance.BuyItem(itemPrice, this);
-        if (isSold)
+        //is it isnt sold check if it can be
+        if (!isSold)
         {
-            priceText.enabled = false;
+            isSold = ShopManager.instance.BuyItem(itemPrice, this);
+            if (isSold)
+            {
+                priceText.enabled = false;
+            }
         }
     }
 }

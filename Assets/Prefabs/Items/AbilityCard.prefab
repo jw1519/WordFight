@@ -145,8 +145,8 @@ GameObject:
   - component: {fileID: 4150011216317905303}
   - component: {fileID: 8391958998061626845}
   - component: {fileID: 1072621652423522495}
-  - component: {fileID: 5767572332958101426}
   - component: {fileID: -3883614068963783571}
+  - component: {fileID: 1041747752552373439}
   m_Layer: 5
   m_Name: AbilityCard
   m_TagString: Untagged
@@ -213,24 +213,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 100
---- !u!114 &5767572332958101426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207823758397008365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77c2f2028dca1214190de1b830dbde6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardSprite: {fileID: 21300000, guid: 69780e64a55887b469dc9dedba1c4bd8, type: 3}
-  itemPrice: 15
-  priceText: {fileID: 3911307680140990495}
-  type: 1
-  itemDescription: heals player for 5
-  descriptionText: {fileID: 6534155504388926754}
 --- !u!114 &-3883614068963783571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +257,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5767572332958101426}
+      - m_Target: {fileID: 1041747752552373439}
+        m_TargetAssemblyTypeName: AbilityCardHeal, scriptsAssemblyDefinition
+        m_MethodName: Use
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1041747752552373439}
         m_TargetAssemblyTypeName: BaseItem, scriptsAssemblyDefinition
         m_MethodName: BuyItem
         m_Mode: 1
@@ -287,6 +281,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1041747752552373439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7207823758397008365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d640bc5e003f549898794872e486ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSprite: {fileID: 21300000, guid: 69780e64a55887b469dc9dedba1c4bd8, type: 3}
+  isSold: 0
+  itemPrice: 10
+  priceText: {fileID: 3911307680140990495}
+  type: 2
+  itemDescription: heals player for 5hp
+  descriptionText: {fileID: 6534155504388926754}
+  healAmount: 5
 --- !u!1 &9149847836821536254
 GameObject:
   m_ObjectHideFlags: 0
