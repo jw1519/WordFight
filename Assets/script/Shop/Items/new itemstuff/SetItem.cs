@@ -9,7 +9,8 @@ public class SetItem : MonoBehaviour
     public BaseItem item;
     public TextMeshProUGUI priceText;
     public TextMeshProUGUI descriptionText;
-    public GameObject buttonPanel;
+    public GameObject buyButton;
+    public GameObject UseButton;
 
     Player player;
     CardPackManager cardPackManager;
@@ -23,14 +24,9 @@ public class SetItem : MonoBehaviour
             descriptionText.text = item.itemDescription;
         }
 
-        
-
         player = FindAnyObjectByType<Player>();
         cardPackManager = FindAnyObjectByType<CardPackManager>();
-    }
-    public void OnClick()
-    {
-        buttonPanel.SetActive(true);
+        item.isSold = false;
     }
 
     public void Use()
@@ -49,9 +45,18 @@ public class SetItem : MonoBehaviour
             cardPackManager.OpenPack(item);
         }
     }
-    public void Buy()
+    public void BuyItem()
     {
-        Debug.Log("buy");
-        item.BuyItem();
+        //is it isnt sold check if it can be
+        if (!item.isSold)
+        {
+            item.isSold = ShopManager.instance.BuyItem(item.itemPrice, this);
+            if (item.isSold)
+            {
+                priceText.enabled = false;
+                buyButton.SetActive(false);
+                UseButton.SetActive(true);
+            }
+        }
     }
 }

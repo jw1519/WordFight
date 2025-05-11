@@ -257,7 +257,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7243933281069052382}
         m_TargetAssemblyTypeName: SetItem, scriptsAssemblyDefinition
-        m_MethodName: Buy
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -650,6 +650,7 @@ GameObject:
   - component: {fileID: 1072621652423522495}
   - component: {fileID: -3883614068963783571}
   - component: {fileID: 7243933281069052382}
+  - component: {fileID: 5111476836764542036}
   m_Layer: 5
   m_Name: AbilityCardHeal
   m_TagString: Untagged
@@ -775,7 +776,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7243933281069052382}
         m_TargetAssemblyTypeName: SetItem, scriptsAssemblyDefinition
-        m_MethodName: Buy
+        m_MethodName: BuyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -800,7 +801,21 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
   priceText: {fileID: 3911307680140990495}
   descriptionText: {fileID: 6534155504388926754}
-  buttonPanel: {fileID: 0}
+  buyButton: {fileID: 1137859608027506321}
+  UseButton: {fileID: 8627890243064201538}
+--- !u!114 &5111476836764542036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7207823758397008365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ddcd09aa3fb9249bf5a8e9e793aa1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPanel: {fileID: 6764100842124274811}
 --- !u!1 &8627890243064201538
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7316686427517848845
 RectTransform:
   m_ObjectHideFlags: 0

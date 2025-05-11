@@ -10,7 +10,7 @@ public class AbilityCardHeal : BaseItem, IUse
     public override void Awake()
     {
         itemDescription = "Card heals player for " + healAmount.ToString();
-        player =FindAnyObjectByType<Player>();
+        player = FindAnyObjectByType<Player>();
         base.Awake();
     }
     public void Use()

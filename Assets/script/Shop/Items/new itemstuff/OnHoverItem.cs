@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class OnHoverItem : MonoBehaviour
+public class OnHoverItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject buttonPanel;
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        buttonPanel.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        
+        buttonPanel.SetActive(false);
     }
 }

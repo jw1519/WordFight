@@ -79,11 +79,12 @@ public abstract class BasePlayer : MonoBehaviour, ITakeDamage, IHeal
             playerUI.UpdatePlayerHealth(this);
         }
     }
-    public void AddItem(BaseItem item)
+    public void AddItem(SetItem item)
     {
-        //item.transform.SetParent(itemParent);
-        items.Add(item);
+        item.transform.SetParent(itemParent);
+        items.Add(item.item);
         playerUI.UpdateItemsText(items.Count, maxItems);
+        playerUI.UpdateGoldText(gold);
     }
     public void RemoveItem(BaseItem item)
     {

@@ -23,16 +23,4 @@ public abstract class BaseItem : ScriptableObject
     {
         isSold = false;
     }
-    public virtual void BuyItem()
-    {
-        //is it isnt sold check if it can be
-        if (!isSold)
-        {
-            isSold = ShopManager.instance.BuyItem(itemPrice, this);
-            if (isSold)
-            {
-                priceText.enabled = false;
-            }
-        }
-    }
 }

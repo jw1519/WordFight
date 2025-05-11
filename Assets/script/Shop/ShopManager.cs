@@ -50,16 +50,16 @@ public class ShopManager : MonoBehaviour
                 break;
         }
     }
-    public bool BuyItem(int price, BaseItem item)
+    public bool BuyItem(int price, SetItem item)
     {
         if (player.gold - price >= 0)
         {
 
             player.gold -= price;
             UpdatePrices();
-            itemsInShop.Remove(item);
+            itemsInShop.Remove(item.item);
             //add item to items UI
-            if (item.type == BaseItem.ItemType.abilitycard)
+            if (item.item.type == BaseItem.ItemType.abilitycard)
             {
                 player.AddItem(item);
             }
