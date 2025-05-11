@@ -54,18 +54,22 @@ public class ShopManager : MonoBehaviour
     {
         if (player.gold - price >= 0)
         {
-
-            player.gold -= price;
-            UpdatePrices();
-            itemsInShop.Remove(item.item);
             //add item to items UI
             if (item.item.type == BaseItem.ItemType.abilitycard)
             {
-                player.AddItem(item);
+                if (player.itemParent.childCount < player.maxItems)
+                {
+                    player.gold -= price;
+                    UpdatePrices();
+                    itemsInShop.Remove(item.item);
+                    player.AddItem(item);
+                }
             }
             else
             {
-                
+                player.gold -= price;
+                UpdatePrices();
+                itemsInShop.Remove(item.item);
             }
             return true;
         }
