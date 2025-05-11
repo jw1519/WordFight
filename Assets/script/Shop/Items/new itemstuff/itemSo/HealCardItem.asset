@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: HealCardItem
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 69780e64a55887b469dc9dedba1c4bd8, type: 3}
-  isSold: 0
-  itemDescription: Card heals player for 5
+  isSold: 1
+  itemDescription: Card heals player for 0
   itemPrice: 10
   priceText: {fileID: 0}
   type: 2
-  healAmount: 0
+  healAmount: 5

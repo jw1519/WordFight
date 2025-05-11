@@ -4,16 +4,7 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     public static ShopManager instance;
-
-    public List<BaseItem> possibleItemsForShop;
-    public List<BaseItem> itemsInShop;
-
-    [Header("itemsPanels")]
-    public Transform cardPackContainer;
-    public Transform abilityCardContainer;
-    public int cardPackContainerMaxAmount;
-    public int abilityCardContainerMaxAmount;
-
+    ShopPanel shopPanel;
     BasePlayer player;
 
     private void Awake()
@@ -23,32 +14,7 @@ public class ShopManager : MonoBehaviour
             instance = this;
         }
         player = FindFirstObjectByType<BasePlayer>();
-    }
-    public void AddItemToShop(BaseItem item)
-    {
-        itemsInShop.Add(item);
-        switch (item.type)
-        {
-            case BaseItem.ItemType.constantCardPack:
-                if (cardPackContainer.childCount < cardPackContainerMaxAmount)
-                {
-                    Instantiate(item, cardPackContainer);
-                }
-                break;
-            case BaseItem.ItemType.vowelCardpack:
-                if (cardPackContainer.childCount < cardPackContainerMaxAmount)
-                {
-                    Instantiate(item, cardPackContainer);
-                }
-                break;
-
-            case BaseItem.ItemType.abilitycard:
-                if (abilityCardContainer.childCount < abilityCardContainerMaxAmount)
-                {
-                    Instantiate(item, abilityCardContainer);
-                }
-                break;
-        }
+        shopPanel = FindAnyObjectByType<ShopPanel>();
     }
     public bool BuyItem(int price, SetItem item)
     {
@@ -61,7 +27,7 @@ public class ShopManager : MonoBehaviour
                 {
                     player.gold -= price;
                     UpdatePrices();
-                    itemsInShop.Remove(item.item);
+                    shopPanel.itemsInShop.Remove(item);
                     player.AddItem(item);
                 }
             }
@@ -69,7 +35,7 @@ public class ShopManager : MonoBehaviour
             {
                 player.gold -= price;
                 UpdatePrices();
-                itemsInShop.Remove(item.item);
+                shopPanel.itemsInShop.Remove(item);
             }
             return true;
         }
@@ -81,9 +47,9 @@ public class ShopManager : MonoBehaviour
     }
     public void UpdatePrices()
     {
-        foreach (BaseItem item in itemsInShop)
+        foreach (SetItem item in shopPanel.itemsInShop)
         {
-            if (item.itemPrice <= player.gold)
+            if (item.item.itemPrice <= player.gold)
             {
                 item.priceText.color = Color.green;
             }
