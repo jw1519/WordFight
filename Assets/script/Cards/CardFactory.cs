@@ -7,6 +7,7 @@ public class CardFactory : MonoBehaviour
     public static CardFactory instance;
     public GameObject cardPrefab;
     public GameObject abilityCardPrefab;
+    public GameObject cardPackPrefab;
 
     public void Awake()
     {
@@ -22,10 +23,26 @@ public class CardFactory : MonoBehaviour
         instance.GetComponent<SetCard>().card = card;
         return instance;
     }
-    public GameObject CreateAbilityItem(BaseItem item)
+    public GameObject CreateItem(BaseItem item)
     {
-        GameObject instance = Instantiate(abilityCardPrefab);
-        instance.GetComponent<SetItem>().item = item;
-        return instance;
+        GameObject instance = null;
+        switch (item.type)
+        {
+            case BaseItem.ItemType.abilitycard:
+                instance = Instantiate(abilityCardPrefab);
+                instance.GetComponent<SetItem>().item = item;
+                return instance;
+
+            case BaseItem.ItemType.vowelCardpack:
+                instance = Instantiate(cardPackPrefab);
+                instance.GetComponent<SetItem>().item = item;
+                return instance;
+            case BaseItem.ItemType.constantCardPack:
+                instance = Instantiate(cardPackPrefab);
+                instance.GetComponent<SetItem>().item = item;
+                return instance;
+        }
+        return null;
+        
     }
 }

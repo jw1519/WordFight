@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShopPanel : BasePanel
 {
-    public List<SetItem> possibleItemsForShop;
+    public List<BaseItem> possibleItemsForShop;
     public List<SetItem> itemsInShop;
 
     [Header("itemsPanels")]
@@ -34,34 +34,42 @@ public class ShopPanel : BasePanel
 
         for (int i = 0; i < abilityCardContainerMaxAmount; i++)
         {
-            GameObject item = CardFactory.instance.CreateAbilityItem(possibleItemsForShop[i].item);
-            itemsInShop.Add(item.GetComponent<SetItem>());
-            item.transform.SetParent(abilityCardContainer);
+            AddItemToShop(possibleItemsForShop[i]);
+        }
+
+        for (int i = 0; i < cardPackContainerMaxAmount; ++i)
+        {
+            AddItemToShop(possibleItemsForShop[i]);
         }
     }
 
-    public void AddItemToShop(SetItem item)
+    public void AddItemToShop(BaseItem item)
     {
-        itemsInShop.Add(item);
-        switch (item.item.type)
+        switch (item.type)
         {
             case BaseItem.ItemType.constantCardPack:
                 if (cardPackContainer.childCount < cardPackContainerMaxAmount)
                 {
-                    Instantiate(item, cardPackContainer);
+                    GameObject instance = CardFactory.instance.CreateItem(item);
+                    instance.transform.SetParent(cardPackContainer);
+                    itemsInShop.Add(instance.GetComponent<SetItem>());
                 }
                 break;
             case BaseItem.ItemType.vowelCardpack:
                 if (cardPackContainer.childCount < cardPackContainerMaxAmount)
                 {
-                    Instantiate(item, cardPackContainer);
+                    GameObject instance = CardFactory.instance.CreateItem(item);
+                    instance.transform.SetParent(cardPackContainer);
+                    itemsInShop.Add(instance.GetComponent<SetItem>());
                 }
                 break;
 
             case BaseItem.ItemType.abilitycard:
                 if (abilityCardContainer.childCount < abilityCardContainerMaxAmount)
                 {
-                    Instantiate(item, abilityCardContainer);
+                    GameObject instance = CardFactory.instance.CreateItem(item);
+                    instance.transform.SetParent(abilityCardContainer);
+                    itemsInShop.Add(instance.GetComponent<SetItem>());
                 }
                 break;
         }
