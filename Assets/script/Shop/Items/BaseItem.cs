@@ -2,10 +2,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class BaseItem : MonoBehaviour
+public abstract class BaseItem : ScriptableObject
 {
     public Sprite cardSprite;
     public bool isSold;
+    public string itemDescription;
     [Header("Price")]
     public int itemPrice;
     public TextMeshProUGUI priceText;
@@ -20,8 +21,6 @@ public abstract class BaseItem : MonoBehaviour
 
     public virtual void Awake()
     {
-        gameObject.GetComponent<Image>().sprite = cardSprite;
-        priceText.text = itemPrice.ToString();
         isSold = false;
     }
     public virtual void BuyItem()

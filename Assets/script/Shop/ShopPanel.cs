@@ -7,6 +7,7 @@ public class ShopPanel : BasePanel
     private void OnEnable()
     {
         ShopManager.instance.UpdatePrices();
+        GameManager.instance.isGameDone = true;
     }
 
 }

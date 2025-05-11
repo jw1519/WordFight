@@ -27,7 +27,7 @@ public class CardPackManager : MonoBehaviour
             }
         }
     }
-    public void OpenPack(CardPack cardPack)
+    public void OpenPack(BaseItem cardPack)
     {
         cardParent.gameObject.SetActive(true);
         cardsToChoose = new List<Card>();

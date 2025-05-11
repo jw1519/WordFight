@@ -2,16 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "CardPack", menuName = "CardPack")]
 public class CardPack : BaseItem
 {
-    CardPackManager cardPackManager;
-    public override void Awake()
-    {
-        base.Awake();
-        cardPackManager = FindFirstObjectByType<CardPackManager>();
-    }
-    public void Open()
-    {
-        cardPackManager.OpenPack(this);
-    }
+
 }

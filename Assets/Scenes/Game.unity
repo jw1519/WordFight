@@ -4841,17 +4841,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4150011216317905303, guid: 324db3485aba83e48a2af449b23595bd, type: 3}
   m_PrefabInstance: {fileID: 1414101349}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1414101351 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1041747752552373439, guid: 324db3485aba83e48a2af449b23595bd, type: 3}
-  m_PrefabInstance: {fileID: 1414101349}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d640bc5e003f549898794872e486ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1430323910
 GameObject:
   m_ObjectHideFlags: 0
@@ -5080,17 +5069,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4815567551154809220, guid: 3b8166be5a4aed746bb73a3f18c5c842, type: 3}
   m_PrefabInstance: {fileID: 7573204499307988692}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1468222262 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5840652791102767694, guid: 3b8166be5a4aed746bb73a3f18c5c842, type: 3}
-  m_PrefabInstance: {fileID: 7573204499307988692}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fce0d927f85ae3f44895dbbd78f45802, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1495601549
 GameObject:
   m_ObjectHideFlags: 0
@@ -5857,15 +5835,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleItemsForShop:
-  - {fileID: 1041747752552373439, guid: 324db3485aba83e48a2af449b23595bd, type: 3}
-  - {fileID: 5840652791102767694, guid: 3b8166be5a4aed746bb73a3f18c5c842, type: 3}
+  - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
+  - {fileID: 11400000, guid: 421d7bd6d956f5a42a009ad1f18ac4e2, type: 2}
   itemsInShop:
-  - {fileID: 1414101351}
-  - {fileID: 1468222262}
+  - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
+  - {fileID: 11400000, guid: 421d7bd6d956f5a42a009ad1f18ac4e2, type: 2}
   cardPackContainer: {fileID: 535891900}
   abilityCardContainer: {fileID: 1275360477}
-  cardPackContainerMaxAmount: 0
-  abilityCardContainerMaxAmount: 0
+  cardPackContainerMaxAmount: 2
+  abilityCardContainerMaxAmount: 4
 --- !u!4 &1726592109
 Transform:
   m_ObjectHideFlags: 0
