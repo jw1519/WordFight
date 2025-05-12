@@ -17,20 +17,11 @@ public class ShopPanel : BasePanel
     {
         ShopManager.instance.UpdatePrices();
         GameManager.instance.isGameDone = true;
-
+        foreach (SetItem item in itemsInShop)
+        {
+            Destroy(item.gameObject);
+        }
         itemsInShop.Clear();
-
-        int childAmount = abilityCardContainer.transform.childCount;
-        for (int i = 0; i < childAmount; childAmount--)
-        {
-            Destroy(abilityCardContainer.transform.GetChild(i));
-        }
-
-        childAmount = cardPackContainer.transform.childCount;
-        for (int i = 0; i < childAmount; childAmount--)
-        {
-            Destroy(abilityCardContainer.transform.GetChild(i));
-        }
 
         for (int i = 0; i < abilityCardContainerMaxAmount; i++)
         {
