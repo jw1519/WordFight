@@ -13,7 +13,6 @@ public class SetItem : MonoBehaviour
     public GameObject UseButton;
 
     Player player;
-    CardPackManager cardPackManager;
     public void Awake()
     {
         gameObject.GetComponent<Image>().sprite = item.cardSprite;
@@ -25,24 +24,19 @@ public class SetItem : MonoBehaviour
         }
 
         player = FindAnyObjectByType<Player>();
-        cardPackManager = FindAnyObjectByType<CardPackManager>();
         item.isSold = false;
     }
 
     public void Use()
     {
-        if (item.type == BaseItem.ItemType.abilitycard)
+        if (item.isSold == true)
         {
-            if (item.isSold == true)
+            if (item.type == BaseItem.ItemType.abilitycard)
             {
                 player.RemoveItem(item);
-                Destroy(gameObject);
-                //do thing
             }
-        }
-        else
-        {
-            cardPackManager.OpenPack(item);
+            item.Use();
+            Destroy(gameObject);
         }
     }
     public void BuyItem()
@@ -55,7 +49,8 @@ public class SetItem : MonoBehaviour
             {
                 priceText.enabled = false;
                 buyButton.SetActive(false);
-                UseButton.SetActive(true);
+                if (UseButton != null)
+                    UseButton.SetActive(true);
             }
         }
     }

@@ -400,6 +400,7 @@ GameObject:
   - component: {fileID: 78122499}
   - component: {fileID: 78122498}
   - component: {fileID: 78122500}
+  - component: {fileID: 78122501}
   m_Layer: 5
   m_Name: PackPanel
   m_TagString: Untagged
@@ -488,6 +489,19 @@ MonoBehaviour:
   m_Spacing: {x: 40, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &78122501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78122496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64b1357ae5d86d468b06761713e76ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cards: []
 --- !u!1 &103622027
 GameObject:
   m_ObjectHideFlags: 0

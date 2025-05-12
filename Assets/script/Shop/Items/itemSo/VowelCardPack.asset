@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: VowelCardPack
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: e41daff94678c5d4fb17b0bf9480c45b, type: 3}
-  isSold: 1
+  isSold: 0
   itemDescription: contains 3 cards
-  itemPrice: 10
+  itemPrice: 20
   priceText: {fileID: 0}
   type: 0
+  amountInPack: 3

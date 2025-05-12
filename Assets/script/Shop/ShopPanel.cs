@@ -41,7 +41,7 @@ public class ShopPanel : BasePanel
             case BaseItem.ItemType.constantCardPack:
                 if (cardPackContainer.childCount < cardPackContainerMaxAmount)
                 {
-                    GameObject instance = CardFactory.instance.CreateItem(item);
+                    GameObject instance = CardFactory.instance.CreateItem(Instantiate(item));
                     instance.transform.SetParent(cardPackContainer);
                     itemsInShop.Add(instance.GetComponent<SetItem>());
                 }
@@ -49,7 +49,7 @@ public class ShopPanel : BasePanel
             case BaseItem.ItemType.vowelCardpack:
                 if (cardPackContainer.childCount < cardPackContainerMaxAmount)
                 {
-                    GameObject instance = CardFactory.instance.CreateItem(item);
+                    GameObject instance = CardFactory.instance.CreateItem(Instantiate(item));
                     instance.transform.SetParent(cardPackContainer);
                     itemsInShop.Add(instance.GetComponent<SetItem>());
                 }
@@ -58,7 +58,7 @@ public class ShopPanel : BasePanel
             case BaseItem.ItemType.abilitycard:
                 if (abilityCardContainer.childCount < abilityCardContainerMaxAmount)
                 {
-                    GameObject instance = CardFactory.instance.CreateItem(item);
+                    GameObject instance = CardFactory.instance.CreateItem(Instantiate(item));
                     instance.transform.SetParent(abilityCardContainer);
                     itemsInShop.Add(instance.GetComponent<SetItem>());
                 }

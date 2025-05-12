@@ -8,7 +8,7 @@ public class CardPool : MonoBehaviour
     public List<Card> cardSO = new();
 
     public Transform cardParent;
-
+    
     private void Awake()
     {
         if (instance == null)

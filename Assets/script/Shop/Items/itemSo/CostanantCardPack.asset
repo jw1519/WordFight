@@ -15,6 +15,7 @@ MonoBehaviour:
   cardSprite: {fileID: 0}
   isSold: 0
   itemDescription: 
-  itemPrice: 0
+  itemPrice: 10
   priceText: {fileID: 0}
   type: 1
+  amountInPack: 3

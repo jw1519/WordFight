@@ -1,12 +1,11 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-
-public abstract class BaseItem : ScriptableObject
+public abstract class BaseItem : ScriptableObject, IUse
 {
     public Sprite cardSprite;
     public bool isSold;
     public string itemDescription;
+
     [Header("Price")]
     public int itemPrice;
     public TextMeshProUGUI priceText;
@@ -22,5 +21,10 @@ public abstract class BaseItem : ScriptableObject
     public virtual void Awake()
     {
         isSold = false;
+    }
+
+    public virtual void Use()
+    {
+        
     }
 }

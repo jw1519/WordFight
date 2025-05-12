@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Items", menuName = "AbilityItem/Heal")]
-public class AbilityItemHeal : BaseItem, IUse
+public class AbilityItemHeal : BaseItem
 {
     public int healAmount;
     Player player;
@@ -13,7 +13,7 @@ public class AbilityItemHeal : BaseItem, IUse
         player = FindAnyObjectByType<Player>();
         base.Awake();
     }
-    public void Use()
+    public override void Use()
     {
         player.Heal(healAmount);
     }
