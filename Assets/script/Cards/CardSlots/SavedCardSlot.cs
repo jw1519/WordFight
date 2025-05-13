@@ -27,8 +27,8 @@ public class SavedCardSlot: CardSlots
     {
         for (int i = 0; i < cards.Count; i++)
         {
-            cards[i].transform.localPosition = new Vector2(-100 + i * 30, 0);
-            cards[i].transform.localScale = new Vector2(0.5f, 0.5f);
+            cards[i].transform.localPosition = new Vector2(-100 + i * 50, 0);
+            cards[i].transform.localScale = new Vector2(.8f, .8f);
         }
     }
 }
