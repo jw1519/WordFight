@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEngine;
 
 public class GameWonPanel : BasePanel
 {
@@ -6,13 +7,13 @@ public class GameWonPanel : BasePanel
     public TextMeshProUGUI goldEarnedText;
     Enemy enemy;
     Player player;
-    ShopPanel shopPanel;
-    public override void Awake()
+    BasePanel shopPanel;
+
+    private void Start()
     {
-        base.Awake();
         enemy = FindAnyObjectByType<SetEnemy>().enemy;
-        shopPanel = FindAnyObjectByType<ShopPanel>();
         player = FindAnyObjectByType<Player>();
+        shopPanel = UIManager.instance.GetPanel("ShopPanel");
     }
     public void SetStats()
     {

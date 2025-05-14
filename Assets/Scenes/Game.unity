@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2516829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4791,6 +4791,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleItemsForShop:
+  - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
+  - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
   - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
   - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
   - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}

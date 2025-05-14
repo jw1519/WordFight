@@ -28,10 +28,13 @@ public class ShopPanel : BasePanel
             AddItemToShop(possibleItemsForShop[i]);
         }
 
-        for (int i = 0; i < cardPackContainerMaxAmount; ++i)
-        {
-            AddItemToShop(possibleItemsForShop[i]);
-        }
+        //for (int i = 0; i < cardPackContainerMaxAmount; ++i)
+        //{
+        //    if (possibleItemsForShop[i] != null)
+        //    {
+        //        AddItemToShop(possibleItemsForShop[i]);
+        //    }
+        //}
     }
 
     public void AddItemToShop(BaseItem item)

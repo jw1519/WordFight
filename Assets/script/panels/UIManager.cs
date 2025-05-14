@@ -24,4 +24,15 @@ public class UIManager : MonoBehaviour
             panel.gameObject.SetActive(true);
         }
     }
+    public BasePanel GetPanel(string name)
+    {
+        foreach (BasePanel panel in panels)
+        {
+            if (panel.name == name)
+            {
+                return panel;
+            }
+        }
+        return null;
+    }
 }
