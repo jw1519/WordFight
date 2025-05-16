@@ -34,7 +34,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         canvasGroup.blocksRaycasts = true;
         if (transform.parent == transform.root)
         {
-            transform.SetParent(parentAfterDrag);
+            transform.SetParent(parentAfterDrag, false);
             parentAfterDrag.GetComponent<CardSlots>().cards.Add(eventData.pointerDrag);  
         }
         parentAfterDrag.GetComponent<CardSlots>().UpdateCards();
