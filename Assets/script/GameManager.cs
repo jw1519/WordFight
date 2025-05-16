@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         }
         setEnemy = FindObjectOfType<SetEnemy>();
         player = FindObjectOfType<Player>();
+        isGameDone = false;
         
 
         foreach (BasePanel panel in UIManager.instance.panels)
@@ -85,8 +86,8 @@ public class GameManager : MonoBehaviour
     {
         if (isGameDone == false) 
         {
-            gameOverPanel.OpenPanel();
             gameOverPanel.SetStats();
+            gameOverPanel.OpenPanel();
         }
     }
     public void GameWon()

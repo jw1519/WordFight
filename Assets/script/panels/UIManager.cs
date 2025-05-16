@@ -23,6 +23,10 @@ public class UIManager : MonoBehaviour
         {
             panels.Add(panel);
         }
+        else
+        {
+            panel.OpenPanel();
+        }
     }
     public BasePanel GetPanel(string name)
     {

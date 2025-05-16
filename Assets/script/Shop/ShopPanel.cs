@@ -16,8 +16,10 @@ public class ShopPanel : BasePanel
 
     private void OnEnable()
     {
-        ShopManager.instance.UpdatePrices();
-        GameManager.instance.isGameDone = true;
+        if (ShopManager.instance != null)
+        {
+            ShopManager.instance.UpdatePrices();
+        }
 
         foreach (SetItem item in itemsInShop)
         {
@@ -46,26 +48,35 @@ public class ShopPanel : BasePanel
             case BaseItem.ItemType.constantCardPack:
                 if (cardPackContainer.childCount < cardPackContainerMaxAmount)
                 {
-                    GameObject instance = CardFactory.instance.CreateItem(Instantiate(item));
-                    instance.transform.SetParent(cardPackContainer);
-                    itemsInShop.Add(instance.GetComponent<SetItem>());
+                    if (CardFactory.instance != null)
+                    {
+                        GameObject instance = CardFactory.instance.CreateItem(Instantiate(item));
+                        instance.transform.SetParent(cardPackContainer);
+                        itemsInShop.Add(instance.GetComponent<SetItem>());
+                    }  
                 }
                 break;
             case BaseItem.ItemType.vowelCardpack:
                 if (cardPackContainer.childCount < cardPackContainerMaxAmount)
                 {
-                    GameObject instance = CardFactory.instance.CreateItem(Instantiate(item));
-                    instance.transform.SetParent(cardPackContainer);
-                    itemsInShop.Add(instance.GetComponent<SetItem>());
+                    if (CardFactory.instance != null)
+                    {
+                        GameObject instance = CardFactory.instance.CreateItem(Instantiate(item));
+                        instance.transform.SetParent(cardPackContainer);
+                        itemsInShop.Add(instance.GetComponent<SetItem>());
+                    }
                 }
                 break;
 
             case BaseItem.ItemType.abilitycard:
                 if (abilityCardContainer.childCount < abilityCardContainerMaxAmount)
                 {
-                    GameObject instance = CardFactory.instance.CreateItem(Instantiate(item));
-                    instance.transform.SetParent(abilityCardContainer);
-                    itemsInShop.Add(instance.GetComponent<SetItem>());
+                    if (CardFactory.instance != null)
+                    {
+                        GameObject instance = CardFactory.instance.CreateItem(Instantiate(item));
+                        instance.transform.SetParent(abilityCardContainer);
+                        itemsInShop.Add(instance.GetComponent<SetItem>());
+                    }   
                 }
                 break;
         }
