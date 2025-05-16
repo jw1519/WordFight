@@ -19,9 +19,9 @@ public class UIManager : MonoBehaviour
     }
     public void RegisterPanel(BasePanel panel)
     {
-        if (panels.Contains(panel))
+        if (!panels.Contains(panel))
         {
-            panel.gameObject.SetActive(true);
+            panels.Add(panel);
         }
     }
     public BasePanel GetPanel(string name)

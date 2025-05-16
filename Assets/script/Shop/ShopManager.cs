@@ -1,10 +1,9 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
     public static ShopManager instance;
-    ShopPanel shopPanel;
+    BasePanel shopPanel;
     BasePlayer player;
 
     private void Awake()
@@ -13,8 +12,11 @@ public class ShopManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+    private void Start()
+    {
         player = FindFirstObjectByType<BasePlayer>();
-        shopPanel = FindAnyObjectByType<ShopPanel>();
+        shopPanel = UIManager.instance.GetPanel("ShopPanel");
     }
     public bool BuyItem(int price, SetItem item)
     {
@@ -27,7 +29,7 @@ public class ShopManager : MonoBehaviour
                 {
                     player.gold -= price;
                     UpdatePrices();
-                    shopPanel.itemsInShop.Remove(item);
+                    shopPanel.gameObject.GetComponent<ShopPanel>().itemsInShop.Remove(item);
                     player.AddItem(item);
                 }
             }
@@ -35,7 +37,7 @@ public class ShopManager : MonoBehaviour
             {
                 player.gold -= price;
                 UpdatePrices();
-                shopPanel.itemsInShop.Remove(item);
+                shopPanel.gameObject.GetComponent<ShopPanel>().itemsInShop.Remove(item);
             }
             return true;
         }
@@ -47,7 +49,7 @@ public class ShopManager : MonoBehaviour
     }
     public void UpdatePrices()
     {
-        foreach (SetItem item in shopPanel.itemsInShop)
+        foreach (SetItem item in shopPanel.gameObject.GetComponent<ShopPanel>().itemsInShop)
         {
             if (item.item.itemPrice <= player.gold)
             {

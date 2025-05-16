@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +9,8 @@ public class ShopPanel : BasePanel
     [Header("itemsPanels")]
     public Transform cardPackContainer;
     public Transform abilityCardContainer;
+
+    [Header("AmountInShop")]
     public int cardPackContainerMaxAmount;
     public int abilityCardContainerMaxAmount;
 
@@ -17,6 +18,7 @@ public class ShopPanel : BasePanel
     {
         ShopManager.instance.UpdatePrices();
         GameManager.instance.isGameDone = true;
+
         foreach (SetItem item in itemsInShop)
         {
             Destroy(item.gameObject);
