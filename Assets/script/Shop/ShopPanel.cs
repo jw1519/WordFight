@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class ShopPanel : BasePanel
 {
-    public List<BaseItem> possibleItemsForShop;
+    public List<BaseItem> abilityItems;
+    public List<CardPack> cardPacks;
     public List<SetItem> itemsInShop;
 
     [Header("itemsPanels")]
@@ -29,16 +30,16 @@ public class ShopPanel : BasePanel
 
         for (int i = 0; i < abilityCardContainerMaxAmount; i++)
         {
-            AddItemToShop(possibleItemsForShop[i]);
+            AddItemToShop(abilityItems[i]);
         }
 
-        //for (int i = 0; i < cardPackContainerMaxAmount; ++i)
-        //{
-        //    if (possibleItemsForShop[i] != null)
-        //    {
-        //        AddItemToShop(possibleItemsForShop[i]);
-        //    }
-        //}
+        for (int i = 0; i < cardPackContainerMaxAmount; ++i)
+        {
+            if (cardPacks[i] != null)
+            {
+                AddItemToShop(cardPacks[i]);
+            }
+        }
     }
 
     public void AddItemToShop(BaseItem item)

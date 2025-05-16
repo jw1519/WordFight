@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2516829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1675,10 +1675,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2084930371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -225}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &401031070
 MonoBehaviour:
@@ -2658,10 +2658,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2084930371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -125}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &656979987
 MonoBehaviour:
@@ -4236,10 +4236,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2084930371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -175}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234795942
 MonoBehaviour:
@@ -4790,12 +4790,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d171d97e1322ef14ab7cf2fada71a178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possibleItemsForShop:
+  abilityItems:
   - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
   - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
   - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
   - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
   - {fileID: 11400000, guid: 39280cb0779b71b4fa5a670eec0b9715, type: 2}
+  cardPacks:
+  - {fileID: 11400000, guid: ddbeaa14a3beb0142baa8955f5be2740, type: 2}
+  - {fileID: 11400000, guid: 421d7bd6d956f5a42a009ad1f18ac4e2, type: 2}
+  - {fileID: 11400000, guid: 421d7bd6d956f5a42a009ad1f18ac4e2, type: 2}
   itemsInShop: []
   cardPackContainer: {fileID: 535891900}
   abilityCardContainer: {fileID: 1275360477}
@@ -4949,10 +4953,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2084930371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -25}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1430323912
 MonoBehaviour:
@@ -6525,10 +6529,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2084930371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -75}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2079640061
 MonoBehaviour:
