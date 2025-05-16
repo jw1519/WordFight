@@ -3,18 +3,19 @@ using UnityEngine.UI;
 
 public class SelectCard : MonoBehaviour
 {
-    CardPackPanel panel;
+    BasePanel panel;
     public void Awake()
     {
-        panel = FindAnyObjectByType<CardPackPanel>();
+        panel = UIManager.instance.GetPanel("CardPackPanel");
     }
     public void ChooseCard()
     {
         CardManager.instance.deck.Add(gameObject);
         CardPool.instance.pooledCards.Add(gameObject);
         gameObject.transform.SetParent(CardManager.instance.cards);
-        panel.cards.Remove(gameObject);
+        panel.gameObject.GetComponent<CardPackPanel>().cards.Remove(gameObject);
         panel.ClosePanel();
+        gameObject.GetComponent<DragAndDrop>().parentAfterDrag = CardManager.instance.handCards; //for now
         GetComponent<Button>().enabled = false;
         gameObject.SetActive(false);
     }
