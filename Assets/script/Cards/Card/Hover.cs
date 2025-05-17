@@ -9,7 +9,7 @@ public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         dragAndDrop = GetComponent<DragAndDrop>();
     }
-    public void OnPointerEnter(PointerEventData eventData) // doesnt work on added cards from packs
+    public void OnPointerEnter(PointerEventData eventData) 
     {
         if (dragAndDrop.isDragging == false)
         {

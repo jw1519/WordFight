@@ -19,6 +19,7 @@ public class SelectCard : MonoBehaviour
         panel.ClosePanel();
         gameObject.GetComponent<DragAndDrop>().parentAfterDrag = CardManager.instance.handCards; //for now
         GetComponent<Button>().enabled = false;
+        GetComponent<Hover>().enabled = true;
         gameObject.SetActive(false);
     }
 }
