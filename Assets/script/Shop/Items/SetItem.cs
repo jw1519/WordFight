@@ -13,7 +13,7 @@ public class SetItem : MonoBehaviour
     public GameObject UseButton;
 
     Player player;
-    public void Awake()
+    public void Start()
     {
         gameObject.GetComponent<Image>().sprite = item.cardSprite;
         item.priceText = priceText;
