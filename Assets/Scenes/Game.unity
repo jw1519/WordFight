@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2516829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2364,8 +2364,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -83.149, y: 0}
-  m_SizeDelta: {x: 166.3, y: 0}
+  m_AnchoredPosition: {x: -74.77084, y: 0}
+  m_SizeDelta: {x: 149.5416, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624094343
 MonoBehaviour:
@@ -3941,8 +3941,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 46.6482, y: 0}
-  m_SizeDelta: {x: 93.2964, y: 95.1996}
+  m_AnchoredPosition: {x: 75, y: 0}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103824136
 MonoBehaviour:
@@ -5681,8 +5681,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 319.60632, y: 0}
-  m_SizeDelta: {x: 639.2125, y: 0}
+  m_AnchoredPosition: {x: 331.89575, y: 0}
+  m_SizeDelta: {x: 663.7914, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1726592107
 GameObject:
@@ -6127,8 +6127,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 105, y: -0.000095367}
-  m_SizeDelta: {x: 95, y: 95}
+  m_AnchoredPosition: {x: 122, y: -0.000095367}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065724157
 MonoBehaviour:
@@ -6614,8 +6614,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -66, y: 0}
-  m_SizeDelta: {x: 207.39001, y: 95.1996}
+  m_AnchoredPosition: {x: -56.098, y: 0.26601}
+  m_SizeDelta: {x: 227.2, y: 150.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135262114
 MonoBehaviour:
@@ -6664,8 +6664,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
