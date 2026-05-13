@@ -32,7 +32,7 @@ public class CardHand : MonoBehaviour, IDropHandler
             Quaternion rotation = Quaternion.LookRotation(-up, Vector3.Cross(-up, forward).normalized);
             cards[i].transform.DOMove(splinePosition + transform.position + .01f * i * Vector3.back, duration);
             cards[i].transform.DORotate(rotation.eulerAngles, duration);
-            cards[i].transform.SetParent(transform, false);
+            cards[i].transform.SetParent(transform);
         }
         yield return new WaitForSeconds(duration);
     }

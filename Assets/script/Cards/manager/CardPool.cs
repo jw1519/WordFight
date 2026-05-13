@@ -34,7 +34,7 @@ public class CardPool : MonoBehaviour
     }
     public GameObject GetPooledCard()
     {
-        List<GameObject> cardDeck = CardManager.instance.deck;
+        List<GameObject> cardDeck = CardManager.instance.cardsInDeck;
         GameObject randomCard = cardDeck[Random.Range(0, cardDeck.Count)];
         return randomCard;
     }

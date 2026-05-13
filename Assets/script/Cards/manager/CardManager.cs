@@ -14,9 +14,9 @@ public class CardManager : MonoBehaviour
     public Transform useCards;
 
     [Header("Lists")]
-    public List<GameObject> deck = new();
-    public List<GameObject> hand = new();
-    public List<GameObject> discard = new();
+    public List<GameObject> cardsInDeck = new();
+    public List<GameObject> cardsInHand = new();
+    public List<GameObject> cardsInDiscard = new();
     public List<GameObject> savedCards = new();
 
     [Header("Text")]
@@ -24,6 +24,7 @@ public class CardManager : MonoBehaviour
     public TextMeshProUGUI discardedAmountText;
 
     CardSlots handSlot;
+    CardHand hand;
     private void Awake()
     {
         if (instance == null)
@@ -36,25 +37,34 @@ public class CardManager : MonoBehaviour
         //Adds all card to the deck list
         foreach (Transform transform in cards)
         {
-            deck.Add(transform.gameObject);
+            cardsInDeck.Add(transform.gameObject);
         }
         handSlot = handCards.GetComponent<CardSlots>();
+        hand = FindAnyObjectByType<CardHand>();
     }
     public void DrawCards()
     {
         DiscardCards();
-        if (deck.Count >= maxCards)
+        if (cardsInDeck.Count >= maxCards)
         {
             for (int i = 0; i < maxCards; i++)
             {
                 GameObject RandomCard = CardPool.instance.GetPooledCard();
                 if (RandomCard != null )
                 {
+                    //RandomCard.gameObject.SetActive(true);
+                    //RandomCard.transform.SetParent(handCards);
+                    //cardsInHand.Add(RandomCard);
+                    //cardsInDeck.Remove(RandomCard);
+                    //handSlot.cards.Add(RandomCard);
+
                     RandomCard.gameObject.SetActive(true);
-                    RandomCard.transform.SetParent(handCards);
-                    hand.Add(RandomCard);
-                    deck.Remove(RandomCard);
-                    handSlot.cards.Add(RandomCard);
+                    //RandomCard.transform.SetParent(hand.transform, false);
+                    cardsInHand.Add(RandomCard);
+                    StartCoroutine(hand.AddCard(RandomCard));
+                    cardsInDeck.Remove(RandomCard);
+                    RandomCard.GetComponent<Hover>().enabled = true;
+                    RandomCard.GetComponent<DragAndDrop>().enabled = true;
                 }
             }
             //if doesnt have any vowels draw a new hand
@@ -62,17 +72,17 @@ public class CardManager : MonoBehaviour
             {
                 DrawCards();
             }
-            deckAmountText.SetText(deck.Count.ToString());
-            handCards.GetComponent<CardSlots>().UpdateCards();
+            deckAmountText.SetText(cardsInDeck.Count.ToString());
+            //handCards.GetComponent<CardSlots>().UpdateCards();
         }
         else
         {
             // put cards from discard pile into deck if deck is empty or doesnt have enough cards
-            foreach (GameObject card in discard)
+            foreach (GameObject card in cardsInDiscard)
             {
-                deck.Add(card);
+                cardsInDeck.Add(card);
             }
-            discard.Clear();
+            cardsInDiscard.Clear();
             DrawCards();
         }
     }
@@ -80,9 +90,9 @@ public class CardManager : MonoBehaviour
     public void DiscardCards()
     {
         // add all cards in hand to discard list
-        foreach (GameObject card in hand)
+        foreach (GameObject card in cardsInHand)
         {
-            discard.Add(card);
+            cardsInDiscard.Add(card);
         }
         // discard all cards in hand
         for (int i = handCards.childCount - 1; i >= 0; i--)
@@ -95,12 +105,12 @@ public class CardManager : MonoBehaviour
             if (savedCards.Contains(child.gameObject))
             {
                 savedCards.Remove(child.gameObject);
-                discard.Add(child.gameObject);
+                cardsInDiscard.Add(child.gameObject);
             }
         }
         //discard any cards left in use cards and lists
         DiscardUsedCards();
-        hand.Clear();
+        cardsInHand.Clear();
         handSlot.cards.Clear();
     }
     public void DiscardUsedCards()
@@ -115,16 +125,16 @@ public class CardManager : MonoBehaviour
             if (savedCards.Contains(child.gameObject))
             {
                 savedCards.Remove(child.gameObject);
-                discard.Add(child.gameObject);
+                cardsInDiscard.Add(child.gameObject);
             }
         }
-        discardedAmountText.SetText(discard.Count.ToString());
+        discardedAmountText.SetText(cardsInDiscard.Count.ToString());
         useCards.GetComponent<CardSlots>().cards.Clear();
     }
     // check if hand contains at least one vowel
     public bool CheckForVowels()
     {
-        foreach (GameObject go in hand)
+        foreach (GameObject go in cardsInHand)
         {
             if (go.GetComponent<SetCard>().card.isVowel == true)
             {

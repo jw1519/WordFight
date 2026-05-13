@@ -11,7 +11,7 @@ public class HandCardSlot : CardSlots
             if (!CardManager.instance.savedCards.Contains(eventData.pointerDrag))
             {
                 CardManager.instance.savedCards.Add(eventData.pointerDrag);
-                CardManager.instance.hand.Remove(eventData.pointerDrag);
+                CardManager.instance.cardsInHand.Remove(eventData.pointerDrag);
             }
             UpdateCards();
         }
